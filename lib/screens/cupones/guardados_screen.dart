@@ -7,14 +7,22 @@ import '../../core/widgets/points_icon.dart';
 import '../../core/widgets/ticket_card.dart';
 
 class GuardadosScreen extends StatefulWidget {
-  const GuardadosScreen({super.key});
+  final int initialSub;
+
+  const GuardadosScreen({super.key, this.initialSub = 0});
 
   @override
   State<GuardadosScreen> createState() => _GuardadosScreenState();
 }
 
 class _GuardadosScreenState extends State<GuardadosScreen> {
-  int _sub = 0; // 0=Cupones, 1=Puntos
+  late int _sub;
+
+  @override
+  void initState() {
+    super.initState();
+    _sub = widget.initialSub;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -31,9 +39,7 @@ class _GuardadosScreenState extends State<GuardadosScreen> {
           const SizedBox(height: 16),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 14),
-            child: Column(
-              children: _sub == 0 ? _cupones() : _puntos(),
-            ),
+            child: Column(children: _sub == 0 ? _cupones() : _puntos()),
           ),
         ],
       ),
@@ -67,11 +73,9 @@ class _GuardadosScreenState extends State<GuardadosScreen> {
   ];
 
   List<Widget> _puntos() => [
-    _puntosCard(avatarBg: const Color(0xFFD4322B), avatarFg: Colors.white, label: "Roger's",
-      name: "Roger's", handle: '@rogersec', disponibles: '15', usadas: '0'),
+    _puntosCard(avatarBg: const Color(0xFFD4322B), avatarFg: Colors.white, label: "Roger's", name: "Roger's", handle: '@rogersec', disponibles: '15', usadas: '0'),
     const SizedBox(height: 14),
-    _puntosCard(avatarBg: const Color(0xFFFEF9E8), avatarFg: const Color(0xFF1C1C1C), label: 'T',
-      name: 'Tijuana', handle: '@tijuanaec', disponibles: '50', usadas: '0'),
+    _puntosCard(avatarBg: const Color(0xFFFEF9E8), avatarFg: const Color(0xFF1C1C1C), label: 'T', name: 'Tijuana', handle: '@tijuanaec', disponibles: '50', usadas: '0'),
   ];
 
   Widget _tallCard({
@@ -122,9 +126,9 @@ class _GuardadosScreenState extends State<GuardadosScreen> {
                 ]),
               const Spacer(),
               Row(mainAxisAlignment: MainAxisAlignment.end, children: [
-                _actionBtn('assets/images/icon-actividad.png', s),
+                GestureDetector(onTap: () => _local(ctx, 'Actividad agregada al perfil'), child: _actionBtn('assets/images/icon-actividad.png', s)),
                 SizedBox(width: 10 * s),
-                _pill('Guardar', s),
+                GestureDetector(onTap: () => _confirmRemoveSaved(ctx), child: _xBtn(s)),
                 SizedBox(width: 10 * s),
                 GestureDetector(onTap: () => ctx.go('/usar-cupon'), child: _pill('Usar', s)),
               ]),
@@ -134,6 +138,23 @@ class _GuardadosScreenState extends State<GuardadosScreen> {
       );
     });
   }
+
+  void _confirmRemoveSaved(BuildContext context) {
+    showDialog<void>(
+      context: context,
+      builder: (_) => AlertDialog(
+        backgroundColor: AppColors.black,
+        title: const Text('Eliminar guardado', style: TextStyle(color: Colors.white)),
+        content: const Text('¿Deseas eliminar este cupón guardado?', style: TextStyle(color: Colors.white70)),
+        actions: [
+          TextButton(onPressed: () => Navigator.of(context).pop(), child: const Text('CANCELAR')),
+          TextButton(onPressed: () => Navigator.of(context).pop(), child: const Text('ELIMINAR')),
+        ],
+      ),
+    );
+  }
+
+  void _local(BuildContext context, String message) => ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(message)));
 
   Widget _statCol(String v, String l, double s) => Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
     Text(v, style: TextStyle(color: Colors.white, fontSize: (26 * s).clamp(13, 26), fontWeight: FontWeight.w600)),
@@ -149,32 +170,33 @@ class _GuardadosScreenState extends State<GuardadosScreen> {
   Widget _pill(String label, double s) => Container(
     height: (30 * s).clamp(20, 30),
     padding: EdgeInsets.symmetric(horizontal: 18 * s),
-    decoration: BoxDecoration(color: AppColors.neonRed, borderRadius: BorderRadius.circular(999),
-      boxShadow: const [BoxShadow(color: Color(0x66FF073A), blurRadius: 8, offset: Offset(0, 3))]),
+    decoration: BoxDecoration(color: AppColors.neonRed, borderRadius: BorderRadius.circular(999), boxShadow: const [BoxShadow(color: Color(0x66FF073A), blurRadius: 8, offset: Offset(0, 3))]),
     alignment: Alignment.center,
     child: Text(label, style: TextStyle(color: Colors.white, fontSize: (13 * s).clamp(8, 13), fontWeight: FontWeight.w500)),
+  );
+
+  Widget _xBtn(double s) => Container(
+    height: (30 * s).clamp(20, 30),
+    width: (36 * s).clamp(24, 36),
+    decoration: BoxDecoration(color: AppColors.neonRed, borderRadius: BorderRadius.circular(999), boxShadow: const [BoxShadow(color: Color(0x66FF073A), blurRadius: 8, offset: Offset(0, 3))]),
+    alignment: Alignment.center,
+    child: Text('X', style: TextStyle(color: Colors.white, fontSize: (13 * s).clamp(8, 13), fontWeight: FontWeight.w600)),
   );
 
   Widget _actionBtn(String asset, double s) => Container(
     width: (34 * s).clamp(22, 34),
     height: (30 * s).clamp(20, 30),
-    decoration: BoxDecoration(color: AppColors.neonRed, borderRadius: BorderRadius.circular(999),
-      boxShadow: const [BoxShadow(color: Color(0x66FF073A), blurRadius: 8, offset: Offset(0, 3))]),
+    decoration: BoxDecoration(color: AppColors.neonRed, borderRadius: BorderRadius.circular(999), boxShadow: const [BoxShadow(color: Color(0x66FF073A), blurRadius: 8, offset: Offset(0, 3))]),
     child: Padding(padding: EdgeInsets.all(7 * s), child: Image.asset(asset, fit: BoxFit.contain)),
   );
 
-  Widget _puntosCard({
-    required Color avatarBg, required Color avatarFg, required String label,
-    required String name, required String handle,
-    required String disponibles, required String usadas,
-  }) {
+  Widget _puntosCard({required Color avatarBg, required Color avatarFg, required String label, required String name, required String handle, required String disponibles, required String usadas}) {
     return LayoutBuilder(builder: (_, c) {
       final s = (c.maxWidth / 520.0).clamp(0.5, 1.5);
       final cardH = c.maxWidth * (200.0 / 720.0);
       final vPad = 18.0 * s;
       final innerH = cardH - vPad * 2;
       final av = (90.0 * s).clamp(20.0, innerH - 4);
-
       return TicketCard(
         aspectRatio: 720 / 200,
         child: Padding(
@@ -216,8 +238,8 @@ class _GuardadosScreenState extends State<GuardadosScreen> {
   void _onNav(BuildContext ctx, NavTab t) {
     switch (t) {
       case NavTab.home: ctx.go('/home');
-      case NavTab.explore: break;
-      case NavTab.cupones: break;
+      case NavTab.explore: ctx.go('/explorar');
+      case NavTab.cupones: ctx.go('/solicitudes');
       case NavTab.perfil: ctx.go('/perfil');
     }
   }
