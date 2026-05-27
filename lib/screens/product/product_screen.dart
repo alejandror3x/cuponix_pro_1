@@ -170,7 +170,7 @@ class ProductScreen extends StatelessWidget {
                   Center(
                     child: PillButton(
                       label: 'GUARDAR',
-                      onPressed: () => context.pop(),
+                      onPressed: () => context.go('/email-verification'),
                     ),
                   ),
                   const SizedBox(height: 12),
