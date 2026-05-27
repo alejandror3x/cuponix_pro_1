@@ -18,7 +18,7 @@ class GraciasVisitarScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             const Text(
-              '¡Gracias por visitar!',
+              '¡Gracias por canjear!',
               textAlign: TextAlign.center,
               style: TextStyle(color: Colors.white, fontSize: 30, fontWeight: FontWeight.w700, height: 1.1),
             ),
@@ -50,7 +50,7 @@ class GraciasVisitarScreen extends StatelessWidget {
               style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.w500, height: 1.25),
             ),
             const SizedBox(height: 16),
-            CuponCta(label: 'ENTENDIDO', onPressed: () => context.go('/solicitudes')),
+            CuponCta(label: 'ENTENDIDO', onPressed: () => context.go('/guardados?tab=puntos')),
             const SizedBox(height: 8),
           ],
         ),
@@ -61,7 +61,7 @@ class GraciasVisitarScreen extends StatelessWidget {
   void _nav(BuildContext context, NavTab t) {
     switch (t) {
       case NavTab.home: context.go('/home');
-      case NavTab.explore: break;
+      case NavTab.explore: context.go('/explorar');
       case NavTab.cupones: context.go('/solicitudes');
       case NavTab.perfil: context.go('/perfil');
     }
