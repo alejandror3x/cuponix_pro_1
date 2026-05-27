@@ -24,7 +24,6 @@ class _HomeScreenState extends State<HomeScreen> {
         backgroundColor: AppColors.black,
         body: Column(
           children: [
-            // Header
             SafeArea(
               bottom: false,
               child: Container(
@@ -49,7 +48,6 @@ class _HomeScreenState extends State<HomeScreen> {
                 ]),
               ),
             ),
-            // Feed
             Expanded(
               child: ListView(
                 children: [
@@ -89,10 +87,14 @@ class _HomeScreenState extends State<HomeScreen> {
               active: NavTab.home,
               onTap: (t) {
                 switch (t) {
-                  case NavTab.home: break;
-                  case NavTab.explore: context.go('/explorar');
-                  case NavTab.cupones: context.go('/cupones');
-                  case NavTab.perfil: context.go('/perfil');
+                  case NavTab.home:
+                    break;
+                  case NavTab.explore:
+                    context.go('/explorar');
+                  case NavTab.cupones:
+                    context.go('/solicitudes');
+                  case NavTab.perfil:
+                    context.go('/perfil');
                 }
               },
             ),
@@ -118,68 +120,49 @@ class _HomeScreenState extends State<HomeScreen> {
     });
   }
 
-  Widget _promoBox(double w, double h, String title, String subtitle) =>
-      GestureDetector(
-        onTap: () => context.go('/buscar-resultados'),
-        child: Container(
-          width: w,
-          height: h,
-          decoration: BoxDecoration(
-            gradient: const LinearGradient(
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-              colors: [Color(0xFF0B6CB1), Color(0xFFFF073A)],
-            ),
-            borderRadius: BorderRadius.circular(18),
-            boxShadow: const [
-              BoxShadow(
-                color: Color(0x73000000),
-                blurRadius: 16,
-                offset: Offset(0, 6),
-              )
-            ],
-          ),
-          padding: EdgeInsets.all((w * 0.1).clamp(8, 18)),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                title,
-                textAlign: TextAlign.center,
-                maxLines: 2,
-                overflow: TextOverflow.ellipsis,
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: (w * 0.16).clamp(16, 34),
-                  fontWeight: FontWeight.w800,
-                  height: 1.0,
-                ),
-              ),
-              SizedBox(height: (h * 0.04).clamp(4, 10)),
-              Text(
-                subtitle,
-                textAlign: TextAlign.center,
-                maxLines: 1,
-                overflow: TextOverflow.ellipsis,
-                style: TextStyle(
-                  color: Colors.white.withValues(alpha: 0.9),
-                  fontSize: (w * 0.08).clamp(10, 18),
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
-            ],
-          ),
+  Widget _promoBox(double w, double h, String title, String subtitle) => GestureDetector(
+    onTap: () => context.go('/negocio'),
+    child: Container(
+      width: w,
+      height: h,
+      decoration: BoxDecoration(
+        gradient: const LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          colors: [Color(0xFF0B6CB1), Color(0xFFFF073A)],
         ),
-      );
+        borderRadius: BorderRadius.circular(18),
+        boxShadow: const [BoxShadow(color: Color(0x73000000), blurRadius: 16, offset: Offset(0, 6))],
+      ),
+      padding: EdgeInsets.all((w * 0.1).clamp(8, 18)),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(
+            title,
+            textAlign: TextAlign.center,
+            maxLines: 2,
+            overflow: TextOverflow.ellipsis,
+            style: TextStyle(color: Colors.white, fontSize: (w * 0.16).clamp(16, 34), fontWeight: FontWeight.w800, height: 1.0),
+          ),
+          SizedBox(height: (h * 0.04).clamp(4, 10)),
+          Text(
+            subtitle,
+            textAlign: TextAlign.center,
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
+            style: TextStyle(color: Colors.white.withValues(alpha: 0.9), fontSize: (w * 0.08).clamp(10, 18), fontWeight: FontWeight.w600),
+          ),
+        ],
+      ),
+    ),
+  );
 
   Widget _buildTabs() {
     return Container(
       color: AppColors.black,
       child: Stack(children: [
-        Row(children: [
-          _tabBtn('Para ti', 0),
-          _tabBtn('Siguiendo', 1),
-        ]),
+        Row(children: [_tabBtn('Para ti', 0), _tabBtn('Siguiendo', 1)]),
         Positioned(
           bottom: 0, left: 0, right: 0,
           child: AnimatedAlign(
@@ -248,82 +231,71 @@ class _CouponCard extends StatelessWidget {
       return GestureDetector(
         onTap: () => context.go('/negocio'),
         child: TicketCard(
-        aspectRatio: 720 / 240,
-        child: Padding(
-          padding: EdgeInsets.fromLTRB(28 * s, vPad, 34 * s, vPad),
-          child: Row(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
-            SizedBox(
-              width: av,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Container(
-                    width: av, height: av,
-                    decoration: BoxDecoration(
-                      color: avatarBg,
-                      shape: BoxShape.circle,
-                      boxShadow: const [BoxShadow(color: Color(0x62000000), blurRadius: 12, offset: Offset(0, 4))],
-                    ),
-                    alignment: Alignment.center,
-                    child: Text(
-                      avatarLabel,
-                      style: TextStyle(
-                        color: avatarFg,
-                        fontSize: (16 * s).clamp(8, 16),
-                        fontWeight: FontWeight.w800,
-                        fontStyle: FontStyle.italic,
-                        letterSpacing: 0.02,
+          aspectRatio: 720 / 240,
+          child: Padding(
+            padding: EdgeInsets.fromLTRB(28 * s, vPad, 34 * s, vPad),
+            child: Row(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
+              SizedBox(
+                width: av,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Container(
+                      width: av, height: av,
+                      decoration: BoxDecoration(
+                        color: avatarBg,
+                        shape: BoxShape.circle,
+                        boxShadow: const [BoxShadow(color: Color(0x62000000), blurRadius: 12, offset: Offset(0, 4))],
+                      ),
+                      alignment: Alignment.center,
+                      child: Text(
+                        avatarLabel,
+                        style: TextStyle(color: avatarFg, fontSize: (16 * s).clamp(8, 16), fontWeight: FontWeight.w800, fontStyle: FontStyle.italic, letterSpacing: 0.02),
                       ),
                     ),
-                  ),
-                  SizedBox(height: 6 * s),
-                  Text(name,
-                    style: TextStyle(color: Colors.white, fontSize: (14 * s).clamp(7, 14), fontWeight: FontWeight.w500, height: 1.1),
-                    maxLines: 2, overflow: TextOverflow.ellipsis),
-                  SizedBox(height: 2 * s),
-                  Text(handle,
-                    style: TextStyle(color: Colors.white70, fontSize: (13 * s).clamp(7, 13), height: 1.1),
-                    maxLines: 1, overflow: TextOverflow.ellipsis),
-                ],
+                    SizedBox(height: 6 * s),
+                    Text(name, style: TextStyle(color: Colors.white, fontSize: (14 * s).clamp(7, 14), fontWeight: FontWeight.w500, height: 1.1), maxLines: 2, overflow: TextOverflow.ellipsis),
+                    SizedBox(height: 2 * s),
+                    Text(handle, style: TextStyle(color: Colors.white70, fontSize: (13 * s).clamp(7, 13), height: 1.1), maxLines: 1, overflow: TextOverflow.ellipsis),
+                  ],
+                ),
               ),
-            ),
-            SizedBox(width: 20 * s),
-            Expanded(
-              child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                Row(crossAxisAlignment: CrossAxisAlignment.start, children: isText ? [
-                  Expanded(child: Text(blurb,
-                    style: TextStyle(color: Colors.white, fontSize: (14 * s).clamp(7, 14), fontWeight: FontWeight.w500, height: 1.25))),
-                  SizedBox(width: 10 * s),
-                  _rewardCol(s),
-                ] : [
-                  _statCol(discount, 'Descuento', s),
-                  SizedBox(width: 10 * s),
-                  _statCol(minCompra, 'Compra mínima', s),
-                  SizedBox(width: 10 * s),
-                  _rewardCol(s),
+              SizedBox(width: 20 * s),
+              Expanded(
+                child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                  Row(crossAxisAlignment: CrossAxisAlignment.start, children: isText ? [
+                    Expanded(child: Text(blurb, style: TextStyle(color: Colors.white, fontSize: (14 * s).clamp(7, 14), fontWeight: FontWeight.w500, height: 1.25))),
+                    SizedBox(width: 10 * s),
+                    _rewardCol(s),
+                  ] : [
+                    _statCol(discount, 'Descuento', s),
+                    SizedBox(width: 10 * s),
+                    _statCol(minCompra, 'Compra mínima', s),
+                    SizedBox(width: 10 * s),
+                    _rewardCol(s),
+                  ]),
+                  const Spacer(),
+                  Row(mainAxisAlignment: MainAxisAlignment.end, children: [
+                    GestureDetector(onTap: () => _local(context, 'Actividad agregada al perfil'), child: _actionPill('assets/images/icon-actividad.png', s)),
+                    SizedBox(width: 10 * s),
+                    GestureDetector(onTap: () => _saveCoupon(context), child: _pill('Guardar', s)),
+                    SizedBox(width: 10 * s),
+                    GestureDetector(onTap: () => context.go('/usar-cupon'), child: _pill('Usar', s)),
+                  ]),
                 ]),
-                const Spacer(),
-                Row(mainAxisAlignment: MainAxisAlignment.end, children: [
-                  _actionPill('assets/images/icon-actividad.png', s),
-                  SizedBox(width: 10 * s),
-                  GestureDetector(onTap: () => _saveCoupon(context), child: _pill('Guardar', s)),
-                  SizedBox(width: 10 * s),
-                  GestureDetector(onTap: () => context.go('/usar-cupon'), child: _pill('Usar', s)),
-                ]),
-              ]),
-            ),
-          ]),
-        ),
+              ),
+            ]),
+          ),
         ),
       );
     });
   }
 
-  void _saveCoupon(BuildContext context) {
-    ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(content: Text('Cupón guardado')),
-    );
+  void _saveCoupon(BuildContext context) => _local(context, 'Cupón guardado');
+
+  void _local(BuildContext context, String msg) {
+    ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(msg)));
   }
 
   Widget _statCol(String v, String l, double s) => Column(
@@ -351,22 +323,14 @@ class _CouponCard extends StatelessWidget {
 
   Widget _actionPill(String asset, double s) => Container(
     width: 34 * s, height: 30 * s,
-    decoration: BoxDecoration(
-      color: AppColors.neonRed,
-      borderRadius: BorderRadius.circular(999),
-      boxShadow: const [BoxShadow(color: Color(0x66FF073A), blurRadius: 8, offset: Offset(0, 3))],
-    ),
+    decoration: BoxDecoration(color: AppColors.neonRed, borderRadius: BorderRadius.circular(999), boxShadow: const [BoxShadow(color: Color(0x66FF073A), blurRadius: 8, offset: Offset(0, 3))]),
     child: Padding(padding: EdgeInsets.all(7 * s), child: Image.asset(asset, fit: BoxFit.contain)),
   );
 
   Widget _pill(String label, double s) => Container(
     height: 30 * s,
     padding: EdgeInsets.symmetric(horizontal: 18 * s),
-    decoration: BoxDecoration(
-      color: AppColors.neonRed,
-      borderRadius: BorderRadius.circular(999),
-      boxShadow: const [BoxShadow(color: Color(0x66FF073A), blurRadius: 8, offset: Offset(0, 3))],
-    ),
+    decoration: BoxDecoration(color: AppColors.neonRed, borderRadius: BorderRadius.circular(999), boxShadow: const [BoxShadow(color: Color(0x66FF073A), blurRadius: 8, offset: Offset(0, 3))]),
     alignment: Alignment.center,
     child: Text(label, style: TextStyle(color: Colors.white, fontSize: (13 * s).clamp(8, 13), fontWeight: FontWeight.w500)),
   );
