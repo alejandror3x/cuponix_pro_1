@@ -42,7 +42,7 @@ class EmailVerificationScreen extends StatelessWidget {
           const Spacer(),
           Center(
             child: PillButton(
-              label: 'SIGUIENTE',
+              label: 'YA VERIFIQUÉ MI CORREO',
               onPressed: () => context.go('/suggested-accounts'),
             ),
           ),
