@@ -104,8 +104,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   Widget _buildCarousel() {
     return LayoutBuilder(builder: (_, c) {
-      // Scale all three boxes + gaps to fill the available width exactly
-      final r = (c.maxWidth - 16.0) / 468.0; // 468 = 110+14+220+14+110
+      final r = (c.maxWidth - 16.0) / 468.0;
       return Padding(
         padding: const EdgeInsets.fromLTRB(8, 10, 8, 8),
         child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
@@ -214,9 +213,6 @@ class _HomeScreenState extends State<HomeScreen> {
   );
 }
 
-// ---------------------------------------------------------------------------
-// Coupon feed card (720×240 ticket shape, fully fluid)
-// ---------------------------------------------------------------------------
 class _CouponCard extends StatelessWidget {
   final Color avatarBg;
   final Color avatarFg;
@@ -242,13 +238,11 @@ class _CouponCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(builder: (_, constraints) {
       final w = constraints.maxWidth;
-      // Scale relative to 520 px reference — cards stay proportional on any phone
       final s = (w / 520.0).clamp(0.5, 1.5);
       final h = w * (240.0 / 720.0);
       final vPad = 22.0 * s;
       final innerH = h - vPad * 2;
-      // Reserve space for 2-line name + gap + handle, then give avatar 85% of what's left
-      final textH = (2 * 14 * 1.1 + 2 + 13 * 1.1) * s; // ≈ 47.1 * s
+      final textH = (2 * 14 * 1.1 + 2 + 13 * 1.1) * s;
       final av = ((innerH - textH) * 0.85).clamp(20.0, 86.0 * s);
 
       return GestureDetector(
@@ -258,7 +252,6 @@ class _CouponCard extends StatelessWidget {
         child: Padding(
           padding: EdgeInsets.fromLTRB(28 * s, vPad, 34 * s, vPad),
           child: Row(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
-            // Left: avatar then name+handle grouped at top
             SizedBox(
               width: av,
               child: Column(
@@ -296,7 +289,6 @@ class _CouponCard extends StatelessWidget {
               ),
             ),
             SizedBox(width: 20 * s),
-            // Right: stats on top, action pills pinned to bottom
             Expanded(
               child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
                 Row(crossAxisAlignment: CrossAxisAlignment.start, children: isText ? [
@@ -315,7 +307,7 @@ class _CouponCard extends StatelessWidget {
                 Row(mainAxisAlignment: MainAxisAlignment.end, children: [
                   _actionPill('assets/images/icon-actividad.png', s),
                   SizedBox(width: 10 * s),
-                  GestureDetector(onTap: () => context.go('/guardados'), child: _pill('Guardar', s)),
+                  GestureDetector(onTap: () => _saveCoupon(context), child: _pill('Guardar', s)),
                   SizedBox(width: 10 * s),
                   GestureDetector(onTap: () => context.go('/usar-cupon'), child: _pill('Usar', s)),
                 ]),
@@ -326,6 +318,12 @@ class _CouponCard extends StatelessWidget {
         ),
       );
     });
+  }
+
+  void _saveCoupon(BuildContext context) {
+    ScaffoldMessenger.of(context).showSnackBar(
+      const SnackBar(content: Text('Cupón guardado')),
+    );
   }
 
   Widget _statCol(String v, String l, double s) => Column(
