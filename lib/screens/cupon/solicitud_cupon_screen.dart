@@ -42,7 +42,7 @@ class SolicitudCuponScreen extends StatelessWidget {
             const CuponHelpText('Para confirmar, se abrirá tu lector\nde QR para el código del solicitante.'),
             const CuponExpiraText('12/12/25'),
             const Spacer(),
-            CuponCta(label: 'CONFIRMAR', onPressed: () => context.go('/lector-qr')),
+            CuponCta(label: 'CONFIRMAR', onPressed: () => _showCameraPopup(context)),
             const SizedBox(height: 8),
           ],
         ),
@@ -50,10 +50,29 @@ class SolicitudCuponScreen extends StatelessWidget {
     );
   }
 
+  void _showCameraPopup(BuildContext context) {
+    showDialog<void>(
+      context: context,
+      builder: (_) => AlertDialog(
+        backgroundColor: const Color(0xFF1C1C1C),
+        content: const Text(
+          '¿Autorizas a Cuponix a acceder a tu cámara?',
+          textAlign: TextAlign.center,
+          style: TextStyle(color: Colors.white, fontSize: 16),
+        ),
+        actionsAlignment: MainAxisAlignment.center,
+        actions: [
+          TextButton(onPressed: () => Navigator.of(context).pop(), child: const Text('Ahora no')),
+          TextButton(onPressed: () => context.go('/lector-qr'), child: const Text('Aceptar')),
+        ],
+      ),
+    );
+  }
+
   void _nav(BuildContext context, NavTab t) {
     switch (t) {
       case NavTab.home: context.go('/home');
-      case NavTab.explore: break;
+      case NavTab.explore: context.go('/explorar');
       case NavTab.cupones: context.go('/solicitudes');
       case NavTab.perfil: context.go('/perfil');
     }
