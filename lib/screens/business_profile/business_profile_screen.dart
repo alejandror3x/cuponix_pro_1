@@ -73,7 +73,7 @@ class _BusinessProfileScreenState extends State<BusinessProfileScreen> {
                       PillButton(
                         label: 'UBICAR EN MAPA',
                         variant: PillButtonVariant.small,
-                        onPressed: () => context.push('/map'),
+                        onPressed: () => context.push('/map-business-setup'),
                       ),
                     ],
                   ),
