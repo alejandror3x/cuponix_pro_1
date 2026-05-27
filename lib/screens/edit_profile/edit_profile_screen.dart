@@ -213,7 +213,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                   const SizedBox(height: 14),
                   Center(
                     child: GestureDetector(
-                      onTap: () => context.go('/points-onboarding'),
+                      onTap: () => context.go('/email-verification'),
                       child: const Text(
                         'USAR COMO CLIENTE',
                         style: TextStyle(
