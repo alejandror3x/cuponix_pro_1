@@ -10,7 +10,7 @@ class GraciasCuponScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CuponScaffold(
-      activeTab: NavTab.explore,
+      activeTab: NavTab.cupones,
       onNav: (t) => _nav(context, t),
       card: SingleChildScrollView(
         padding: const EdgeInsets.fromLTRB(28, 20, 28, 28),
@@ -38,11 +38,11 @@ class GraciasCuponScreen extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: const [
-                _StatCol(value: '20%',    label: 'Descuento'),
+                _StatCol(value: '20%', label: 'Descuento'),
                 SizedBox(width: 20),
                 _StatCol(value: r'$15,00', label: 'Compra mínima'),
                 SizedBox(width: 20),
-                _PointsCol(pts: '15',     label: 'Recompenza'),
+                _PointsCol(pts: '15', label: 'Recompenza'),
               ],
             ),
             const SizedBox(height: 18),
@@ -52,7 +52,7 @@ class GraciasCuponScreen extends StatelessWidget {
               style: TextStyle(color: Colors.white, fontSize: 17, fontWeight: FontWeight.w500, height: 1.35),
             ),
             const SizedBox(height: 20),
-            CuponCta(label: 'ENTENDIDO', onPressed: () => context.go('/home')),
+            CuponCta(label: 'ENTENDIDO', onPressed: () => context.go('/solicitudes')),
             const SizedBox(height: 8),
           ],
         ),
@@ -80,7 +80,7 @@ class _StatCol extends StatelessWidget {
     crossAxisAlignment: CrossAxisAlignment.center,
     children: [
       Text(value, style: const TextStyle(color: Colors.white, fontSize: 26, fontWeight: FontWeight.w700)),
-      Text(label,  style: const TextStyle(color: Colors.white70, fontSize: 12)),
+      Text(label, style: const TextStyle(color: Colors.white70, fontSize: 12)),
     ],
   );
 }
