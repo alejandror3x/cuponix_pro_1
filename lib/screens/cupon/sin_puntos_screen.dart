@@ -29,7 +29,7 @@ class SinPuntosScreen extends StatelessWidget {
               style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.w500, height: 1.35),
             ),
             const Spacer(),
-            CuponCta(label: 'ENTENDIDO', onPressed: () => context.go('/solicitudes')),
+            CuponCta(label: 'ENTENDIDO', onPressed: () => context.go('/producto-detalle')),
             const SizedBox(height: 8),
           ],
         ),
@@ -40,7 +40,7 @@ class SinPuntosScreen extends StatelessWidget {
   void _nav(BuildContext context, NavTab t) {
     switch (t) {
       case NavTab.home: context.go('/home');
-      case NavTab.explore: break;
+      case NavTab.explore: context.go('/explorar');
       case NavTab.cupones: context.go('/solicitudes');
       case NavTab.perfil: context.go('/perfil');
     }
