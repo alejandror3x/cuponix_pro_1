@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:go_router/go_router.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../../core/theme/app_colors.dart';
 import '../../core/widgets/bottom_nav_bar.dart';
 import '../../core/widgets/cupon_scaffold.dart';
@@ -8,6 +9,14 @@ import '../../core/widgets/pill_button.dart';
 
 class BusinessMapScreen extends StatelessWidget {
   const BusinessMapScreen({super.key});
+
+  static final Uri _mapsUri = Uri.parse(
+    'https://www.google.com/maps/search/?api=1&query=Av.%20Principal%20y%20Calle%2010',
+  );
+
+  Future<void> _openGoogleMaps() async {
+    await launchUrl(_mapsUri, mode: LaunchMode.externalApplication);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -123,7 +132,7 @@ class BusinessMapScreen extends StatelessWidget {
                 top: false,
                 child: PillButton(
                   label: 'IR A GOOGLE MAPS',
-                  onPressed: () {},
+                  onPressed: _openGoogleMaps,
                 ),
               ),
             ),
@@ -158,19 +167,29 @@ class _MapPainter extends CustomPainter {
         size.width + 30,
         size.height * 0.38,
       );
+
     canvas.drawPath(path, road);
     canvas.drawPath(path, road2);
 
     final path2 = Path()
-      ..moveTo(size.width * 0.24, -20)
-      ..lineTo(size.width * 0.38, size.height + 20);
+      ..moveTo(size.width * 0.18, -20)
+      ..quadraticBezierTo(
+        size.width * 0.38,
+        size.height * 0.42,
+        size.width * 0.48,
+        size.height + 20,
+      );
+
     canvas.drawPath(path2, road);
     canvas.drawPath(path2, road2);
 
-    final pinPaint = Paint()..color = AppColors.neonRed;
-    final center = Offset(size.width * 0.52, size.height * 0.45);
-    canvas.drawCircle(center, 18, pinPaint);
-    canvas.drawCircle(center, 7, Paint()..color = Colors.white);
+    final pin = Paint()..color = AppColors.neonRed;
+    canvas.drawCircle(Offset(size.width * 0.5, size.height * 0.5), 16, pin);
+    canvas.drawCircle(
+      Offset(size.width * 0.5, size.height * 0.5),
+      7,
+      Paint()..color = Colors.white,
+    );
   }
 
   @override
