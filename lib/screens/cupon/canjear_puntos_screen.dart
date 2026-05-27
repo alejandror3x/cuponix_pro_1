@@ -18,7 +18,7 @@ class CanjearPuntosScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            CuponTitleRow(title: 'Canjear Puntos', onBack: () => context.go('/solicitudes')),
+            CuponTitleRow(title: 'Canjear Puntos', onBack: () => context.go('/producto-detalle')),
             CuponProfile(
               avatar: CuponAvatar(bg: const Color(0xFFD4322B), fg: Colors.white, label: "Roger's", size: 90),
               name: "Roger's Smash",
@@ -59,6 +59,11 @@ class CanjearPuntosScreen extends StatelessWidget {
             ),
             const SizedBox(height: 14),
             CuponCta(label: 'CANJEAR', onPressed: () => context.go('/mostrar-qr')),
+            const SizedBox(height: 10),
+            TextButton(
+              onPressed: () => context.go('/sin-puntos'),
+              child: const Text('SIMULAR PUNTOS INSUFICIENTES'),
+            ),
             const SizedBox(height: 8),
           ],
         ),
@@ -69,7 +74,7 @@ class CanjearPuntosScreen extends StatelessWidget {
   void _nav(BuildContext context, NavTab t) {
     switch (t) {
       case NavTab.home: context.go('/home');
-      case NavTab.explore: break;
+      case NavTab.explore: context.go('/explorar');
       case NavTab.cupones: context.go('/solicitudes');
       case NavTab.perfil: context.go('/perfil');
     }
