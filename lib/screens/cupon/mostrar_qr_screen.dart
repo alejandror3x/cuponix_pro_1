@@ -28,7 +28,6 @@ class MostrarQrScreen extends StatelessWidget {
               handle: '@rogersec',
             ),
             const SizedBox(height: 14),
-            // QR code frame
             Container(
               width: 220,
               height: 220,
@@ -43,6 +42,8 @@ class MostrarQrScreen extends StatelessWidget {
             const SizedBox(height: 14),
             const CuponHelpText('Para canjear tus Puntos por\nel Producto Selecionado.'),
             const Spacer(),
+            CuponCta(label: 'ESCANEO COMPLETADO', onPressed: () => context.go('/gracias-visitar')),
+            const SizedBox(height: 10),
             CuponCta(label: 'EN OTRO MOMENTO', onPressed: () => context.go('/solicitudes')),
             const SizedBox(height: 8),
           ],
@@ -54,7 +55,7 @@ class MostrarQrScreen extends StatelessWidget {
   void _nav(BuildContext context, NavTab t) {
     switch (t) {
       case NavTab.home: context.go('/home');
-      case NavTab.explore: break;
+      case NavTab.explore: context.go('/explorar');
       case NavTab.cupones: context.go('/solicitudes');
       case NavTab.perfil: context.go('/perfil');
     }
@@ -67,21 +68,14 @@ class _FakeQrPainter extends CustomPainter {
     final bk = Paint()..color = Colors.black..style = PaintingStyle.fill;
     final wh = Paint()..color = Colors.white..style = PaintingStyle.fill;
     final u = s.width / 29;
-
     canvas.drawRect(Rect.fromLTWH(0, 0, s.width, s.height), wh);
-
     void finder(double ox, double oy) {
       canvas.drawRect(Rect.fromLTWH(ox * u, oy * u, 7 * u, 7 * u), bk);
       canvas.drawRect(Rect.fromLTWH((ox + 1) * u, (oy + 1) * u, 5 * u, 5 * u), wh);
       canvas.drawRect(Rect.fromLTWH((ox + 2) * u, (oy + 2) * u, 3 * u, 3 * u), bk);
     }
-    finder(0, 0);
-    finder(22, 0);
-    finder(0, 22);
-
-    void d(double x, double y, double w, double h) =>
-        canvas.drawRect(Rect.fromLTWH(x * u, y * u, w * u, h * u), bk);
-
+    finder(0, 0); finder(22, 0); finder(0, 22);
+    void d(double x, double y, double w, double h) => canvas.drawRect(Rect.fromLTWH(x * u, y * u, w * u, h * u), bk);
     d(8, 0, 1, 1); d(10, 0, 2, 1); d(14, 0, 1, 2); d(17, 0, 2, 1); d(20, 0, 1, 1);
     d(8, 2, 2, 1); d(11, 2, 1, 2); d(13, 2, 2, 1); d(16, 2, 1, 3); d(19, 2, 2, 1);
     d(0, 8, 1, 2); d(2, 8, 3, 1); d(6, 8, 1, 2); d(9, 8, 2, 2); d(13, 8, 1, 1);
