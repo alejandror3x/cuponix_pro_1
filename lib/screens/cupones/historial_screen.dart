@@ -7,14 +7,22 @@ import '../../core/widgets/points_icon.dart';
 import '../../core/widgets/ticket_card.dart';
 
 class HistorialScreen extends StatefulWidget {
-  const HistorialScreen({super.key});
+  final int initialSub;
+
+  const HistorialScreen({super.key, this.initialSub = 0});
 
   @override
   State<HistorialScreen> createState() => _HistorialScreenState();
 }
 
 class _HistorialScreenState extends State<HistorialScreen> {
-  int _sub = 0; // 0=Recibidos, 1=Enviados
+  late int _sub;
+
+  @override
+  void initState() {
+    super.initState();
+    _sub = widget.initialSub;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -35,13 +43,13 @@ class _HistorialScreenState extends State<HistorialScreen> {
           ),
           const SizedBox(height: 28),
           Center(
-            child: Container(
-              height: 42, padding: const EdgeInsets.symmetric(horizontal: 48),
-              decoration: BoxDecoration(color: AppColors.neonRed, borderRadius: BorderRadius.circular(999),
-                boxShadow: const [BoxShadow(color: Color(0x66FF073A), blurRadius: 14, offset: Offset(0, 5))]),
-              alignment: Alignment.center,
-              child: GestureDetector(
-                onTap: () => _confirmClear(context),
+            child: GestureDetector(
+              onTap: () => _confirmClear(context),
+              child: Container(
+                height: 42, padding: const EdgeInsets.symmetric(horizontal: 48),
+                decoration: BoxDecoration(color: AppColors.neonRed, borderRadius: BorderRadius.circular(999),
+                  boxShadow: const [BoxShadow(color: Color(0x66FF073A), blurRadius: 14, offset: Offset(0, 5))]),
+                alignment: Alignment.center,
                 child: const Text('BORRAR TODO', style: TextStyle(color: Colors.white, fontSize: 14, fontWeight: FontWeight.w700, letterSpacing: 1.0)),
               ),
             ),
@@ -159,7 +167,7 @@ class _HistorialScreenState extends State<HistorialScreen> {
               ),
             ),
             SizedBox(width: 16 * s),
-            GestureDetector(onTap: () => context.go('/historial-detalle'), child: _pill('Ver', s)),
+            GestureDetector(onTap: () => _confirmRemoveItem(context), child: _xBtn(s)),
           ]),
         ),
       );
@@ -196,6 +204,8 @@ class _HistorialScreenState extends State<HistorialScreen> {
               statsBuilder(s),
             ])),
             Column(mainAxisAlignment: MainAxisAlignment.end, crossAxisAlignment: CrossAxisAlignment.end, children: [
+              GestureDetector(onTap: () => _confirmRemoveItem(context), child: _xBtn(s)),
+              SizedBox(height: 10 * s),
               Text(hora, style: TextStyle(color: Colors.white70, fontSize: (13 * s).clamp(7, 13))),
               Text(fecha, style: TextStyle(color: Colors.white70, fontSize: (13 * s).clamp(7, 13))),
             ]),
@@ -210,13 +220,13 @@ class _HistorialScreenState extends State<HistorialScreen> {
     Text(l, style: TextStyle(color: Colors.white70, fontSize: (11 * s).clamp(7, 11))),
   ]);
 
-  Widget _pill(String label, double s) => Container(
+  Widget _xBtn(double s) => Container(
     height: (30 * s).clamp(20, 30),
-    padding: EdgeInsets.symmetric(horizontal: 20 * s),
+    width: (36 * s).clamp(24, 36),
     decoration: BoxDecoration(color: AppColors.neonRed, borderRadius: BorderRadius.circular(999),
       boxShadow: const [BoxShadow(color: Color(0x66FF073A), blurRadius: 8, offset: Offset(0, 3))]),
     alignment: Alignment.center,
-    child: Text(label, style: TextStyle(color: Colors.white, fontSize: (13 * s).clamp(8, 13), fontWeight: FontWeight.w500)),
+    child: Text('X', style: TextStyle(color: Colors.white, fontSize: (13 * s).clamp(8, 13), fontWeight: FontWeight.w500)),
   );
 
   void _onInner(BuildContext ctx, InnerTab t) {
@@ -230,8 +240,8 @@ class _HistorialScreenState extends State<HistorialScreen> {
   void _onNav(BuildContext ctx, NavTab t) {
     switch (t) {
       case NavTab.home: ctx.go('/home');
-      case NavTab.explore: break;
-      case NavTab.cupones: break;
+      case NavTab.explore: ctx.go('/explorar');
+      case NavTab.cupones: ctx.go('/solicitudes');
       case NavTab.perfil: ctx.go('/perfil');
     }
   }
@@ -246,6 +256,21 @@ class _HistorialScreenState extends State<HistorialScreen> {
         actions: [
           TextButton(onPressed: () => Navigator.of(context).pop(), child: const Text('CANCELAR')),
           TextButton(onPressed: () => Navigator.of(context).pop(), child: const Text('BORRAR')),
+        ],
+      ),
+    );
+  }
+
+  void _confirmRemoveItem(BuildContext context) {
+    showDialog<void>(
+      context: context,
+      builder: (_) => AlertDialog(
+        backgroundColor: AppColors.black,
+        title: const Text('Eliminar registro', style: TextStyle(color: Colors.white)),
+        content: const Text('¿Deseas eliminar este registro del historial?', style: TextStyle(color: Colors.white70)),
+        actions: [
+          TextButton(onPressed: () => Navigator.of(context).pop(), child: const Text('CANCELAR')),
+          TextButton(onPressed: () => Navigator.of(context).pop(), child: const Text('ELIMINAR')),
         ],
       ),
     );
