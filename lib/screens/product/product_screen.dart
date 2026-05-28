@@ -9,79 +9,60 @@ import '../../core/widgets/pill_text_field.dart';
 class ProductScreen extends StatelessWidget {
   const ProductScreen({super.key});
 
+  void _askMediaPermission(BuildContext context) {
+    showDialog<void>(
+      context: context,
+      builder: (_) => AlertDialog(
+        backgroundColor: Colors.white,
+        content: const Text(
+          'Cuponix desea acceder a tu\nGalería Multimedia',
+          textAlign: TextAlign.center,
+          style: TextStyle(color: AppColors.ink, fontSize: 16),
+        ),
+        actionsAlignment: MainAxisAlignment.center,
+        actions: [
+          TextButton(onPressed: () { Navigator.of(context).pop(); context.push('/cargar-foto'); }, child: const Text('Permitir')),
+          TextButton(onPressed: () => Navigator.of(context).pop(), child: const Text('Ahora no')),
+        ],
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return DarkScaffold(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          CuponixHeader(
-            title: 'Producto /Servicio',
-            onBack: () => context.pop(),
-          ),
+          CuponixHeader(title: 'Producto /Servicio', onBack: () => context.pop()),
           const SizedBox(height: 12),
           Expanded(
             child: SingleChildScrollView(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text(
-                    'Nombre de Producto /Servicio',
-                    style: TextStyle(color: Colors.white, fontSize: 13),
-                  ),
+                  const Text('Nombre de Producto /Servicio', style: TextStyle(color: Colors.white, fontSize: 13)),
                   const SizedBox(height: 5),
-                  const FractionallySizedBox(
-                    widthFactor: 0.6,
-                    child: PillTextField(),
-                  ),
+                  const FractionallySizedBox(widthFactor: 0.6, child: PillTextField()),
                   const SizedBox(height: 8),
-
-                  // Photo placeholder
                   GestureDetector(
-                    onTap: () => context.push('/cargar-foto'),
+                    onTap: () => _askMediaPermission(context),
                     child: AspectRatio(
                       aspectRatio: 660 / 410,
                       child: Container(
                         decoration: BoxDecoration(
                           color: AppColors.avatarGrey,
                           borderRadius: BorderRadius.circular(20),
-                          boxShadow: const [
-                            BoxShadow(
-                              color: Color(0x59000000),
-                              blurRadius: 20,
-                              offset: Offset(0, 8),
-                            ),
-                          ],
+                          boxShadow: const [BoxShadow(color: Color(0x59000000), blurRadius: 20, offset: Offset(0, 8))],
                         ),
-                        child: const Icon(
-                          Icons.add,
-                          color: Color(0x8CFFFFFF),
-                          size: 60,
-                        ),
+                        child: const Icon(Icons.add, color: Color(0x8CFFFFFF), size: 60),
                       ),
                     ),
                   ),
                   const SizedBox(height: 8),
-
-                  // Precio row
                   Row(
                     children: [
-                      Expanded(
-                        child: Column(
-                          children: [
-                            _priceInput(),
-                            const SizedBox(height: 10),
-                            const Text(
-                              'Precio',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 15,
-                              ),
-                              textAlign: TextAlign.center,
-                            ),
-                          ],
-                        ),
-                      ),
+                      Expanded(child: Column(children: [_priceInput(), const SizedBox(height: 10), const Text('Precio', style: TextStyle(color: Colors.white, fontSize: 15), textAlign: TextAlign.center)])),
                       const SizedBox(width: 20),
                       Expanded(
                         child: Column(
@@ -92,33 +73,14 @@ class ProductScreen extends StatelessWidget {
                               textAlign: TextAlign.center,
                               text: const TextSpan(
                                 text: 'Precio en Puntos  ',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 15,
-                                ),
-                                children: [
-                                  TextSpan(
-                                    text: '(Opcional)',
-                                    style: TextStyle(
-                                      color: Color(0xBFFFFFFF),
-                                      fontSize: 12,
-                                    ),
-                                  ),
-                                ],
+                                style: TextStyle(color: Colors.white, fontSize: 15),
+                                children: [TextSpan(text: '(Opcional)', style: TextStyle(color: Color(0xBFFFFFFF), fontSize: 12))],
                               ),
                             ),
                             const SizedBox(height: 2),
                             GestureDetector(
                               onTap: () => context.push('/points-help'),
-                              child: const Text(
-                                '¿Qué es esto?',
-                                style: TextStyle(
-                                  color: Color(0xD9FFFFFF),
-                                  fontSize: 13,
-                                  decoration: TextDecoration.underline,
-                                  decorationColor: Color(0xD9FFFFFF),
-                                ),
-                              ),
+                              child: const Text('¿Qué es esto?', style: TextStyle(color: Color(0xD9FFFFFF), fontSize: 13, decoration: TextDecoration.underline, decorationColor: Color(0xD9FFFFFF))),
                             ),
                           ],
                         ),
@@ -126,53 +88,25 @@ class ProductScreen extends StatelessWidget {
                     ],
                   ),
                   const SizedBox(height: 10),
-
-                  // Descripción
-                  const Text(
-                    'Descripción',
-                    style: TextStyle(color: Colors.white, fontSize: 13),
-                  ),
+                  const Text('Descripción', style: TextStyle(color: Colors.white, fontSize: 13)),
                   const SizedBox(height: 6),
                   Container(
-                    decoration: BoxDecoration(
-                      color: const Color(0xB3DCDCDC),
-                      borderRadius: BorderRadius.circular(18),
-                    ),
+                    decoration: BoxDecoration(color: const Color(0xB3DCDCDC), borderRadius: BorderRadius.circular(18)),
                     child: TextField(
                       maxLines: 4,
                       maxLength: 200,
-                      style: const TextStyle(
-                        color: AppColors.ink,
-                        fontSize: 13,
-                      ),
+                      style: const TextStyle(color: AppColors.ink, fontSize: 13),
                       decoration: InputDecoration(
                         filled: false,
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(18),
-                          borderSide: BorderSide.none,
-                        ),
-                        focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(18),
-                          borderSide: const BorderSide(
-                            color: Color(0x80FF073A),
-                            width: 2,
-                          ),
-                        ),
+                        border: OutlineInputBorder(borderRadius: BorderRadius.circular(18), borderSide: BorderSide.none),
+                        focusedBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(18), borderSide: const BorderSide(color: Color(0x80FF073A), width: 2)),
                         contentPadding: const EdgeInsets.all(12),
-                        counterStyle:
-                            const TextStyle(color: Colors.white54),
+                        counterStyle: const TextStyle(color: Colors.white54),
                       ),
                     ),
                   ),
-
                   const SizedBox(height: 14),
-
-                  Center(
-                    child: PillButton(
-                      label: 'GUARDAR',
-                      onPressed: () => context.go('/email-verification'),
-                    ),
-                  ),
+                  Center(child: PillButton(label: 'GUARDAR', onPressed: () => context.go('/email-verification'))),
                   const SizedBox(height: 12),
                 ],
               ),
@@ -186,29 +120,15 @@ class ProductScreen extends StatelessWidget {
   Widget _priceInput() => TextField(
     keyboardType: const TextInputType.numberWithOptions(decimal: true),
     textAlign: TextAlign.center,
-    style: const TextStyle(
-      color: AppColors.ink,
-      fontWeight: FontWeight.w500,
-      fontSize: 13,
-    ),
+    style: const TextStyle(color: AppColors.ink, fontWeight: FontWeight.w500, fontSize: 13),
     decoration: InputDecoration(
       filled: true,
       fillColor: AppColors.fieldBg,
       isDense: true,
-      contentPadding:
-          const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
-      border: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(999),
-        borderSide: BorderSide.none,
-      ),
-      enabledBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(999),
-        borderSide: BorderSide.none,
-      ),
-      focusedBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(999),
-        borderSide: const BorderSide(color: Color(0x80FF073A), width: 2),
-      ),
+      contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+      border: OutlineInputBorder(borderRadius: BorderRadius.circular(999), borderSide: BorderSide.none),
+      enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(999), borderSide: BorderSide.none),
+      focusedBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(999), borderSide: const BorderSide(color: Color(0x80FF073A), width: 2)),
     ),
   );
 }
