@@ -36,10 +36,13 @@ class _BusinessPublicProfileScreenState extends State<BusinessPublicProfileScree
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              _option('Reportar', () => context.go('/reportar')),
+              _option('Reportar', () {
+                Navigator.of(context).pop();
+                context.go('/reportar');
+              }),
               _option('Bloquear', () {
                 Navigator.of(context).pop();
-                _local('Cuenta bloqueada');
+                context.go('/bloqueados?agregado=roger');
               }),
               _option('Compartir', () {
                 Navigator.of(context).pop();
