@@ -17,39 +17,23 @@ class MostrarCodigoScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            const Text(
-              'Muestra este código en:',
-              textAlign: TextAlign.center,
-              style: TextStyle(color: Colors.white, fontSize: 26, fontWeight: FontWeight.w700, height: 1.1),
-            ),
+            const Text('Muestra este código en:', textAlign: TextAlign.center, style: TextStyle(color: Colors.white, fontSize: 26, fontWeight: FontWeight.w700, height: 1.1)),
             const SizedBox(height: 12),
-            CuponProfile(
-              avatar: CuponAvatar(bg: const Color(0xFFD4322B), fg: Colors.white, label: "Roger's", size: 80),
-              name: "Roger's Smash",
-              handle: '@rogersec',
-            ),
+            CuponProfile(avatar: CuponAvatar(bg: const Color(0xFFD4322B), fg: Colors.white, label: "Roger's", size: 80), name: "Roger's Smash", handle: '@rogersec'),
             const SizedBox(height: 14),
             Container(
               width: 220,
               height: 220,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(20),
-                boxShadow: const [BoxShadow(color: Color(0x66000000), blurRadius: 20, offset: Offset(0, 8))],
-              ),
+              decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(20), boxShadow: const [BoxShadow(color: Color(0x66000000), blurRadius: 20, offset: Offset(0, 8))]),
               padding: const EdgeInsets.all(14),
               child: CustomPaint(painter: _QrPainter()),
             ),
             const SizedBox(height: 16),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: const [
-                _McStat(value: '20%', label: 'Descuento'),
-                _McStat(value: r'$15,00', label: 'Compra mínima'),
-                _McStatPoints(points: '5', label: 'Recompenza'),
-              ],
-            ),
+            Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, crossAxisAlignment: CrossAxisAlignment.start, children: const [
+              _McStat(value: '20%', label: 'Descuento'),
+              _McStat(value: r'$15,00', label: 'Compra mínima'),
+              _McStatPoints(points: '5', label: 'Recompenza'),
+            ]),
             const SizedBox(height: 10),
             const Text('Expira: 12/12/25', textAlign: TextAlign.center, style: TextStyle(color: Colors.white, fontSize: 13)),
             const Spacer(),
@@ -80,14 +64,8 @@ class MostrarCodigoScreen extends StatelessWidget {
         title: const Text('Guardar cupón', style: TextStyle(color: Colors.white)),
         content: const Text('¿Deseas guardar este cupón para usarlo luego?', style: TextStyle(color: Colors.white70)),
         actions: [
-          TextButton(onPressed: () => context.go('/solicitudes'), child: const Text('Ahora no')),
-          TextButton(
-            onPressed: () {
-              Navigator.of(context).pop();
-              ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Cupón guardado')));
-            },
-            child: const Text('Guardar'),
-          ),
+          TextButton(onPressed: () => context.go('/solicitudes?tab=enviadas'), child: const Text('Ahora no')),
+          TextButton(onPressed: () { Navigator.of(context).pop(); ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Cupón guardado'))); }, child: const Text('Guardar')),
         ],
       ),
     );
@@ -100,13 +78,11 @@ class _McStat extends StatelessWidget {
   const _McStat({required this.value, required this.label});
 
   @override
-  Widget build(BuildContext context) => Column(
-    children: [
-      Text(value, style: const TextStyle(color: Colors.white, fontSize: 24, fontWeight: FontWeight.w600, height: 1)),
-      const SizedBox(height: 3),
-      Text(label, style: const TextStyle(color: Colors.white70, fontSize: 11, height: 1.1), textAlign: TextAlign.center),
-    ],
-  );
+  Widget build(BuildContext context) => Column(children: [
+    Text(value, style: const TextStyle(color: Colors.white, fontSize: 24, fontWeight: FontWeight.w600, height: 1)),
+    const SizedBox(height: 3),
+    Text(label, style: const TextStyle(color: Colors.white70, fontSize: 11, height: 1.1), textAlign: TextAlign.center),
+  ]);
 }
 
 class _McStatPoints extends StatelessWidget {
@@ -115,17 +91,11 @@ class _McStatPoints extends StatelessWidget {
   const _McStatPoints({required this.points, required this.label});
 
   @override
-  Widget build(BuildContext context) => Column(
-    children: [
-      Row(mainAxisSize: MainAxisSize.min, children: [
-        const PointsIcon(size: 20),
-        const SizedBox(width: 4),
-        Text(points, style: const TextStyle(color: Colors.white, fontSize: 24, fontWeight: FontWeight.w600, height: 1)),
-      ]),
-      const SizedBox(height: 3),
-      Text(label, style: const TextStyle(color: Colors.white70, fontSize: 11, height: 1.1), textAlign: TextAlign.center),
-    ],
-  );
+  Widget build(BuildContext context) => Column(children: [
+    Row(mainAxisSize: MainAxisSize.min, children: [const PointsIcon(size: 20), const SizedBox(width: 4), Text(points, style: const TextStyle(color: Colors.white, fontSize: 24, fontWeight: FontWeight.w600, height: 1))]),
+    const SizedBox(height: 3),
+    Text(label, style: const TextStyle(color: Colors.white70, fontSize: 11, height: 1.1), textAlign: TextAlign.center),
+  ]);
 }
 
 class _QrPainter extends CustomPainter {
@@ -145,7 +115,6 @@ class _QrPainter extends CustomPainter {
     d(8, 0, 1, 1); d(10, 0, 2, 1); d(14, 0, 1, 2); d(17, 0, 2, 1); d(20, 0, 1, 1);
     d(8, 2, 2, 1); d(11, 2, 1, 2); d(13, 2, 2, 1); d(16, 2, 1, 3); d(19, 2, 2, 1);
     d(0, 8, 1, 2); d(2, 8, 3, 1); d(6, 8, 1, 2); d(9, 8, 2, 2); d(13, 8, 1, 1);
-    d(15, 8, 2, 1); d(18, 8, 1, 3); d(20, 8, 2, 1); d(23, 8, 1, 2); d(25, 8, 2, 1); d(28, 8, 1, 2);
   }
 
   @override
