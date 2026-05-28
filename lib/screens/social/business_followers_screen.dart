@@ -7,15 +7,23 @@ import '../../core/widgets/cupon_scaffold.dart';
 import '../../core/widgets/ticket_card.dart';
 
 class BusinessFollowersScreen extends StatefulWidget {
-  const BusinessFollowersScreen({super.key});
+  final int initialTab;
+  const BusinessFollowersScreen({super.key, this.initialTab = 0});
 
   @override
-  State<BusinessFollowersScreen> createState() =>
-      _BusinessFollowersScreenState();
+  State<BusinessFollowersScreen> createState() => _BusinessFollowersScreenState();
 }
 
 class _BusinessFollowersScreenState extends State<BusinessFollowersScreen> {
-  int _tab = 0;
+  late int _tab;
+
+  @override
+  void initState() {
+    super.initState();
+    _tab = widget.initialTab;
+  }
+
+  void _local(String message) => ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(message)));
 
   @override
   Widget build(BuildContext context) {
@@ -30,23 +38,11 @@ class _BusinessFollowersScreenState extends State<BusinessFollowersScreen> {
               child: Container(
                 color: AppColors.black,
                 padding: const EdgeInsets.fromLTRB(20, 14, 20, 4),
-                child: Row(
-                  children: [
-                    BackTriangle(onTap: () => context.go('/negocio')),
-                    const Expanded(
-                      child: Text(
-                        '@rogersec',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 22,
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                    ),
-                    const SizedBox(width: 40),
-                  ],
-                ),
+                child: Row(children: [
+                  BackTriangle(onTap: () => context.go('/negocio')),
+                  const Expanded(child: Text('@rogersec', textAlign: TextAlign.center, style: TextStyle(color: Colors.white, fontSize: 22, fontWeight: FontWeight.w500))),
+                  const SizedBox(width: 40),
+                ]),
               ),
             ),
             _tabs(),
@@ -55,10 +51,7 @@ class _BusinessFollowersScreenState extends State<BusinessFollowersScreen> {
               child: ListView(
                 padding: const EdgeInsets.fromLTRB(14, 16, 14, 16),
                 children: (_tab == 0 ? _seguidos : _seguidores)
-                    .map((a) => Padding(
-                          padding: const EdgeInsets.only(bottom: 14),
-                          child: _FollowerCard(account: a),
-                        ))
+                    .map((a) => Padding(padding: const EdgeInsets.only(bottom: 14), child: _FollowerCard(account: a, onFollow: () => _local('${a.name} añadido a seguidos'))))
                     .toList(),
               ),
             ),
@@ -66,14 +59,10 @@ class _BusinessFollowersScreenState extends State<BusinessFollowersScreen> {
               active: NavTab.perfil,
               onTap: (t) {
                 switch (t) {
-                  case NavTab.home:
-                    context.go('/home');
-                  case NavTab.explore:
-                    context.go('/explorar');
-                  case NavTab.cupones:
-                    context.go('/cupones');
-                  case NavTab.perfil:
-                    context.go('/perfil');
+                  case NavTab.home: context.go('/home');
+                  case NavTab.explore: context.go('/explorar');
+                  case NavTab.cupones: context.go('/solicitudes');
+                  case NavTab.perfil: context.go('/perfil');
                 }
               },
             ),
@@ -84,63 +73,37 @@ class _BusinessFollowersScreenState extends State<BusinessFollowersScreen> {
   }
 
   Widget _tabs() => Container(
-        color: AppColors.black,
-        child: Stack(
-          children: [
-            Row(
-              children: [
-                _tabButton(0, 'Seguidos'),
-                _tabButton(1, 'Seguidores'),
-              ],
-            ),
-            Positioned(
-              left: 0,
-              right: 0,
-              bottom: 0,
-              child: AnimatedAlign(
-                duration: const Duration(milliseconds: 250),
-                curve: Curves.easeInOut,
-                alignment: _tab == 0 ? Alignment.centerLeft : Alignment.centerRight,
-                child: FractionallySizedBox(
-                  widthFactor: 0.5,
-                  child: Container(
-                    height: 4,
-                    decoration: BoxDecoration(
-                      color: AppColors.neonRed,
-                      borderRadius: BorderRadius.circular(999),
-                    ),
-                  ),
-                ),
-              ),
-            ),
-          ],
+    color: AppColors.black,
+    child: Stack(children: [
+      Row(children: [_tabButton(0, 'Seguidos'), _tabButton(1, 'Seguidores')]),
+      Positioned(
+        left: 0, right: 0, bottom: 0,
+        child: AnimatedAlign(
+          duration: const Duration(milliseconds: 250),
+          curve: Curves.easeInOut,
+          alignment: _tab == 0 ? Alignment.centerLeft : Alignment.centerRight,
+          child: FractionallySizedBox(widthFactor: 0.5, child: Container(height: 4, decoration: BoxDecoration(color: AppColors.neonRed, borderRadius: BorderRadius.circular(999)))),
         ),
-      );
+      ),
+    ]),
+  );
 
   Widget _tabButton(int idx, String label) => Expanded(
-        child: GestureDetector(
-          onTap: () => setState(() => _tab = idx),
-          behavior: HitTestBehavior.opaque,
-          child: Padding(
-            padding: const EdgeInsets.fromLTRB(0, 12, 0, 20),
-            child: Text(
-              label,
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                color: _tab == idx ? Colors.white : Colors.white70,
-                fontSize: 26,
-                fontWeight: FontWeight.w500,
-              ),
-            ),
-          ),
-        ),
-      );
+    child: GestureDetector(
+      onTap: () => setState(() => _tab = idx),
+      behavior: HitTestBehavior.opaque,
+      child: Padding(
+        padding: const EdgeInsets.fromLTRB(0, 12, 0, 20),
+        child: Text(label, textAlign: TextAlign.center, style: TextStyle(color: _tab == idx ? Colors.white : Colors.white70, fontSize: 26, fontWeight: FontWeight.w500)),
+      ),
+    ),
+  );
 }
 
 class _FollowerCard extends StatelessWidget {
   final _Account account;
-
-  const _FollowerCard({required this.account});
+  final VoidCallback onFollow;
+  const _FollowerCard({required this.account, required this.onFollow});
 
   @override
   Widget build(BuildContext context) {
@@ -148,65 +111,26 @@ class _FollowerCard extends StatelessWidget {
       aspectRatio: 720 / 200,
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 26, vertical: 14),
-        child: Row(
-          children: [
-            CircleAvatar(
-              radius: 42,
-              backgroundColor: account.color,
-              child: Text(
-                account.initial,
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 20,
-                  fontWeight: FontWeight.w700,
-                ),
-              ),
+        child: Row(children: [
+          GestureDetector(
+            onTap: () => context.go('/negocio'),
+            child: CircleAvatar(radius: 42, backgroundColor: account.color, child: Text(account.initial, style: const TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.w700))),
+          ),
+          const SizedBox(width: 18),
+          Expanded(
+            child: GestureDetector(
+              onTap: () => context.go('/negocio'),
+              child: Column(mainAxisAlignment: MainAxisAlignment.center, crossAxisAlignment: CrossAxisAlignment.start, children: [
+                Text(account.name, maxLines: 1, overflow: TextOverflow.ellipsis, style: const TextStyle(color: Colors.white, fontSize: 22, fontWeight: FontWeight.w500)),
+                Text(account.handle, maxLines: 1, overflow: TextOverflow.ellipsis, style: const TextStyle(color: Colors.white70, fontSize: 16)),
+              ]),
             ),
-            const SizedBox(width: 18),
-            Expanded(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    account.name,
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
-                    style: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 22,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                  Text(
-                    account.handle,
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
-                    style: const TextStyle(color: Colors.white70, fontSize: 16),
-                  ),
-                ],
-              ),
-            ),
-            Container(
-              height: 34,
-              padding: const EdgeInsets.symmetric(horizontal: 18),
-              decoration: BoxDecoration(
-                color: AppColors.neonRed,
-                borderRadius: BorderRadius.circular(999),
-              ),
-              alignment: Alignment.center,
-              child: const Text(
-                'SEGUIR',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 12,
-                  fontWeight: FontWeight.w700,
-                  letterSpacing: 0.6,
-                ),
-              ),
-            ),
-          ],
-        ),
+          ),
+          GestureDetector(
+            onTap: onFollow,
+            child: Container(height: 34, padding: const EdgeInsets.symmetric(horizontal: 18), decoration: BoxDecoration(color: AppColors.neonRed, borderRadius: BorderRadius.circular(999)), alignment: Alignment.center, child: const Text('SEGUIR', style: TextStyle(color: Colors.white, fontSize: 12, fontWeight: FontWeight.w700, letterSpacing: 0.6))),
+          ),
+        ]),
       ),
     );
   }
@@ -227,6 +151,5 @@ class _Account {
   final String name;
   final String handle;
   final Color color;
-
   const _Account(this.initial, this.name, this.handle, this.color);
 }
