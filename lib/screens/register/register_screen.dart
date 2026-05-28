@@ -17,6 +17,16 @@ class _RegisterScreenState extends State<RegisterScreen> {
   bool _isPrivate = false;
   bool _acceptTerms = true;
 
+  void _next() {
+    if (!_acceptTerms) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Debes aceptar términos y condiciones para continuar.')),
+      );
+      return;
+    }
+    context.push('/edit-profile');
+  }
+
   @override
   Widget build(BuildContext context) {
     return DarkScaffold(
@@ -30,7 +40,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  // Nombre + Cuenta Privada
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
@@ -117,7 +126,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
                   const SizedBox(height: 16),
 
-                  // Términos y condiciones
                   Center(
                     child: GestureDetector(
                       onTap: () => context.push('/terminos'),
@@ -155,8 +163,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
                   Center(
                     child: PillButton(
-                      label: 'REGISTRAR',
-                      onPressed: () => context.push('/edit-profile'),
+                      label: 'SIGUIENTE',
+                      onPressed: _next,
                     ),
                   ),
                   const SizedBox(height: 12),
