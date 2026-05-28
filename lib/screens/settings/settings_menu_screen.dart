@@ -45,7 +45,6 @@ class SettingsMenuScreen extends StatelessWidget {
                   children: [
                     _option(context, 'Editar Perfil', '/editar-perfil-config'),
                     _option(context, 'Editar Cuenta', '/editar-cuenta'),
-                    _option(context, 'Editar Producto', '/editar-producto'),
                     _option(context, 'Bloqueos', '/bloqueados'),
                     _option(context, 'Suscripción', '/suscripcion?estado=gratis'),
                     _option(context, 'Permisos', '/permisos'),
