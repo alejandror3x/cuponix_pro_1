@@ -6,7 +6,9 @@ import '../../core/widgets/points_icon.dart';
 import '../../core/theme/app_colors.dart';
 
 class CanjearPuntosScreen extends StatelessWidget {
-  const CanjearPuntosScreen({super.key});
+  final bool forceInsufficient;
+
+  const CanjearPuntosScreen({super.key, this.forceInsufficient = false});
 
   @override
   Widget build(BuildContext context) {
@@ -58,7 +60,7 @@ class CanjearPuntosScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 14),
-            CuponCta(label: 'CANJEAR', onPressed: () => context.go('/mostrar-qr')),
+            CuponCta(label: 'CANJEAR', onPressed: () => context.go(forceInsufficient ? '/sin-puntos' : '/mostrar-qr')),
             const SizedBox(height: 8),
           ],
         ),
