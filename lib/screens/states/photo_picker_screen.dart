@@ -8,6 +8,11 @@ import '../../core/widgets/pill_button.dart';
 class PhotoPickerScreen extends StatelessWidget {
   const PhotoPickerScreen({super.key});
 
+  void _select(BuildContext context, String message) {
+    ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(message)));
+    context.pop();
+  }
+
   @override
   Widget build(BuildContext context) {
     return DarkScaffold(
@@ -46,9 +51,9 @@ class PhotoPickerScreen extends StatelessWidget {
             style: TextStyle(color: Colors.white, fontSize: 19, height: 1.3),
           ),
           const Spacer(),
-          PillButton(label: 'TOMAR FOTO', onPressed: () {}),
+          PillButton(label: 'TOMAR FOTO', onPressed: () => _select(context, 'Foto tomada')),
           const SizedBox(height: 14),
-          PillButton(label: 'ELEGIR DE GALERÍA', onPressed: () {}),
+          PillButton(label: 'ELEGIR DE GALERIA', onPressed: () => _select(context, 'Imagen seleccionada')),
         ],
       ),
     );
