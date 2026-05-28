@@ -19,6 +19,7 @@ class _CrearCuponScreenState extends State<CrearCuponScreen> {
   double _consumo = 0;
   double _puntos = 0;
   double _puntosPersonal = 0;
+  bool _subscriptionPopupShown = false;
   final _promoCtrl = TextEditingController();
   final _fechaCtrl = TextEditingController();
   final _codigoCtrl = TextEditingController();
@@ -32,6 +33,33 @@ class _CrearCuponScreenState extends State<CrearCuponScreen> {
   }
 
   @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    if (!_subscriptionPopupShown) {
+      _subscriptionPopupShown = true;
+      WidgetsBinding.instance.addPostFrameCallback((_) => _showSubscriptionNotice());
+    }
+  }
+
+  void _showSubscriptionNotice() {
+    if (!mounted) return;
+    showDialog<void>(
+      context: context,
+      builder: (_) => AlertDialog(
+        backgroundColor: AppColors.black,
+        title: const Text('Cupones ilimitados', style: TextStyle(color: Colors.white)),
+        content: const Text(
+          'Disfruta de crear cupones y puntos ilimitados por tres meses. Luego suscríbete para crear más.',
+          style: TextStyle(color: Colors.white70),
+        ),
+        actions: [
+          TextButton(onPressed: () => Navigator.of(context).pop(), child: const Text('ENTENDIDO')),
+        ],
+      ),
+    );
+  }
+
+  @override
   Widget build(BuildContext context) {
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: SystemUiOverlayStyle.light,
@@ -39,7 +67,6 @@ class _CrearCuponScreenState extends State<CrearCuponScreen> {
         backgroundColor: AppColors.black,
         body: Column(
           children: [
-            // Header
             SafeArea(
               bottom: false,
               child: Container(
@@ -52,22 +79,19 @@ class _CrearCuponScreenState extends State<CrearCuponScreen> {
                 ]),
               ),
             ),
-            // Tabs
             _buildTabs(),
             Container(height: 1, color: Colors.white.withOpacity(0.18)),
-            // Content
             Expanded(
               child: _tab == 0 ? _consumoContent() : _personalizadoContent(),
             ),
-            // Footer
             _buildFooter(context),
             BottomNavBar(
               active: NavTab.cupones,
               onTap: (t) {
                 switch (t) {
                   case NavTab.home: context.go('/home');
-                  case NavTab.explore: break;
-                  case NavTab.cupones: context.go('/cupones');
+                  case NavTab.explore: context.go('/explorar');
+                  case NavTab.cupones: context.go('/solicitudes');
                   case NavTab.perfil: context.go('/perfil');
                 }
               },
@@ -232,7 +256,7 @@ class _CrearCuponScreenState extends State<CrearCuponScreen> {
         _footerInput(_codigoCtrl, ''),
         const SizedBox(height: 16),
         GestureDetector(
-          onTap: () => context.go('/cupon-listo'),
+          onTap: () => context.go(_tab == 0 ? '/cupon-listo?tipo=consumo' : '/cupon-listo?tipo=personalizado'),
           child: Container(
             height: 36, padding: const EdgeInsets.symmetric(horizontal: 34),
             decoration: BoxDecoration(color: AppColors.neonRed, borderRadius: BorderRadius.circular(999),
