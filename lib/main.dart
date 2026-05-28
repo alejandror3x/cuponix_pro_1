@@ -87,52 +87,20 @@ final _router = GoRouter(
     GoRoute(path: '/recover-user', builder: (_, _) => const RecoverUserScreen()),
     GoRoute(path: '/verify-code', builder: (_, _) => const VerifyCodeScreen()),
     GoRoute(path: '/home', builder: (_, _) => const HomeScreen()),
-    GoRoute(
-      path: '/perfil',
-      builder: (_, state) => PerfilScreen(
-        initialTab: _tabIndex(state.uri.queryParameters['tab']),
-      ),
-    ),
+    GoRoute(path: '/perfil', builder: (_, state) => PerfilScreen(initialTab: _tabIndex(state.uri.queryParameters['tab']))),
     GoRoute(path: '/cupones', builder: (_, _) => const MisCuponesScreen()),
-    GoRoute(
-      path: '/guardados',
-      builder: (_, state) => GuardadosScreen(
-        initialSub: state.uri.queryParameters['tab'] == 'puntos' ? 1 : 0,
-      ),
-    ),
-    GoRoute(
-      path: '/solicitudes',
-      builder: (_, state) => SolicitudesScreen(
-        initialSub: state.uri.queryParameters['tab'] == 'enviadas' ? 1 : 0,
-      ),
-    ),
-    GoRoute(
-      path: '/historial',
-      builder: (_, state) => HistorialScreen(
-        initialSub: state.uri.queryParameters['tab'] == 'enviados' ? 1 : 0,
-      ),
-    ),
+    GoRoute(path: '/guardados', builder: (_, state) => GuardadosScreen(initialSub: state.uri.queryParameters['tab'] == 'puntos' ? 1 : 0)),
+    GoRoute(path: '/solicitudes', builder: (_, state) => SolicitudesScreen(initialSub: state.uri.queryParameters['tab'] == 'enviadas' ? 1 : 0)),
+    GoRoute(path: '/historial', builder: (_, state) => HistorialScreen(initialSub: state.uri.queryParameters['tab'] == 'enviados' ? 1 : 0)),
     GoRoute(path: '/crear-cupon', builder: (_, _) => const CrearCuponScreen()),
-    GoRoute(
-      path: '/seguidores',
-      builder: (_, state) => SeguidoresScreen(
-        initialTab: state.uri.queryParameters['tab'] == 'seguidores' ? 1 : 0,
-      ),
-    ),
+    GoRoute(path: '/seguidores', builder: (_, state) => SeguidoresScreen(initialTab: state.uri.queryParameters['tab'] == 'seguidores' ? 1 : 0)),
     GoRoute(path: '/solicitud-cupon', builder: (_, _) => const SolicitudCuponScreen()),
     GoRoute(path: '/solicitud-canje', builder: (_, _) => const SolicitudCanjeScreen()),
-    GoRoute(path: '/canjear-puntos', builder: (_, _) => const CanjearPuntosScreen()),
+    GoRoute(path: '/canjear-puntos', builder: (_, state) => CanjearPuntosScreen(forceInsufficient: state.uri.queryParameters['estado'] == 'sin-puntos')),
     GoRoute(path: '/mostrar-qr', builder: (_, _) => const MostrarQrScreen()),
     GoRoute(path: '/sin-puntos', builder: (_, _) => const SinPuntosScreen()),
     GoRoute(path: '/gracias-visitar', builder: (_, _) => const GraciasVisitarScreen()),
-    GoRoute(
-      path: '/cupon-listo',
-      builder: (_, state) => CuponListoScreen(
-        tipo: state.uri.queryParameters['tipo'] == 'personalizado'
-            ? 'personalizado'
-            : 'consumo',
-      ),
-    ),
+    GoRoute(path: '/cupon-listo', builder: (_, state) => CuponListoScreen(tipo: state.uri.queryParameters['tipo'] == 'personalizado' ? 'personalizado' : 'consumo')),
     GoRoute(path: '/explorar', builder: (_, _) => const ExplorarScreen()),
     GoRoute(path: '/buscar-resultados', builder: (_, _) => const BuscarResultadosScreen()),
     GoRoute(path: '/usar-cupon', builder: (_, _) => const UsarCuponScreen()),
@@ -141,24 +109,9 @@ final _router = GoRouter(
     GoRoute(path: '/points-help', builder: (_, _) => const PointsHelpScreen()),
     GoRoute(path: '/email-verification', builder: (_, _) => const EmailVerificationScreen()),
     GoRoute(path: '/suggested-accounts', builder: (_, _) => const SuggestedAccountsScreen()),
-    GoRoute(
-      path: '/negocio',
-      builder: (_, state) => BusinessPublicProfileScreen(
-        initialTab: _tabIndex(state.uri.queryParameters['tab']),
-      ),
-    ),
-    GoRoute(
-      path: '/negocio-seguidores',
-      builder: (_, state) => BusinessFollowersScreen(
-        initialTab: state.uri.queryParameters['tab'] == 'seguidores' ? 1 : 0,
-      ),
-    ),
-    GoRoute(
-      path: '/mensajes',
-      builder: (_, state) => MessagesScreen(
-        initialTab: state.uri.queryParameters['tab'] == 'notificaciones' ? 1 : 0,
-      ),
-    ),
+    GoRoute(path: '/negocio', builder: (_, state) => BusinessPublicProfileScreen(initialTab: _tabIndex(state.uri.queryParameters['tab']))),
+    GoRoute(path: '/negocio-seguidores', builder: (_, state) => BusinessFollowersScreen(initialTab: state.uri.queryParameters['tab'] == 'seguidores' ? 1 : 0)),
+    GoRoute(path: '/mensajes', builder: (_, state) => MessagesScreen(initialTab: state.uri.queryParameters['tab'] == 'notificaciones' ? 1 : 0)),
     GoRoute(path: '/chat', builder: (_, _) => const ChatScreen()),
     GoRoute(path: '/mapa-negocio', builder: (_, _) => const BusinessMapScreen()),
     GoRoute(path: '/configuracion', builder: (_, _) => const SettingsMenuScreen()),
@@ -183,10 +136,7 @@ final _router = GoRouter(
   ],
 );
 
-void _applySystemUI() => SystemChrome.setEnabledSystemUIMode(
-  SystemUiMode.manual,
-  overlays: [SystemUiOverlay.top],
-);
+void _applySystemUI() => SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: [SystemUiOverlay.top]);
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -225,11 +175,6 @@ class _CuponixAppState extends State<CuponixApp> with WidgetsBindingObserver {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
-      title: 'Cuponix',
-      theme: AppTheme.theme,
-      routerConfig: _router,
-      debugShowCheckedModeBanner: false,
-    );
+    return MaterialApp.router(title: 'Cuponix', theme: AppTheme.theme, routerConfig: _router, debugShowCheckedModeBanner: false);
   }
 }
