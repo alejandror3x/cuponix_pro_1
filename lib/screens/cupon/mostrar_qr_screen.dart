@@ -16,26 +16,14 @@ class MostrarQrScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            const Text(
-              'Muestra este código en:',
-              textAlign: TextAlign.center,
-              style: TextStyle(color: Colors.white, fontSize: 26, fontWeight: FontWeight.w700, height: 1.1),
-            ),
+            const Text('Muestra este código en:', textAlign: TextAlign.center, style: TextStyle(color: Colors.white, fontSize: 26, fontWeight: FontWeight.w700, height: 1.1)),
             const SizedBox(height: 14),
-            CuponProfile(
-              avatar: CuponAvatar(bg: const Color(0xFFD4322B), fg: Colors.white, label: "Roger's", size: 90),
-              name: "Roger's Smash",
-              handle: '@rogersec',
-            ),
+            CuponProfile(avatar: CuponAvatar(bg: const Color(0xFFD4322B), fg: Colors.white, label: "Roger's", size: 90), name: "Roger's Smash", handle: '@rogersec'),
             const SizedBox(height: 14),
             Container(
               width: 220,
               height: 220,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(20),
-                boxShadow: const [BoxShadow(color: Color(0x66000000), blurRadius: 20, offset: Offset(0, 8))],
-              ),
+              decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(20), boxShadow: const [BoxShadow(color: Color(0x66000000), blurRadius: 20, offset: Offset(0, 8))]),
               padding: const EdgeInsets.all(14),
               child: CustomPaint(painter: _FakeQrPainter()),
             ),
@@ -44,7 +32,7 @@ class MostrarQrScreen extends StatelessWidget {
             const Spacer(),
             CuponCta(label: 'ESCANEO COMPLETADO', onPressed: () => context.go('/gracias-visitar')),
             const SizedBox(height: 10),
-            CuponCta(label: 'EN OTRO MOMENTO', onPressed: () => context.go('/solicitudes')),
+            CuponCta(label: 'EN OTRO MOMENTO', onPressed: () => context.go('/solicitudes?tab=enviadas')),
             const SizedBox(height: 8),
           ],
         ),
@@ -80,18 +68,6 @@ class _FakeQrPainter extends CustomPainter {
     d(8, 2, 2, 1); d(11, 2, 1, 2); d(13, 2, 2, 1); d(16, 2, 1, 3); d(19, 2, 2, 1);
     d(0, 8, 1, 2); d(2, 8, 3, 1); d(6, 8, 1, 2); d(9, 8, 2, 2); d(13, 8, 1, 1);
     d(15, 8, 2, 1); d(18, 8, 1, 3); d(20, 8, 2, 1); d(23, 8, 1, 2); d(25, 8, 2, 1); d(28, 8, 1, 2);
-    d(1, 11, 2, 1); d(4, 11, 1, 2); d(7, 11, 2, 1); d(10, 11, 1, 2); d(12, 11, 2, 2);
-    d(15, 11, 1, 1); d(17, 11, 3, 1); d(21, 11, 1, 2); d(24, 11, 2, 1); d(27, 11, 1, 2);
-    d(0, 14, 2, 1); d(3, 14, 1, 2); d(5, 14, 2, 1); d(8, 14, 1, 2); d(10, 14, 3, 1);
-    d(14, 14, 1, 3); d(16, 14, 2, 1); d(19, 14, 2, 2); d(22, 14, 1, 2); d(24, 14, 3, 1); d(28, 14, 1, 2);
-    d(1, 17, 2, 2); d(4, 17, 3, 1); d(8, 17, 2, 1); d(11, 17, 1, 2); d(13, 17, 2, 2);
-    d(16, 17, 1, 1); d(18, 17, 2, 1); d(21, 17, 2, 2); d(24, 17, 1, 3); d(26, 17, 2, 1);
-    d(0, 20, 1, 2); d(3, 20, 2, 1); d(6, 20, 1, 2); d(8, 20, 3, 1); d(12, 20, 2, 1);
-    d(15, 20, 1, 2); d(17, 20, 2, 1); d(20, 20, 1, 2); d(22, 20, 2, 1); d(26, 20, 1, 2); d(28, 20, 1, 1);
-    d(8, 23, 1, 1); d(10, 23, 3, 1); d(14, 23, 1, 2); d(16, 23, 2, 1); d(19, 23, 2, 2);
-    d(22, 23, 1, 3); d(24, 23, 2, 1); d(27, 23, 1, 2);
-    d(8, 26, 2, 1); d(11, 26, 2, 2); d(14, 26, 1, 1); d(16, 26, 3, 1); d(20, 26, 1, 2);
-    d(24, 26, 2, 1); d(28, 26, 1, 2);
   }
 
   @override
