@@ -3,17 +3,13 @@ import 'package:go_router/go_router.dart';
 import '../../core/widgets/cupon_scaffold.dart';
 import '../../core/widgets/bottom_nav_bar.dart';
 import '../../core/widgets/points_icon.dart';
-import '../../core/theme/app_colors.dart';
 
-class CuponListoScreen extends StatefulWidget {
-  const CuponListoScreen({super.key});
+class CuponListoScreen extends StatelessWidget {
+  final String tipo;
 
-  @override
-  State<CuponListoScreen> createState() => _CuponListoScreenState();
-}
+  const CuponListoScreen({super.key, this.tipo = 'consumo'});
 
-class _CuponListoScreenState extends State<CuponListoScreen> {
-  bool _isConsumo = true;
+  bool get _isConsumo => tipo != 'personalizado';
 
   @override
   Widget build(BuildContext context) {
@@ -30,17 +26,7 @@ class _CuponListoScreenState extends State<CuponListoScreen> {
               textAlign: TextAlign.center,
               style: TextStyle(color: Colors.white, fontSize: 32, fontWeight: FontWeight.w700, height: 1.1),
             ),
-            const SizedBox(height: 10),
-            // Variant toggle
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                _variantBtn('Consumo', _isConsumo, () => setState(() => _isConsumo = true)),
-                const SizedBox(width: 4),
-                _variantBtn('Personalizado', !_isConsumo, () => setState(() => _isConsumo = false)),
-              ],
-            ),
-            const SizedBox(height: 10),
+            const SizedBox(height: 16),
             CuponProfile(
               avatar: CuponAvatar(bg: const Color(0xFFD4322B), fg: Colors.white, label: "Roger's", size: 90),
               name: "Roger's Smash",
@@ -95,25 +81,11 @@ class _CuponListoScreenState extends State<CuponListoScreen> {
     );
   }
 
-  Widget _variantBtn(String label, bool active, VoidCallback onTap) {
-    return GestureDetector(
-      onTap: onTap,
-      child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
-        decoration: BoxDecoration(
-          color: active ? AppColors.neonRed : Colors.white.withOpacity(0.18),
-          borderRadius: BorderRadius.circular(999),
-        ),
-        child: Text(label, style: const TextStyle(color: Colors.white, fontSize: 11, fontWeight: FontWeight.w500)),
-      ),
-    );
-  }
-
   void _nav(BuildContext context, NavTab t) {
     switch (t) {
       case NavTab.home: context.go('/home');
-      case NavTab.explore: break;
-      case NavTab.cupones: context.go('/cupones');
+      case NavTab.explore: context.go('/explorar');
+      case NavTab.cupones: context.go('/solicitudes');
       case NavTab.perfil: context.go('/perfil');
     }
   }
