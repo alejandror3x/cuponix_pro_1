@@ -7,14 +7,38 @@ import '../../core/widgets/cupon_scaffold.dart';
 import '../../core/widgets/ticket_card.dart';
 
 class MessagesScreen extends StatefulWidget {
-  const MessagesScreen({super.key});
+  final int initialTab;
+  const MessagesScreen({super.key, this.initialTab = 0});
 
   @override
   State<MessagesScreen> createState() => _MessagesScreenState();
 }
 
 class _MessagesScreenState extends State<MessagesScreen> {
-  int _tab = 0;
+  late int _tab;
+
+  @override
+  void initState() {
+    super.initState();
+    _tab = widget.initialTab;
+  }
+
+  void _local(String message) => ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(message)));
+
+  void _confirmRemove(String title) {
+    showDialog<void>(
+      context: context,
+      builder: (_) => AlertDialog(
+        backgroundColor: AppColors.black,
+        title: Text(title, style: const TextStyle(color: Colors.white)),
+        content: const Text('Deseas quitar este elemento?', style: TextStyle(color: Colors.white70)),
+        actions: [
+          TextButton(onPressed: () => Navigator.of(context).pop(), child: const Text('CANCELAR')),
+          TextButton(onPressed: () { Navigator.of(context).pop(); _local('Elemento quitado'); }, child: const Text('QUITAR')),
+        ],
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -29,45 +53,24 @@ class _MessagesScreenState extends State<MessagesScreen> {
               child: Container(
                 color: AppColors.black,
                 padding: const EdgeInsets.fromLTRB(20, 14, 20, 4),
-                child: Row(
-                  children: [
-                    BackTriangle(onTap: () => context.go('/home')),
-                    Expanded(
-                      child: Text(
-                        _tab == 0 ? 'Mensajes' : 'Notificaciones',
-                        textAlign: TextAlign.center,
-                        style: const TextStyle(
-                          color: Colors.white,
-                          fontSize: 24,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
-                    ),
-                    const SizedBox(width: 40),
-                  ],
-                ),
+                child: Row(children: [
+                  BackTriangle(onTap: () => context.go('/home')),
+                  Expanded(child: Text(_tab == 0 ? 'Mensajes' : 'Notificaciones', textAlign: TextAlign.center, style: const TextStyle(color: Colors.white, fontSize: 24, fontWeight: FontWeight.w600))),
+                  const SizedBox(width: 40),
+                ]),
               ),
             ),
             _tabs(),
             Container(height: 1, color: Colors.white.withValues(alpha: 0.32)),
-            Expanded(
-              child: ListView(
-                padding: const EdgeInsets.fromLTRB(14, 16, 14, 16),
-                children: _tab == 0 ? _messages(context) : _notifications(context),
-              ),
-            ),
+            Expanded(child: ListView(padding: const EdgeInsets.fromLTRB(14, 16, 14, 16), children: _tab == 0 ? _messages(context) : _notifications(context))),
             BottomNavBar(
               active: NavTab.home,
               onTap: (t) {
                 switch (t) {
-                  case NavTab.home:
-                    context.go('/home');
-                  case NavTab.explore:
-                    context.go('/explorar');
-                  case NavTab.cupones:
-                    context.go('/cupones');
-                  case NavTab.perfil:
-                    context.go('/perfil');
+                  case NavTab.home: context.go('/home');
+                  case NavTab.explore: context.go('/explorar');
+                  case NavTab.cupones: context.go('/solicitudes');
+                  case NavTab.perfil: context.go('/perfil');
                 }
               },
             ),
@@ -78,106 +81,45 @@ class _MessagesScreenState extends State<MessagesScreen> {
   }
 
   Widget _tabs() => Container(
-        color: AppColors.black,
-        child: Stack(
-          children: [
-            Row(
-              children: [
-                _tabButton(0, 'Mensajes'),
-                _tabButton(1, 'Notificaciones'),
-              ],
-            ),
-            Positioned(
-              left: 0,
-              right: 0,
-              bottom: 0,
-              child: AnimatedAlign(
-                duration: const Duration(milliseconds: 250),
-                curve: Curves.easeInOut,
-                alignment: _tab == 0 ? Alignment.centerLeft : Alignment.centerRight,
-                child: FractionallySizedBox(
-                  widthFactor: 0.5,
-                  child: Container(
-                    height: 4,
-                    decoration: BoxDecoration(
-                      color: AppColors.neonRed,
-                      borderRadius: BorderRadius.circular(999),
-                    ),
-                  ),
-                ),
-              ),
-            ),
-          ],
+    color: AppColors.black,
+    child: Stack(children: [
+      Row(children: [_tabButton(0, 'Mensajes'), _tabButton(1, 'Notificaciones')]),
+      Positioned(
+        left: 0, right: 0, bottom: 0,
+        child: AnimatedAlign(
+          duration: const Duration(milliseconds: 250),
+          curve: Curves.easeInOut,
+          alignment: _tab == 0 ? Alignment.centerLeft : Alignment.centerRight,
+          child: FractionallySizedBox(widthFactor: 0.5, child: Container(height: 4, decoration: BoxDecoration(color: AppColors.neonRed, borderRadius: BorderRadius.circular(999)))),
         ),
-      );
+      ),
+    ]),
+  );
 
   Widget _tabButton(int idx, String label) => Expanded(
-        child: GestureDetector(
-          onTap: () => setState(() => _tab = idx),
-          behavior: HitTestBehavior.opaque,
-          child: Padding(
-            padding: const EdgeInsets.fromLTRB(0, 12, 0, 20),
-            child: Text(
-              label,
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                color: _tab == idx ? Colors.white : Colors.white70,
-                fontSize: 25,
-                fontWeight: FontWeight.w500,
-              ),
-            ),
-          ),
-        ),
-      );
+    child: GestureDetector(
+      onTap: () => setState(() => _tab = idx),
+      behavior: HitTestBehavior.opaque,
+      child: Padding(
+        padding: const EdgeInsets.fromLTRB(0, 12, 0, 20),
+        child: Text(label, textAlign: TextAlign.center, style: TextStyle(color: _tab == idx ? Colors.white : Colors.white70, fontSize: 25, fontWeight: FontWeight.w500)),
+      ),
+    ),
+  );
 
   List<Widget> _messages(BuildContext context) => [
-        _InboxCard(
-          avatar: "R",
-          name: "Roger's Smash",
-          handle: '@rogersec',
-          text: 'Hola, tu cupón está listo para usar.',
-          action: 'VER',
-          onAction: () => context.go('/chat'),
-        ),
-        const SizedBox(height: 14),
-        _InboxCard(
-          avatar: 'T',
-          name: 'Tijuana',
-          handle: '@tijuanaec',
-          text: 'Gracias por seguirnos.',
-          action: 'VER',
-          onAction: () => context.go('/chat'),
-        ),
-      ];
+    _InboxCard(avatar: 'R', name: 'Rogers Smash', handle: '@rogersec', text: 'Hola, tu cupon esta listo para usar.', action: 'VER', onAction: () => context.go('/chat'), onRemove: () => _confirmRemove('Quitar mensaje')),
+    const SizedBox(height: 14),
+    _InboxCard(avatar: 'T', name: 'Tijuana', handle: '@tijuanaec', text: 'Gracias por seguirnos.', action: 'VER', onAction: () => context.go('/chat'), onRemove: () => _confirmRemove('Quitar mensaje')),
+  ];
 
   List<Widget> _notifications(BuildContext context) => [
-        _InboxCard(
-          avatar: 'A',
-          name: 'Alexis',
-          handle: '@alexiscuponix',
-          text: 'Solicitó seguirte.',
-          action: 'ACEPTAR',
-          onAction: () {},
-        ),
-        const SizedBox(height: 14),
-        _InboxCard(
-          avatar: 'R',
-          name: "Roger's Smash",
-          handle: '@rogersec',
-          text: 'Calificó tu perfil.',
-          action: 'VER',
-          onAction: () => context.go('/negocio'),
-        ),
-        const SizedBox(height: 14),
-        _InboxCard(
-          avatar: 'D',
-          name: "Domino's Pizza",
-          handle: '@dominosec',
-          text: 'Compartió un cupón.',
-          action: 'VER',
-          onAction: () => context.go('/buscar-resultados'),
-        ),
-      ];
+    _InboxCard(avatar: 'A', name: 'Alexis', handle: '@alexiscuponix', text: 'Solicito seguirte.', action: 'ACEPTAR', onAction: () => _local('Solicitud aceptada'), onRemove: () => _confirmRemove('Quitar notificacion')),
+    const SizedBox(height: 14),
+    _InboxCard(avatar: 'R', name: 'Rogers Smash', handle: '@rogersec', text: 'Califico tu perfil.', action: 'VER', onAction: () => context.go('/perfil?tab=valoraciones'), onRemove: () => _confirmRemove('Quitar notificacion')),
+    const SizedBox(height: 14),
+    _InboxCard(avatar: 'D', name: 'Dominos Pizza', handle: '@dominosec', text: 'Compartio un cupon.', action: 'VER', onAction: () => context.go('/negocio'), onRemove: () => _confirmRemove('Quitar notificacion')),
+  ];
 }
 
 class _InboxCard extends StatelessWidget {
@@ -187,15 +129,9 @@ class _InboxCard extends StatelessWidget {
   final String text;
   final String action;
   final VoidCallback onAction;
+  final VoidCallback onRemove;
 
-  const _InboxCard({
-    required this.avatar,
-    required this.name,
-    required this.handle,
-    required this.text,
-    required this.action,
-    required this.onAction,
-  });
+  const _InboxCard({required this.avatar, required this.name, required this.handle, required this.text, required this.action, required this.onAction, required this.onRemove});
 
   @override
   Widget build(BuildContext context) {
@@ -203,86 +139,28 @@ class _InboxCard extends StatelessWidget {
       aspectRatio: 720 / 210,
       child: Padding(
         padding: const EdgeInsets.fromLTRB(24, 16, 24, 16),
-        child: Row(
-          children: [
-            CircleAvatar(
-              radius: 38,
-              backgroundColor: const Color(0xFFD4322B),
-              child: Text(
-                avatar,
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.w800,
-                ),
-              ),
-            ),
-            const SizedBox(width: 16),
-            Expanded(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    name,
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
-                    style: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 20,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                  Text(
-                    handle,
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
-                    style: const TextStyle(color: Colors.white70, fontSize: 14),
-                  ),
-                  const SizedBox(height: 6),
-                  Text(
-                    text,
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
-                    style: const TextStyle(color: Colors.white, fontSize: 15),
-                  ),
-                ],
-              ),
-            ),
-            const SizedBox(width: 12),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                _pill(action, onAction),
-                const SizedBox(height: 8),
-                _pill('X', () {}, compact: true),
-              ],
-            ),
-          ],
-        ),
+        child: Row(children: [
+          CircleAvatar(radius: 38, backgroundColor: const Color(0xFFD4322B), child: Text(avatar, style: const TextStyle(color: Colors.white, fontWeight: FontWeight.w800))),
+          const SizedBox(width: 16),
+          Expanded(child: Column(mainAxisAlignment: MainAxisAlignment.center, crossAxisAlignment: CrossAxisAlignment.start, children: [
+            Text(name, maxLines: 1, overflow: TextOverflow.ellipsis, style: const TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.w600)),
+            Text(handle, maxLines: 1, overflow: TextOverflow.ellipsis, style: const TextStyle(color: Colors.white70, fontSize: 14)),
+            const SizedBox(height: 6),
+            Text(text, maxLines: 2, overflow: TextOverflow.ellipsis, style: const TextStyle(color: Colors.white, fontSize: 15)),
+          ])),
+          const SizedBox(width: 12),
+          Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+            _pill(action, onAction),
+            const SizedBox(height: 8),
+            _pill('X', onRemove, compact: true),
+          ]),
+        ]),
       ),
     );
   }
 
-  Widget _pill(String label, VoidCallback onTap, {bool compact = false}) =>
-      GestureDetector(
-        onTap: onTap,
-        child: Container(
-          height: 32,
-          width: compact ? 44 : null,
-          padding: compact ? EdgeInsets.zero : const EdgeInsets.symmetric(horizontal: 16),
-          decoration: BoxDecoration(
-            color: AppColors.neonRed,
-            borderRadius: BorderRadius.circular(999),
-          ),
-          alignment: Alignment.center,
-          child: Text(
-            label,
-            style: const TextStyle(
-              color: Colors.white,
-              fontSize: 12,
-              fontWeight: FontWeight.w700,
-            ),
-          ),
-        ),
-      );
+  Widget _pill(String label, VoidCallback onTap, {bool compact = false}) => GestureDetector(
+    onTap: onTap,
+    child: Container(height: 32, width: compact ? 44 : null, padding: compact ? EdgeInsets.zero : const EdgeInsets.symmetric(horizontal: 16), decoration: BoxDecoration(color: AppColors.neonRed, borderRadius: BorderRadius.circular(999)), alignment: Alignment.center, child: Text(label, style: const TextStyle(color: Colors.white, fontSize: 12, fontWeight: FontWeight.w700))),
+  );
 }
