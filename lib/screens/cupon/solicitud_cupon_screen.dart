@@ -62,8 +62,8 @@ class SolicitudCuponScreen extends StatelessWidget {
         ),
         actionsAlignment: MainAxisAlignment.center,
         actions: [
-          TextButton(onPressed: () => Navigator.of(context).pop(), child: const Text('Ahora no')),
           TextButton(onPressed: () => context.go('/lector-qr'), child: const Text('Aceptar')),
+          TextButton(onPressed: () => Navigator.of(context).pop(), child: const Text('Ahora no')),
         ],
       ),
     );
