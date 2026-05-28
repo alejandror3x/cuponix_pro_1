@@ -14,10 +14,18 @@ class BlockedAccountsScreen extends StatefulWidget {
 }
 
 class _BlockedAccountsScreenState extends State<BlockedAccountsScreen> {
-  final List<_BlockedAccount> _accounts = [
-    const _BlockedAccount('A', 'Alexis', '@alexiscuponix', Color(0xFF5B6F8A)),
-    const _BlockedAccount('D', 'Dominos Pizza', '@dominosec', Color(0xFF0B6CB1)),
-  ];
+  late final List<_BlockedAccount> _accounts;
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    final added = GoRouterState.of(context).uri.queryParameters['agregado'];
+    _accounts = [
+      if (added == 'roger') const _BlockedAccount('R', "Roger's Smash", '@rogersec', Color(0xFFD4322B)),
+      const _BlockedAccount('A', 'Alexis', '@alexiscuponix', Color(0xFF5B6F8A)),
+      const _BlockedAccount('D', 'Dominos Pizza', '@dominosec', Color(0xFF0B6CB1)),
+    ];
+  }
 
   void _unblock(_BlockedAccount account) {
     setState(() => _accounts.remove(account));
