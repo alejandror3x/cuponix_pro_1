@@ -14,11 +14,12 @@ class BlockedAccountsScreen extends StatefulWidget {
 }
 
 class _BlockedAccountsScreenState extends State<BlockedAccountsScreen> {
-  late final List<_BlockedAccount> _accounts;
+  List<_BlockedAccount>? _accounts;
 
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
+    if (_accounts != null) return;
     final added = GoRouterState.of(context).uri.queryParameters['agregado'];
     _accounts = [
       if (added == 'roger') const _BlockedAccount('R', "Roger's Smash", '@rogersec', Color(0xFFD4322B)),
@@ -28,12 +29,13 @@ class _BlockedAccountsScreenState extends State<BlockedAccountsScreen> {
   }
 
   void _unblock(_BlockedAccount account) {
-    setState(() => _accounts.remove(account));
+    setState(() => _accounts!.remove(account));
     ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('${account.name} desbloqueado')));
   }
 
   @override
   Widget build(BuildContext context) {
+    final accounts = _accounts ?? const <_BlockedAccount>[];
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: SystemUiOverlayStyle.light,
       child: Scaffold(
@@ -54,13 +56,13 @@ class _BlockedAccountsScreenState extends State<BlockedAccountsScreen> {
           Expanded(
             child: Container(
               decoration: const BoxDecoration(image: DecorationImage(image: AssetImage('assets/images/fondo-negro.png'), fit: BoxFit.cover)),
-              child: _accounts.isEmpty
+              child: accounts.isEmpty
                   ? const Center(child: Text('No tienes cuentas bloqueadas.', style: TextStyle(color: Colors.white70, fontSize: 18)))
                   : ListView.separated(
                       padding: const EdgeInsets.fromLTRB(14, 16, 14, 16),
-                      itemCount: _accounts.length,
+                      itemCount: accounts.length,
                       separatorBuilder: (_, _) => const SizedBox(height: 14),
-                      itemBuilder: (_, i) => _BlockedCard(account: _accounts[i], onUnblock: () => _unblock(_accounts[i])),
+                      itemBuilder: (_, i) => _BlockedCard(account: accounts[i], onUnblock: () => _unblock(accounts[i])),
                     ),
             ),
           ),
