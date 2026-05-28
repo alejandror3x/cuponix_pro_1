@@ -63,6 +63,14 @@ import 'screens/states/subscription_status_screen.dart';
 import 'screens/states/photo_picker_screen.dart';
 import 'screens/states/map_status_screen.dart';
 
+int _tabIndex(String? tab) {
+  if (tab == 'menu') return 1;
+  if (tab == 'valoraciones') return 2;
+  if (tab == 'seguidores') return 1;
+  if (tab == 'notificaciones') return 1;
+  return 0;
+}
+
 final _router = GoRouter(
   routes: [
     GoRoute(path: '/', builder: (_, _) => const SplashScreen()),
@@ -79,7 +87,12 @@ final _router = GoRouter(
     GoRoute(path: '/recover-user', builder: (_, _) => const RecoverUserScreen()),
     GoRoute(path: '/verify-code', builder: (_, _) => const VerifyCodeScreen()),
     GoRoute(path: '/home', builder: (_, _) => const HomeScreen()),
-    GoRoute(path: '/perfil', builder: (_, _) => const PerfilScreen()),
+    GoRoute(
+      path: '/perfil',
+      builder: (_, state) => PerfilScreen(
+        initialTab: _tabIndex(state.uri.queryParameters['tab']),
+      ),
+    ),
     GoRoute(path: '/cupones', builder: (_, _) => const MisCuponesScreen()),
     GoRoute(
       path: '/guardados',
@@ -128,9 +141,24 @@ final _router = GoRouter(
     GoRoute(path: '/points-help', builder: (_, _) => const PointsHelpScreen()),
     GoRoute(path: '/email-verification', builder: (_, _) => const EmailVerificationScreen()),
     GoRoute(path: '/suggested-accounts', builder: (_, _) => const SuggestedAccountsScreen()),
-    GoRoute(path: '/negocio', builder: (_, _) => const BusinessPublicProfileScreen()),
-    GoRoute(path: '/negocio-seguidores', builder: (_, _) => const BusinessFollowersScreen()),
-    GoRoute(path: '/mensajes', builder: (_, _) => const MessagesScreen()),
+    GoRoute(
+      path: '/negocio',
+      builder: (_, state) => BusinessPublicProfileScreen(
+        initialTab: _tabIndex(state.uri.queryParameters['tab']),
+      ),
+    ),
+    GoRoute(
+      path: '/negocio-seguidores',
+      builder: (_, state) => BusinessFollowersScreen(
+        initialTab: state.uri.queryParameters['tab'] == 'seguidores' ? 1 : 0,
+      ),
+    ),
+    GoRoute(
+      path: '/mensajes',
+      builder: (_, state) => MessagesScreen(
+        initialTab: state.uri.queryParameters['tab'] == 'notificaciones' ? 1 : 0,
+      ),
+    ),
     GoRoute(path: '/chat', builder: (_, _) => const ChatScreen()),
     GoRoute(path: '/mapa-negocio', builder: (_, _) => const BusinessMapScreen()),
     GoRoute(path: '/configuracion', builder: (_, _) => const SettingsMenuScreen()),
