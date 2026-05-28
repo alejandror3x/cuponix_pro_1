@@ -6,14 +6,22 @@ import '../../core/widgets/cupones_shell.dart';
 import '../../core/widgets/ticket_card.dart';
 
 class SolicitudesScreen extends StatefulWidget {
-  const SolicitudesScreen({super.key});
+  final int initialSub;
+
+  const SolicitudesScreen({super.key, this.initialSub = 0});
 
   @override
   State<SolicitudesScreen> createState() => _SolicitudesScreenState();
 }
 
 class _SolicitudesScreenState extends State<SolicitudesScreen> {
-  int _sub = 0; // 0=Recibidas, 1=Enviadas
+  late int _sub;
+
+  @override
+  void initState() {
+    super.initState();
+    _sub = widget.initialSub;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +43,7 @@ class _SolicitudesScreenState extends State<SolicitudesScreen> {
           const SizedBox(height: 28),
           Center(
             child: GestureDetector(
-              onTap: () => context.go('/historial'),
+              onTap: () => context.go(_sub == 0 ? '/historial' : '/historial?tab=enviados'),
               child: Container(
                 height: 42, padding: const EdgeInsets.symmetric(horizontal: 48),
                 decoration: BoxDecoration(
@@ -66,10 +74,10 @@ class _SolicitudesScreenState extends State<SolicitudesScreen> {
 
   List<Widget> _enviadas(BuildContext ctx) => [
     _reqCard(avatarBg: const Color(0xFFFEF9E8), avatarFg: const Color(0xFF1C1C1C), label: 'T', name: 'Tijuana', handle: '@tijuanaec',
-      action: 'Solicitud de Puntos', ctx: ctx, route: '/canjear-puntos'),
+      action: 'Solicitud de Puntos', ctx: ctx, route: '/mostrar-qr'),
     const SizedBox(height: 14),
     _reqCard(avatarBg: const Color(0xFFD4322B), avatarFg: Colors.white, label: "R", name: "Roger's Smash", handle: '@rogersec',
-      action: 'Solicitud de Puntos', ctx: ctx, route: '/canjear-puntos'),
+      action: 'Solicitud de Cupón', ctx: ctx, route: '/mostrar-codigo'),
   ];
 
   Widget _reqCard({
@@ -106,7 +114,7 @@ class _SolicitudesScreenState extends State<SolicitudesScreen> {
               Row(children: [
                 _pill('VER', () => ctx.go(route), s),
                 SizedBox(width: 10 * s),
-                _xBtn(s),
+                GestureDetector(onTap: () => _confirmRemove(ctx), child: _xBtn(s)),
               ]),
             ])),
           ]),
@@ -136,6 +144,21 @@ class _SolicitudesScreenState extends State<SolicitudesScreen> {
     child: Text('X', style: TextStyle(color: Colors.white, fontSize: (13 * s).clamp(8, 13), fontWeight: FontWeight.w500)),
   );
 
+  void _confirmRemove(BuildContext context) {
+    showDialog<void>(
+      context: context,
+      builder: (_) => AlertDialog(
+        backgroundColor: AppColors.black,
+        title: const Text('Eliminar solicitud', style: TextStyle(color: Colors.white)),
+        content: const Text('¿Deseas eliminar esta solicitud?', style: TextStyle(color: Colors.white70)),
+        actions: [
+          TextButton(onPressed: () => Navigator.of(context).pop(), child: const Text('CANCELAR')),
+          TextButton(onPressed: () => Navigator.of(context).pop(), child: const Text('ELIMINAR')),
+        ],
+      ),
+    );
+  }
+
   void _onInner(BuildContext ctx, InnerTab t) {
     switch (t) {
       case InnerTab.cupones: ctx.go('/cupones');
@@ -147,7 +170,7 @@ class _SolicitudesScreenState extends State<SolicitudesScreen> {
   void _onNav(BuildContext ctx, NavTab t) {
     switch (t) {
       case NavTab.home: ctx.go('/home');
-      case NavTab.explore: break;
+      case NavTab.explore: ctx.go('/explorar');
       case NavTab.cupones: break;
       case NavTab.perfil: ctx.go('/perfil');
     }
