@@ -18,7 +18,7 @@ class GraciasVisitarScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             const Text(
-              '¡Gracias por canjear!',
+              '¡Gracias por visitar!',
               textAlign: TextAlign.center,
               style: TextStyle(color: Colors.white, fontSize: 30, fontWeight: FontWeight.w700, height: 1.1),
             ),
