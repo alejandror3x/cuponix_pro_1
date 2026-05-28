@@ -87,8 +87,18 @@ final _router = GoRouter(
         initialSub: state.uri.queryParameters['tab'] == 'puntos' ? 1 : 0,
       ),
     ),
-    GoRoute(path: '/solicitudes', builder: (_, _) => const SolicitudesScreen()),
-    GoRoute(path: '/historial', builder: (_, _) => const HistorialScreen()),
+    GoRoute(
+      path: '/solicitudes',
+      builder: (_, state) => SolicitudesScreen(
+        initialSub: state.uri.queryParameters['tab'] == 'enviadas' ? 1 : 0,
+      ),
+    ),
+    GoRoute(
+      path: '/historial',
+      builder: (_, state) => HistorialScreen(
+        initialSub: state.uri.queryParameters['tab'] == 'enviados' ? 1 : 0,
+      ),
+    ),
     GoRoute(path: '/crear-cupon', builder: (_, _) => const CrearCuponScreen()),
     GoRoute(
       path: '/seguidores',
@@ -102,7 +112,14 @@ final _router = GoRouter(
     GoRoute(path: '/mostrar-qr', builder: (_, _) => const MostrarQrScreen()),
     GoRoute(path: '/sin-puntos', builder: (_, _) => const SinPuntosScreen()),
     GoRoute(path: '/gracias-visitar', builder: (_, _) => const GraciasVisitarScreen()),
-    GoRoute(path: '/cupon-listo', builder: (_, _) => const CuponListoScreen()),
+    GoRoute(
+      path: '/cupon-listo',
+      builder: (_, state) => CuponListoScreen(
+        tipo: state.uri.queryParameters['tipo'] == 'personalizado'
+            ? 'personalizado'
+            : 'consumo',
+      ),
+    ),
     GoRoute(path: '/explorar', builder: (_, _) => const ExplorarScreen()),
     GoRoute(path: '/buscar-resultados', builder: (_, _) => const BuscarResultadosScreen()),
     GoRoute(path: '/usar-cupon', builder: (_, _) => const UsarCuponScreen()),
