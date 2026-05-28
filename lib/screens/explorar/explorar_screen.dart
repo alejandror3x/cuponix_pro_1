@@ -14,6 +14,7 @@ class ExplorarScreen extends StatefulWidget {
 class _ExplorarScreenState extends State<ExplorarScreen> {
   final _controller = TextEditingController();
   final Set<String> _selected = {};
+  bool _locationPopupShown = false;
 
   static const _categories = [
     'Restaurante', 'Arte', 'Deporte', 'Ropa', 'Música', 'Coctel',
@@ -25,6 +26,35 @@ class _ExplorarScreenState extends State<ExplorarScreen> {
   void dispose() {
     _controller.dispose();
     super.dispose();
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    if (!_locationPopupShown) {
+      _locationPopupShown = true;
+      WidgetsBinding.instance.addPostFrameCallback((_) => _showLocationPopup());
+    }
+  }
+
+  void _showLocationPopup() {
+    if (!mounted) return;
+    showDialog<void>(
+      context: context,
+      builder: (_) => AlertDialog(
+        backgroundColor: Colors.white,
+        content: const Text(
+          'Cuponix desea acceder a\ntu ubicación',
+          textAlign: TextAlign.center,
+          style: TextStyle(color: AppColors.ink, fontSize: 16),
+        ),
+        actionsAlignment: MainAxisAlignment.center,
+        actions: [
+          TextButton(onPressed: () => Navigator.of(context).pop(), child: const Text('Permitir')),
+          TextButton(onPressed: () => Navigator.of(context).pop(), child: const Text('Ahora no')),
+        ],
+      ),
+    );
   }
 
   @override
@@ -90,13 +120,21 @@ class _ExplorarScreenState extends State<ExplorarScreen> {
                         textAlign: TextAlign.center,
                         style: TextStyle(color: Colors.white, fontSize: 28, fontWeight: FontWeight.w600, height: 1.1),
                       ),
+                      const SizedBox(height: 6),
+                      const Text(
+                        'La IA te recomendará los mejores resultados',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(color: Colors.white, fontSize: 14, fontWeight: FontWeight.w400),
+                      ),
                       const SizedBox(height: 14),
                       TextField(
                         controller: _controller,
                         maxLines: null,
                         minLines: 4,
+                        maxLength: 200,
                         style: const TextStyle(color: Color(0xFF1C1C1C), fontSize: 15, fontWeight: FontWeight.w500),
                         decoration: InputDecoration(
+                          hintText: '200 caracteres',
                           filled: true,
                           fillColor: Colors.white.withValues(alpha: 0.4),
                           border: OutlineInputBorder(
@@ -108,28 +146,11 @@ class _ExplorarScreenState extends State<ExplorarScreen> {
                             borderSide: const BorderSide(color: Colors.white54, width: 2),
                           ),
                           contentPadding: const EdgeInsets.symmetric(horizontal: 22, vertical: 16),
+                          counterStyle: const TextStyle(color: Colors.white70),
                         ),
                       ),
                       const SizedBox(height: 10),
-                      Center(
-                        child: GestureDetector(
-                          onTap: () => context.go('/buscar-resultados'),
-                          child: Container(
-                            height: 36,
-                            padding: const EdgeInsets.symmetric(horizontal: 48),
-                            decoration: BoxDecoration(
-                              color: AppColors.purple,
-                              borderRadius: BorderRadius.circular(999),
-                              boxShadow: const [
-                                BoxShadow(color: Color(0x732D1078), blurRadius: 14, offset: Offset(0, 5)),
-                              ],
-                            ),
-                            alignment: Alignment.center,
-                            child: const Text('BUSCAR',
-                              style: TextStyle(color: Colors.white, fontSize: 13, fontWeight: FontWeight.w700, letterSpacing: 1.3)),
-                          ),
-                        ),
-                      ),
+                      Center(child: _searchButton(color: AppColors.purple)),
                       const SizedBox(height: 24),
                       const Text(
                         'Busca por categorías',
@@ -162,25 +183,7 @@ class _ExplorarScreenState extends State<ExplorarScreen> {
                         }).toList(),
                       ),
                       const SizedBox(height: 14),
-                      Center(
-                        child: GestureDetector(
-                          onTap: () => context.go('/buscar-resultados'),
-                          child: Container(
-                            height: 36,
-                            padding: const EdgeInsets.symmetric(horizontal: 48),
-                            decoration: BoxDecoration(
-                              color: AppColors.neonRed,
-                              borderRadius: BorderRadius.circular(999),
-                              boxShadow: const [
-                                BoxShadow(color: Color(0x66FF073A), blurRadius: 14, offset: Offset(0, 5)),
-                              ],
-                            ),
-                            alignment: Alignment.center,
-                            child: const Text('BUSCAR',
-                              style: TextStyle(color: Colors.white, fontSize: 13, fontWeight: FontWeight.w700, letterSpacing: 1.3)),
-                          ),
-                        ),
-                      ),
+                      Center(child: _searchButton(color: AppColors.neonRed)),
                     ],
                   ),
                 ]),
@@ -192,7 +195,7 @@ class _ExplorarScreenState extends State<ExplorarScreen> {
                 switch (t) {
                   case NavTab.home: context.go('/home');
                   case NavTab.explore: break;
-                  case NavTab.cupones: context.go('/cupones');
+                  case NavTab.cupones: context.go('/solicitudes');
                   case NavTab.perfil: context.go('/perfil');
                 }
               },
@@ -202,4 +205,20 @@ class _ExplorarScreenState extends State<ExplorarScreen> {
       ),
     );
   }
+
+  Widget _searchButton({required Color color}) => GestureDetector(
+    onTap: () => context.go('/buscar-resultados'),
+    child: Container(
+      height: 36,
+      padding: const EdgeInsets.symmetric(horizontal: 48),
+      decoration: BoxDecoration(
+        color: color,
+        borderRadius: BorderRadius.circular(999),
+        boxShadow: const [BoxShadow(color: Color(0x66000000), blurRadius: 14, offset: Offset(0, 5))],
+      ),
+      alignment: Alignment.center,
+      child: const Text('BUSCAR',
+        style: TextStyle(color: Colors.white, fontSize: 13, fontWeight: FontWeight.w700, letterSpacing: 1.3)),
+    ),
+  );
 }
