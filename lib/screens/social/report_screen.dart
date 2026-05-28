@@ -25,6 +25,13 @@ class _ReportScreenState extends State<ReportScreen> {
   ];
 
   void _send() {
+    if (_selected.isEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Selecciona al menos un motivo.')),
+      );
+      return;
+    }
+
     showDialog<void>(
       context: context,
       barrierDismissible: false,
