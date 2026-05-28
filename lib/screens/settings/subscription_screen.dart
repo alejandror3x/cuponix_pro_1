@@ -41,25 +41,30 @@ class SubscriptionScreen extends StatelessWidget {
               decoration: const BoxDecoration(image: DecorationImage(image: AssetImage('assets/images/fondo-negro.png'), fit: BoxFit.cover)),
               child: ListView(padding: const EdgeInsets.fromLTRB(22, 24, 22, 28), children: [
                 TicketCard(
-                  aspectRatio: 640 / 760,
+                  aspectRatio: 640 / 780,
                   child: Padding(
-                    padding: const EdgeInsets.fromLTRB(26, 28, 26, 28),
+                    padding: const EdgeInsets.fromLTRB(26, 26, 26, 26),
                     child: Column(children: [
-                      Image.asset('assets/images/cuponix-imagotipo-cropped.png', width: 82),
-                      const SizedBox(height: 18),
-                      Text(_active ? 'Tu suscripción está activa' : 'Pruébalo Gratis por 3 meses', textAlign: TextAlign.center, style: const TextStyle(color: Colors.white, fontSize: 29, fontWeight: FontWeight.w700, height: 1.1)),
-                      const SizedBox(height: 14),
+                      Image.asset('assets/images/cuponix-imagotipo-cropped.png', width: 76),
+                      const SizedBox(height: 16),
+                      Text(_active ? 'Tu suscripción está activa' : 'Pruébalo Gratis por 3 meses', textAlign: TextAlign.center, style: const TextStyle(color: Colors.white, fontSize: 28, fontWeight: FontWeight.w700, height: 1.1)),
+                      const SizedBox(height: 12),
                       if (_active) ...[
                         const Text('Disfruta cupones ilimitados\ny Puntos canjeables.', textAlign: TextAlign.center, style: TextStyle(color: Colors.white, fontSize: 19, fontWeight: FontWeight.w500, height: 1.3)),
-                        const SizedBox(height: 18),
+                        const SizedBox(height: 12),
+                        const _InfoLine('Inicio: 01/06/26'),
+                        const _InfoLine('A nombre de: Tom'),
+                        const SizedBox(height: 12),
                         const Text('Puedes anular tu suscripción\nen cualquier momento.', textAlign: TextAlign.center, style: TextStyle(color: Colors.white70, fontSize: 16, height: 1.3)),
                       ] else ...[
                         const Text('Sin suscripción', textAlign: TextAlign.center, style: TextStyle(color: AppColors.neonRed, fontSize: 26, fontWeight: FontWeight.w800)),
-                        const SizedBox(height: 8),
-                        const Text('Días restantes: 90', textAlign: TextAlign.center, style: TextStyle(color: Colors.white, fontSize: 22, fontWeight: FontWeight.w600)),
-                        const SizedBox(height: 8),
+                        const SizedBox(height: 7),
+                        const Text('Días restantes: 90', textAlign: TextAlign.center, style: TextStyle(color: Colors.white, fontSize: 21, fontWeight: FontWeight.w600)),
+                        const SizedBox(height: 6),
+                        const _InfoLine('Expira: 01/09/26'),
+                        const SizedBox(height: 7),
                         const Text(r'$5.99 al mes', textAlign: TextAlign.center, style: TextStyle(color: Colors.white, fontSize: 23, fontWeight: FontWeight.w600)),
-                        const SizedBox(height: 18),
+                        const SizedBox(height: 16),
                         const Text('Con CUPONIX dale a tus clientes\nmás razones para volver.\n\nActiva cupones ilimitados y\nrecompensas con puntos.', textAlign: TextAlign.center, style: TextStyle(color: Colors.white70, fontSize: 16, height: 1.3)),
                       ],
                       const Spacer(),
@@ -86,4 +91,15 @@ class SubscriptionScreen extends StatelessWidget {
       ),
     );
   }
+}
+
+class _InfoLine extends StatelessWidget {
+  final String text;
+  const _InfoLine(this.text);
+
+  @override
+  Widget build(BuildContext context) => Padding(
+    padding: const EdgeInsets.only(bottom: 4),
+    child: Text(text, textAlign: TextAlign.center, style: const TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.w600)),
+  );
 }
