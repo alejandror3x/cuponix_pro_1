@@ -20,7 +20,7 @@ class ProductDetailScreen extends StatelessWidget {
           case NavTab.explore:
             context.go('/explorar');
           case NavTab.cupones:
-            context.go('/cupones');
+            context.go('/solicitudes');
           case NavTab.perfil:
             context.go('/negocio');
         }
@@ -29,7 +29,7 @@ class ProductDetailScreen extends StatelessWidget {
         padding: const EdgeInsets.fromLTRB(28, 20, 28, 28),
         child: Column(
           children: [
-            CuponTitleRow(title: 'Producto', onBack: () => context.go('/negocio')),
+            CuponTitleRow(title: 'Producto', onBack: () => context.go('/negocio?tab=menu')),
             const SizedBox(height: 8),
             Container(
               height: 210,
@@ -69,6 +69,11 @@ class ProductDetailScreen extends StatelessWidget {
             ),
             const SizedBox(height: 22),
             PillButton(label: 'CANJEAR', onPressed: () => context.go('/canjear-puntos')),
+            const SizedBox(height: 12),
+            TextButton(
+              onPressed: () => context.go('/negocio?tab=valoraciones'),
+              child: const Text('VER VALORACIONES'),
+            ),
           ],
         ),
       ),
