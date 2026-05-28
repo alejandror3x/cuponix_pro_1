@@ -59,11 +59,6 @@ class CanjearPuntosScreen extends StatelessWidget {
             ),
             const SizedBox(height: 14),
             CuponCta(label: 'CANJEAR', onPressed: () => context.go('/mostrar-qr')),
-            const SizedBox(height: 10),
-            TextButton(
-              onPressed: () => context.go('/sin-puntos'),
-              child: const Text('SIMULAR PUNTOS INSUFICIENTES'),
-            ),
             const SizedBox(height: 8),
           ],
         ),
