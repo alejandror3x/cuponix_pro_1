@@ -43,6 +43,7 @@ import 'screens/social/business_followers_screen.dart';
 import 'screens/social/messages_screen.dart';
 import 'screens/social/chat_screen.dart';
 import 'screens/social/business_map_screen.dart';
+import 'screens/social/report_screen.dart';
 import 'screens/settings/settings_menu_screen.dart';
 import 'screens/settings/edit_account_screen.dart';
 import 'screens/settings/edit_profile_settings_screen.dart';
@@ -114,12 +115,13 @@ final _router = GoRouter(
     GoRoute(path: '/mensajes', builder: (_, state) => MessagesScreen(initialTab: state.uri.queryParameters['tab'] == 'notificaciones' ? 1 : 0)),
     GoRoute(path: '/chat', builder: (_, _) => const ChatScreen()),
     GoRoute(path: '/mapa-negocio', builder: (_, _) => const BusinessMapScreen()),
+    GoRoute(path: '/reportar', builder: (_, _) => const ReportScreen()),
     GoRoute(path: '/configuracion', builder: (_, _) => const SettingsMenuScreen()),
     GoRoute(path: '/editar-cuenta', builder: (_, _) => const EditAccountScreen()),
     GoRoute(path: '/editar-perfil-config', builder: (_, _) => const EditProfileSettingsScreen()),
     GoRoute(path: '/editar-producto', builder: (_, _) => const EditProductScreen()),
     GoRoute(path: '/bloqueados', builder: (_, _) => const BlockedAccountsScreen()),
-    GoRoute(path: '/suscripcion', builder: (_, _) => const SubscriptionScreen()),
+    GoRoute(path: '/suscripcion', builder: (_, state) => SubscriptionScreen(state: state.uri.queryParameters['estado'] == 'suscrito' ? 'suscrito' : 'gratis')),
     GoRoute(path: '/permisos', builder: (_, _) => const PermissionsScreen()),
     GoRoute(path: '/terminos', builder: (_, _) => const TermsScreen()),
     GoRoute(path: '/ayuda', builder: (_, _) => const HelpScreen()),
@@ -131,8 +133,8 @@ final _router = GoRouter(
     GoRoute(path: '/cargar-foto', builder: (_, _) => const PhotoPickerScreen()),
     GoRoute(path: '/mapa-cargando', builder: (_, _) => const MapLoadingScreen()),
     GoRoute(path: '/mapa-error', builder: (_, _) => const MapErrorScreen()),
-    GoRoute(path: '/suscripcion-activa', builder: (_, _) => const SubscriptionStatusScreen(active: true)),
-    GoRoute(path: '/plan-gratis', builder: (_, _) => const SubscriptionStatusScreen(active: false)),
+    GoRoute(path: '/suscripcion-activa', builder: (_, _) => const SubscriptionScreen(state: 'suscrito')),
+    GoRoute(path: '/plan-gratis', builder: (_, _) => const SubscriptionScreen(state: 'gratis')),
   ],
 );
 
