@@ -18,6 +18,7 @@ class _PermissionsScreenState extends State<PermissionsScreen> {
   bool _reviews = true;
   bool _notifications = true;
   bool _followers = true;
+  bool _messages = true;
   bool _shareActivity = true;
 
   @override
@@ -37,6 +38,7 @@ class _PermissionsScreenState extends State<PermissionsScreen> {
           _row('Permitir Reseñas', _reviews, (v) => setState(() => _reviews = v)),
           _row('Permitir Notificaciones', _notifications, (v) => setState(() => _notifications = v)),
           _row('Permitir Seguidores', _followers, (v) => setState(() => _followers = v)),
+          _row('Permitir Mensajes', _messages, (v) => setState(() => _messages = v)),
           _row('Permitir Compartir Actividad', _shareActivity, (v) => setState(() => _shareActivity = v)),
           const Spacer(),
           PillButton(label: 'GUARDAR', onPressed: () => context.go('/configuracion')),
