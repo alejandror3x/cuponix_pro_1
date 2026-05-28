@@ -30,7 +30,7 @@ class _UsarCuponScreenState extends State<UsarCuponScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            CuponTitleRow(title: 'Usar Cupón', onBack: () => context.go('/buscar-resultados')),
+            CuponTitleRow(title: 'Usar Cupón', onBack: () => _goBack(context)),
             const SizedBox(height: 10),
             CuponProfile(
               avatar: CuponAvatar(bg: const Color(0xFFD4322B), fg: Colors.white, label: "Roger's", size: 90),
@@ -86,11 +86,19 @@ class _UsarCuponScreenState extends State<UsarCuponScreen> {
     );
   }
 
+  void _goBack(BuildContext context) {
+    if (Navigator.of(context).canPop()) {
+      context.pop();
+    } else {
+      context.go('/buscar-resultados');
+    }
+  }
+
   void _nav(BuildContext context, NavTab t) {
     switch (t) {
       case NavTab.home: context.go('/home');
       case NavTab.explore: context.go('/explorar');
-      case NavTab.cupones: context.go('/cupones');
+      case NavTab.cupones: context.go('/solicitudes');
       case NavTab.perfil: context.go('/perfil');
     }
   }
