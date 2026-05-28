@@ -56,16 +56,25 @@ class MostrarCodigoScreen extends StatelessWidget {
     }
   }
 
+  void _goToMisCupones(BuildContext context, {required bool saved}) {
+    Navigator.of(context).pop();
+    if (saved) {
+      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Cupón guardado')));
+    }
+    context.go('/cupones');
+  }
+
   void _askSave(BuildContext context) {
     showDialog<void>(
       context: context,
       builder: (_) => AlertDialog(
         backgroundColor: const Color(0xFF1C1C1C),
-        title: const Text('Guardar cupón', style: TextStyle(color: Colors.white)),
-        content: const Text('¿Deseas guardar este cupón para usarlo luego?', style: TextStyle(color: Colors.white70)),
+        title: const Text('Guardar Cupón', style: TextStyle(color: Colors.white)),
+        content: const Text('¿Deseas Guardar este Cupón\npara otro momento?', textAlign: TextAlign.center, style: TextStyle(color: Colors.white70)),
+        actionsAlignment: MainAxisAlignment.center,
         actions: [
-          TextButton(onPressed: () => context.go('/solicitudes?tab=enviadas'), child: const Text('Ahora no')),
-          TextButton(onPressed: () { Navigator.of(context).pop(); ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Cupón guardado'))); }, child: const Text('Guardar')),
+          TextButton(onPressed: () => _goToMisCupones(context, saved: true), child: const Text('Guardar')),
+          TextButton(onPressed: () => _goToMisCupones(context, saved: false), child: const Text('Ahora no')),
         ],
       ),
     );
