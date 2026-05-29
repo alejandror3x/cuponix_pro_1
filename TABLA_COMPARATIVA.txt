@@ -1,0 +1,77 @@
+╔════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗
+║                          📊 TABLA COMPARATIVA CUPONIX: DISEÑOS vs IMPLEMENTACIÓN                                                  ║
+╚════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+
+PANTALLA            │ ESTADO  │ FLUJO     │ COMPLETITUD │ CATEGORÍA      │ OBSERVACIÓN
+────────────────────┼─────────┼───────────┼─────────────┼────────────────┼────────────────────────────────────────────────────────
+V1  Splash          │ ✓ 100%  │ ✓ OK      │ 100%        │ Auth           │ Implementado correctamente
+V2  Login/Welcome   │ ✓ 100%  │ ✓ OK      │ 100%        │ Auth           │ Welcome screen funcional
+V3  Recover Email   │ ✓ 100%  │ ✓ OK      │ 100%        │ Auth           │ Recuperación por email OK
+V4  Verify Code     │ ✓ 100%  │ ✓ OK      │ 100%        │ Auth           │ Verificación código SMS OK
+V5  Recover Sent    │ ✓ 100%  │ ✓ OK      │ 100%        │ Auth           │ Confirmación envío OK
+V6  Register        │ ✓  80%  │ ⚠ 80%    │  80%        │ Auth           │ Falta tour de puntos (V15)
+V7  Edit Profile    │ ✓ 100%  │ ✓ OK      │ 100%        │ Auth/Onboard   │ Edición de perfil OK
+V8  Edit Account    │ ✓ 100%  │ ✓ OK      │ 100%        │ Settings       │ Edición de cuenta OK
+V9  Edit Perfile🞑   │ ✓ 100%  │ ✓ OK      │ 100%        │ Settings       │ Edición perfil settings OK
+V10 Business Prof   │ ✓ 100%  │ ✓ OK      │ 100%        │ Business       │ Perfil de negocio OK
+V11 Create Product  │ ✓ 100%  │ ✓ OK      │ 100%        │ Business       │ Crear producto OK
+V12 Map Location    │ ✓ 100%  │ ✓ OK      │ 100%        │ Business       │ Mapa para ubicación OK
+V13 Tour 9s         │ ✗   0%  │ ✗ FALTA   │   0%        │ Onboarding     │ 🔴 FALTA: Tour educativo
+V14 Suggested Accs  │ ✓  85%  │ ✓ OK      │  85%        │ Social         │ Cuentas sugeridas OK
+V15 Points Help     │ ✓  75%  │ ⚠ 75%    │  75%        │ Onboarding     │ Falta animación 9s
+────────────────────┼─────────┼───────────┼─────────────┼────────────────┼────────────────────────────────────────────────────────
+V16 Navigation      │ ✓ 100%  │ ✓ OK      │ 100%        │ Navigation     │ Bottom nav bar OK
+V17 Biz Pub Profile │ ✓ 100%  │ ✓ OK      │ 100%        │ Social         │ Perfil público de negocio OK
+V18 Messages Tab    │ ✓  80%  │ ⚠ 80%    │  80%        │ Social         │ Mensajes OK, falta notificaciones
+V19 Notifications   │ ⚠  60%  │ ⚠ 60%    │  60%        │ Notifications  │ 🟡 IMPORTANTE: Centro notificaciones
+V20 Chat            │ ✓ 100%  │ ✓ OK      │ 100%        │ Social         │ Chat funcional
+V21 Home Feed       │ ✓  75%  │ ⚠ 75%    │  75%        │ Home           │ Home OK, falta búsqueda IA
+V22 AI Search       │ ✗   0%  │ ✗ FALTA   │   0%        │ Search         │ 🔴 CRÍTICO: Búsqueda con IA Gemini
+V23 Search Results  │ ✓ 100%  │ ✓ OK      │ 100%        │ Search         │ Resultados búsqueda OK
+V23 My Coupons      │ ✓ 100%  │ ✓ OK      │ 100%        │ Coupons        │ Mis cupones OK
+────────────────────┼─────────┼───────────┼─────────────┼────────────────┼────────────────────────────────────────────────────────
+V24 Coupon Editor   │ ✗   0%  │ ✗ FALTA   │   0%        │ Coupons        │ 🔴 CRÍTICO: Editor/Carrito falta
+V25 Show QR         │ ✗   0%  │ ✗ FALTA   │   0%        │ Coupons        │ 🔴 CRÍTICO: Mostrar QR falta
+V26 History         │ ✓ 100%  │ ✓ OK      │ 100%        │ History        │ Historial general OK
+V27 Received        │ ✓ 100%  │ ✓ OK      │ 100%        │ History        │ Cupones recibidos OK
+V27 Sent            │ ✓ 100%  │ ✓ OK      │ 100%        │ History        │ Cupones enviados OK
+V28 QR Scanner      │ ✓ 100%  │ ✓ OK      │ 100%        │ Utility        │ Scanner QR funcional
+V29 Request Coupon  │ ✓  85%  │ ⚠ 85%    │  85%        │ Coupons        │ Solicitar cupón, flujo incompleto
+V30 Request Exch    │ ✓  85%  │ ⚠ 85%    │  85%        │ Coupons        │ Solicitud canje, flujo incompleto
+V31 Thank Visit     │ ✓ 100%  │ ✓ OK      │ 100%        │ Feedback       │ Gracias visita OK
+V32 Thank Coupon    │ ✓ 100%  │ ✓ OK      │ 100%        │ Feedback       │ Gracias cupón OK
+V33 Exchange Pts    │ ✓  70%  │ ⚠ 70%    │  70%        │ Points         │ Canjear puntos, lógica incompleta
+V34 Ready Coupon    │ ✓ 100%  │ ✓ OK      │ 100%        │ Coupons        │ Cupón listo para usar OK
+V35 Use Coupon      │ ✓ 100%  │ ✓ OK      │ 100%        │ Coupons        │ Usar cupón OK
+V36 No Points       │ ✓ 100%  │ ✓ OK      │ 100%        │ Points         │ Pantalla sin puntos OK
+────────────────────┼─────────┼───────────┼─────────────┼────────────────┼────────────────────────────────────────────────────────
+V37 Create Coupon   │ ✓ 100%  │ ✓ OK      │ 100%        │ Coupons        │ Crear cupón OK
+V38 Edit Coupon     │ ✓ 100%  │ ✓ OK      │ 100%        │ Coupons        │ Editar cupón OK
+V39 Edit Product    │ ✓ 100%  │ ✓ OK      │ 100%        │ Business       │ Editar producto OK
+V40 Activity Panel   │ ✓  60%  │ ⚠ 60%    │  60%        │ Navigation     │ 🟡 IMPORTANTE: Dashboard actividades
+V41 Activity Sub    │ ✗   0%  │ ✗ FALTA   │   0%        │ Activity       │ Subvistas detalladas falta
+V42 Activity Detail  │ ✗   0%  │ ✗ FALTA   │   0%        │ Activity       │ Detalles actividades falta
+V43 Edit Prof Adv   │ ✓ 100%  │ ✓ OK      │ 100%        │ Settings       │ Edición perfil avanzada OK
+V44 Blocked Accs    │ ✓ 100%  │ ✓ OK      │ 100%        │ Settings       │ Cuentas bloqueadas OK
+V45 Subscription    │ ✓  60%  │ ⚠ 60%    │  60%        │ Business       │ Suscripción parcial, UI incompleta
+V46 Settings Menu   │ ✓ 100%  │ ✓ OK      │ 100%        │ Settings       │ Menú configuración OK
+V47 Profile         │ ✓ 100%  │ ✓ OK      │ 100%        │ Profile        │ Perfil usuario OK
+V48 Followers       │ ✓ 100%  │ ✓ OK      │ 100%        │ Social         │ Seguidores OK
+────────────────────┼─────────┼───────────┼─────────────┼────────────────┼────────────────────────────────────────────────────────
+EXTRA: Explore      │ ✓ 100%  │ ✓ OK      │ 100%        │ Discovery      │ Pantalla exploración OK
+EXTRA: Permisos     │ ✓ 100%  │ ✓ OK      │ 100%        │ System         │ Permisos startup OK
+EXTRA: Terms        │ ✓ 100%  │ ✓ OK      │ 100%        │ Legal          │ Términos OK
+EXTRA: Help         │ ✓ 100%  │ ✓ OK      │ 100%        │ Support        │ Ayuda OK
+EXTRA: Report       │ ✓ 100%  │ ✓ OK      │ 100%        │ Support        │ Reportar OK
+EXTRA: Business Map │ ✓ 100%  │ ✓ OK      │ 100%        │ Business       │ Mapa negocio OK
+EXTRA: Product Det  │ ✓ 100%  │ ✓ OK      │ 100%        │ Product        │ Detalle producto OK
+EXTRA: Followers D  │ ✓ 100%  │ ✓ OK      │ 100%        │ Social         │ Detalles seguidores OK
+EXTRA: History D    │ ✓ 100%  │ ✓ OK      │ 100%        │ History        │ Detalles historial OK
+EXTRA: Saved        │ ✓ 100%  │ ✓ OK      │ 100%        │ Coupons        │ Guardados OK
+EXTRA: Requests     │ ✓ 100%  │ ✓ OK      │ 100%        │ Coupons        │ Solicitudes OK
+EXTRA: Email Verify │ ✓ 100%  │ ✓ OK      │ 100%        │ Auth           │ Verificación email OK
+
+════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+LEYENDA:
+  ✓ = Implementado | ⚠ = Parcial | ✗ = No existe | % = Grado de completitud | OK = Flujo correcto | FALTA = No implementado
+════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════

@@ -1,0 +1,581 @@
+================================================================================
+                ANÁLISIS COMPLETO DE DISEÑO - CUPONIX
+            Basado en Planos: def25 p2.pdf, def26 p1.pdf, def26 p3.pdf
+================================================================================
+
+## RESUMEN EJECUTIVO
+
+Total de Pantallas Identificadas: 55
+- Pantallas base: V1-V48 (48 pantallas)
+- Pantallas especiales: V61, V71, V101, V141, V211, V301
+
+Categorías principales: 11
+- Exploración de Cupones (CUE)
+- Mis Cupones (CUP)  
+- Historial de Transacciones (REC/ENV)
+- Mensajes (MSJ)
+- Acciones/Actividades (ACT)
+- Puntos/Rewards (PUN)
+- Perfil/Cuenta (PER/PRO)
+- Configuración (CON/SEG/VAL)
+- Notificaciones (NOT)
+- Gamificación (GRA/SUS)
+
+================================================================================
+1. FLUJO DE HOME / EXPLORACIÓN
+================================================================================
+
+V21 - HOME PRINCIPAL / Para Ti
+---------------------------------------
+Descripción: Ventana de menú principal. Ofrece negocios destacados recomendados y 
+  cupones de cuentas que sigues.
+Tipo: Pantalla completa
+Componentes:
+  - BBI: Botón Inicio
+  - BCI: Botón Centro  
+  - BPI: Botón Pie
+  - BMsI: Botón Mensajes
+  - BOI: Botón Opciones
+  - VIR#1, VIR#2, VIR#3: Ventanas Respuesta IA (3 ventanas)
+  - PES2: 2 Pestañas
+  - VIP1#1: Ventana Información Pop-up
+  - BS3#1, BS3#2: Botones Secundarios
+  - BS2#1: Botón Secundario
+Transiciones:
+  → V22 (siguiente)
+  → V27 (historial/transacciones)
+  → V40(ACT) (actividades)
+  → V19(MSJ) (mensajes)
+  → V16(X) (cerrar/atrás)
+Pestañas: "Para Ti" / "Siguiendo"
+
+V22 - BÚSQUEDA / CATEGORÍAS
+---------------------------------------
+Descripción: Ventana buscador general. Cuenta con IA (Gemini para búsqueda).
+  Se puede buscar por etiqueta/categoría.
+Tipo: Pantalla completa
+Componentes:
+  - Buscador IA integrado
+  - Selector de categorías
+Transiciones:
+  → V23(CUE) (resultados de búsqueda)
+  → V21 (atrás a home)
+Categorías disponibles: Salud, Tecnología, Maquillaje, Arte, Deporte, Ropa, 
+  Restaurante, Pizza, Sushi, Artesanía, Bares, Gym, Vegetariano, Mascotas,
+  Música, Cótel, Hamburguesa, Cine
+
+V23(CUE) - RESULTADOS DE BÚSQUEDA / CUPONES A EXPLORAR  
+---------------------------------------
+Descripción: Resultado en cuentas y cupones de la búsqueda realizadas.
+  Muestra cupones recomendados según búsqueda.
+Tipo: Pantalla completa (scrolleable)
+Componentes:
+  - VIR: Ventana Respuesta IA
+  - PES2: 2 Pestañas (Cupones / Cuentas)
+  - CT1: Contenedor principal
+  - BS2#1, BS3#1, BS3#2: Botones secundarios
+  - VIP1: Ventana de Información
+Transiciones:
+  → V24 (ver detalle de cupón)
+  → V25 (detalle ampliado)
+  → V21 (atrás)
+  → V27 (transacciones)
+Pestañas: "Cupones Explorar (CUE)" / "Otra pestaña"
+UI Elements: 
+  - Tarjetas de cupones (330x330px / 165x165px)
+  - Descuentos, Recompensas, Fecha de expiración
+  - Botón "Guardar" para guardar cupón
+
+================================================================================
+2. FLUJO DE CUPONES - DETALLES Y ACCIONES
+================================================================================
+
+V24 - CARRITO / EDITOR DE CUPÓN A USAR
+---------------------------------------
+Descripción: Ventana para editar/personalizar cupón antes de usar.
+  Permite añadir código especial si es necesario.
+Tipo: Pantalla completa
+Componentes:
+  - BHI: Botón Historia
+  - BCA: Botón Centro Arriba
+  - BPI: Botón Pie
+  - BMsI, BOI: Botones Mensajes y Opciones
+  - CT2: Contenedor
+  - BS1: Botón Secundario
+  - E: Campo de entrada (para código)
+Transiciones:
+  → V25 (confirmar y ver código QR)
+  → V21 (atrás)
+  → V27 (transacciones)
+  → V40 (actividades)
+Funcionalidades:
+  - Entrada de código especial
+  - Visualización de detalles del cupón
+  - Opción "Usar Ahora" o "En otro momento"
+
+V25 - CÓDIGO QR Y CONFIRMACIÓN
+---------------------------------------
+Descripción: Ventana de código QR de transacción. Se genera al usar el cupón.
+  Este código debe mostrarse al propietario de la cuenta.
+Tipo: Pantalla completa / Modal
+Componentes:
+  - BHI, BCI, BPI: Botones principales
+  - BR: Botón Regresar
+  - BMsI, BOI: Botones Opciones
+  - CT1: Contenedor
+  - BS2#1, BS2#2: Botones Secundarios
+  - PES2: 2 Pestañas
+  - VIP1: Ventana Información
+  - VIQR: Código QR (360x369px)
+Transiciones:
+  → V36[V25.POP] (popup de guardar)
+  → V21 (atrás)
+  → V27 (transacciones)
+  → V40 (actividades)
+Funcionalidades:
+  - Display de código QR
+  - Información de puntos recompensados
+  - Resumen de cupón usado
+
+V36[V25.POP] - MODAL: GUARDAR CUPÓN
+---------------------------------------
+Descripción: Popup modal que pregunta "¿Deseas guardar este cupón para otro momento?"
+Tipo: Modal/Popup
+Componentes:
+  - BHI, BCI, BPI: Botones
+  - BS1: Botón Secundario
+  - POP.1, POP.2: 2 Popup elements
+Botones:
+  - "Guardar" → Guarda el cupón
+  - "Ahora no" → Cancela
+Transiciones:
+  → V25 (volver)
+  → V36 (puntos)
+
+================================================================================
+3. FLUJO DE MIS CUPONES / GUARDADOS
+================================================================================
+
+V23(CUP) - MIS CUPONES
+---------------------------------------
+Descripción: Lista de cupones guardados/adquiridos por el usuario.
+  Vista con todos los cupones que el usuario ha guardado.
+Tipo: Pantalla completa (scrolleable)
+Componentes:
+  - BHI, BCI, BPI: Botones principales
+  - BMsI, BOI: Botones Opciones
+  - CT1: Contenedor
+  - BS2#1, BS2#2, BS3#1, BS3#2: Botones Secundarios
+  - PES2: 2 Pestañas
+  - VIP1: Ventana Información
+Transiciones:
+  → V24 (seleccionar y usar)
+  → V25 (ver detalle)
+  → V21 (atrás/home)
+  → V27 (transacciones)
+  → V40 (actividades)
+Condición: Visualiza según V23(CT1) - tipo de contenido seleccionado
+
+V35(CUP) - PUNTOS Y REWARDS
+---------------------------------------
+Descripción: Pantalla de puntos y recompensas acumuladas en los cupones.
+Tipo: Pantalla completa
+Componentes:
+  - BHI, BCI, BPI: Botones
+  - BMsI, BOI: Botones Opciones
+  - BCrI, BGI: Botones Crear/General
+  - VIP1: Ventana Información
+Transiciones:
+  → V36(PUN) (detalle de puntos)
+  → V27(REC) (recibidos)
+  → V34(REC/ENV) (historial)
+  → V21 (atrás)
+  → V40(ACT) (actividades)
+Información mostrada: Saldo de puntos, historial de puntos, cupones redimibles
+
+================================================================================
+4. FLUJO DE TRANSACCIONES / HISTORIAL
+================================================================================
+
+V26 - HISTORIAL GENERAL
+---------------------------------------
+Descripción: Vista general del historial de transacciones/interacciones.
+Tipo: Pantalla completa
+Componentes:
+  - BHI: Botón Historia
+  - BCA: Botón Centro
+  - BPI: Botón Pie
+  - BS1: Botón Secundario
+Transiciones:
+  → V21 (atrás)
+  → V22 (siguiente)
+  → V27(REC) (recibidos)
+  → V27(ENV) (enviados)
+  → V40(ACT) (actividades)
+Opciones: Recibidas / Enviadas / Solicitudes
+
+V27(REC) - HISTORIAL RECIBIDO
+---------------------------------------
+Descripción: Cupones/puntos que has recibido de otros usuarios o negociaciones.
+Tipo: Pantalla completa (scrolleable)
+Componentes:
+  - BHI, BCI, BPI: Botones
+  - BMsI, BOI: Botones Opciones
+  - BCrI, BGI: Botones Crear/General
+  - PES.2: 2 Pestañas
+  - VIP1: Ventana Información
+  - BS2, BS3: Botones Secundarios
+Transiciones:
+  → V21 (atrás/home)
+  → V22 (búsqueda)
+  → V27(ENV) (enviados)
+  → V28 (abrir lector QR / popup QR)
+  → V34(REC) (detalle)
+Funcionalidades:
+  - Listar cupones recibidos
+  - Ver detalles de cada cupón
+  - Opción de usar/canjear
+
+V27(ENV) - HISTORIAL ENVIADO
+---------------------------------------
+Descripción: Cupones/puntos que has enviado a otros usuarios.
+Tipo: Pantalla completa (scrolleable)
+Componentes: Similares a V27(REC)
+Transiciones:
+  → V21 (atrás)
+  → V22 (búsqueda)
+  → V27(REC) (recibidos)
+  → V28 (abrir lector QR)
+  → V34(ENV) (detalle)
+Pestaña de V42: Indica acceso a configuración
+
+V28(ENV) - CÓDIGO QR ENVIADO / ESCÁNER
+---------------------------------------
+Descripción: Modal/popup para escanear código QR al recibir cupones.
+  Muestra código QR de transacción y permite escaneo.
+Tipo: Modal/Popup o Pantalla
+Componentes:
+  - BHI, BBI: Botones
+  - BPI, BMsI, BOI: Botones Opciones
+  - BCrI, BGI: Botones Crear/General
+  - PES.1: 1 Pestaña
+  - VIP1: Ventana Información
+  - BS2, BS3: Botones Secundarios
+Transiciones:
+  → V21 (atrás)
+  → V22 (búsqueda)
+  → V27(REC) (recibidos)
+  → Lector QR integrado
+Funcionalidades:
+  - Escaneo de código QR
+  - Captura de código QR
+  - Confirmación de transacción
+
+V34(REC) - DETALLE DE CUPÓN RECIBIDO
+---------------------------------------
+Descripción: Detalles completos de un cupón específico recibido.
+Tipo: Pantalla de detalle
+Transiciones:
+  → V27(REC) (atrás)
+  → V35(CUP) (ver puntos)
+  → V21 (home)
+
+V34(ENV) - DETALLE DE CUPÓN ENVIADO
+---------------------------------------
+Descripción: Detalles completos de un cupón que enviaste.
+Tipo: Pantalla de detalle
+Transiciones:
+  → V27(ENV) (atrás)
+  → V28 (código QR)
+  → V21 (home)
+
+================================================================================
+5. FLUJO DE MENSAJES Y COMUNICACIÓN
+================================================================================
+
+V19(MSJ) - MENSAJES / NOTIFICACIONES
+---------------------------------------
+Descripción: Centro de mensajes y notificaciones.
+Tipo: Pantalla completa
+Componentes: No especificado en planos (referenciado como V19(MSJ))
+Transiciones:
+  ← Accesible desde V21, V22, V23, V24, V25, V26, V27, V28
+  ← Accesible desde tab de mensajes en menú
+Funcionalidades:
+  - Ver mensajes de usuarios
+  - Ver notificaciones del sistema
+  - Solicitudes pendientes
+
+================================================================================
+6. FLUJO DE ACTIVIDADES Y ACCIONES
+================================================================================
+
+V40(ACT) - PANEL DE ACTIVIDADES
+---------------------------------------
+Descripción: Panel principal de acciones y actividades del usuario.
+  Muestra acciones recientes, notificaciones, estado.
+Tipo: Pantalla completa
+Componentes:
+  - MEN: Menú integrado
+  - VAL: Validación de elementos
+  - PRIV: Privacidad/Visibilidad
+  - SIG: Navegación siguiente
+Transiciones:
+  ← Accesible desde múltiples pantallas
+  → V41(ACT) (sub-actividades)
+  → V42(ACT) (más actividades)
+Pestaña: V40 (con opciones de menú)
+
+V41(ACT) / V41(SIG) / V41(SEG) - SUBACTIVIDADES
+---------------------------------------
+Descripción: Sub-vistas de actividades organizadas por categoría.
+Contextos:
+  - V41(SIG): Siguiendo/Seguidos
+  - V41(SEG): Seguridad
+  - V41(ACT): General
+Componentes:
+  - BS3#1, BS2(X): Botones para navegación
+Transiciones:
+  → V21 (atrás/home)
+  → V22 (búsqueda)
+  → V27(REC) (transacciones)
+
+V42 - CONFIGURACIÓN DE ACTIVIDADES
+---------------------------------------
+Descripción: Configuración de qué actividades mostrar/notificar.
+Referencia: Accesible desde V40 y V27(ENV)
+Transiciones:
+  → V37 (configuración principal)
+  → V36 (puntos)
+  → V27(ENV) (transacciones)
+
+================================================================================
+7. FLUJO DE PERFIL Y CONFIGURACIÓN
+================================================================================
+
+V37 - PERFIL / CONFIGURACIÓN
+---------------------------------------
+Descripción: Pantalla de perfil del usuario y configuraciones.
+Contextos detectados:
+  - CON: Configuración
+  - PER: Perfil Personal
+  - CUP: Mis Cupones (acceso desde aquí)
+Tipo: Pantalla completa
+Componentes: No especificados en detalle
+Transiciones:
+  ← Accesible desde V42, V40, V27
+  → V36 (puntos)
+Secciones probables:
+  - Información personal
+  - Preferencias
+  - Privacidad/Seguridad
+  - Notificaciones
+  - Cuentas vinculadas
+
+V16(X) - CERRAR / RETORNO
+---------------------------------------
+Descripción: Botón/Función para cerrar modales, popups o retornar.
+Tipo: Componente de navegación
+Contextos:
+  - X: Cerrar modal
+  - ACT: En contexto de actividades
+  - MEN: En menú
+  - VAL: En validación
+Transiciones:
+  → Retorna a la pantalla anterior
+  → Cierra modales/popups
+
+V16(ACT) - BOTÓN ACCIONES EN MENÚ
+---------------------------------------
+Descripción: Botón que abre panel de acciones desde el menú.
+Ubicación: Aparece en V21, V22, V27
+Transiciones:
+  → V40(ACT) (abre panel de actividades)
+
+V16(MEN) / V16(PRO) - MENÚ Y PERFIL
+---------------------------------------
+Descripción: Navegación a menú principal y perfil.
+Ubicación: Barra inferior o superior
+Transiciones:
+  → V40(MEN) (menú)
+  → V37(PRO) (perfil)
+  → V16(X) (cerrar)
+
+================================================================================
+8. FLUJO DE SEGURIDAD Y VALIDACIÓN
+================================================================================
+
+V17(SEG) - PANTALLA DE SEGURIDAD / VERIFICACIÓN
+---------------------------------------
+Descripción: Verificación de seguridad, autenticación.
+Tipo: Pantalla de seguridad
+Contextos:
+  - SEG: Seguridad
+  - SIG: Siguiente paso
+Transiciones:
+  → Pantallas posteriores tras validación
+  → V41(SEG) (detalles de seguridad)
+
+V40(VAL) - VALIDACIÓN
+---------------------------------------
+Descripción: Pantalla/Componente de validación de acciones.
+Tipo: Elemento/Pantalla
+Ubicación: En V16, V40
+Funcionalidad: Validar acciones sensibles
+
+================================================================================
+9. FLUJO DE GAMIFICACIÓN Y SUSCRIPCIÓN
+================================================================================
+
+V46(GRA) - GAMIFICACIÓN / LOGROS
+---------------------------------------
+Descripción: Sistema de gamificación, logros, desafíos.
+Contextos:
+  - GRA: Gamificación
+  - SUS: Suscripción
+Tipo: Pantalla de logros
+Funcionalidad: Mostrar logros, desafíos, badges
+
+================================================================================
+10. FLUJOS DE AUTENTICACIÓN Y ONBOARDING
+================================================================================
+
+V1-V20 - FLUJO DE AUTENTICACIÓN (Sospechado)
+---------------------------------------
+Descripción: Pantallas V1 a V20 presumiblemente forman el flujo de onboarding,
+  autenticación, y primeras pantallas del sistema.
+Pantallas en rango: V1, V2, V3, V4, V5, V6, V7, V8, V9, V9.8, V10, 
+  V11, V12, V13, V14, V15, V16, V17, V18, V20
+  
+Probable orden:
+  V1 → V2 → ... → V20 → V21 (Home)
+
+Pantallas especiales:
+  V16: Elemento de menú/cerrar (usado en múltiples contextos)
+  V17: Seguridad/verificación
+  V18: (Botón X/Cerrar)
+  V20: (Botón X/Cerrar)
+
+================================================================================
+11. PANTALLAS AVANZADAS / RESERVADAS
+================================================================================
+
+V61, V71, V101, V141, V211, V301
+---------------------------------------
+Descripción: Pantallas especiales con numeración reservada (probablemente 
+  para futuras extensiones o funcionalidades avanzadas).
+  
+Numeración de posición:
+  V61 → Posición especial 1
+  V71 → Posición especial 2
+  V101 → Posición especial 3
+  V141 → Posición especial 4
+  V211 → Posición especial 5
+  V301 → Posición especial 6
+
+================================================================================
+12. COMPONENTES UI GLOBALES
+================================================================================
+
+Botones Principales (BX):
+  - BBI: Botón Inicio/Top
+  - BCI: Botón Centro
+  - BPI: Botón Pie/Bottom
+  - BMsI: Botón Mensajes
+  - BOI: Botón Opciones
+  - BCrI: Botón Crear
+  - BGI: Botón General
+  - BHI: Botón Historia
+  - BR: Botón Regresar
+  - BCA: Botón Centro Arriba
+
+Botones Secundarios (BS):
+  - BS1, BS2, BS3: Variaciones de botones secundarios
+  - BS#1, BS#2: Múltiples instancias del mismo botón
+
+Contenedores (CT):
+  - CT1: Contenedor principal
+  - CT2: Contenedor secundario
+
+Ventanas especiales (V):
+  - VIR: Ventana de Respuesta IA (3 instancias en V21)
+  - VIP: Ventana de Información Pop-up (4 instancias)
+  - VIQR: Código QR (360x369px)
+
+Pestañas/Tabs (PES):
+  - PES.1, PES.2: Número de pestañas
+  - PES2: Específicamente 2 pestañas
+
+Modales/Popups (POP):
+  - POP.1, POP.2: Múltiples popups
+
+Entrada de datos (E):
+  - E: Campo entrada (máx. 14 o 200 caracteres según contexto)
+
+================================================================================
+13. RESUMEN DE FLUJOS PRINCIPALES
+================================================================================
+
+FLUJO 1: DESCUBRIMIENTO
+  V1-V20 → V21 (Home) → V22 (Buscar) → V23(CUE) (Resultados)
+  → V24 (Editar) → V25 (QR) → V36 (Guardar?)
+
+FLUJO 2: MIS CUPONES
+  V21 (Home) → V23(CUP) (Mis Cupones) → V24/V25 (Usar)
+  → V28 (QR Scanner) → V34(REC/ENV) (Detalles)
+
+FLUJO 3: HISTORIAL
+  V21 → V26 (Historial) → V27(REC/ENV) (Recibidos/Enviados)
+  → V34 (Detalles) → V28 (QR)
+
+FLUJO 4: PUNTOS
+  V23(CUP) → V35(CUP) (Puntos) → V36(PUN) (Detalle Puntos)
+
+FLUJO 5: ACTIVIDADES
+  V21 / V23 / V27 → V40(ACT) → V41/V42 (Sub-actividades)
+
+FLUJO 6: PERFIL
+  V40(ACT) / V27(ENV) → V42 → V37 (Perfil/Config)
+
+FLUJO 7: NAVEGACIÓN GLOBAL
+  Desde cualquier V → V16(X) (Cerrar)
+  Desde cualquier V → V19(MSJ) (Mensajes)
+  Desde cualquier V → V40 / V37 / V16 (Menu/Perfil)
+
+================================================================================
+14. MATRIZ DE TRANSICIONES RÁPIDA
+================================================================================
+
+V21 → V22, V23, V27, V40, V19, V16(X)
+V22 → V23(CUE), V21
+V23(CUE) → V24, V25, V21, V27, V40, V19, V16(X)
+V23(CUP) → V24, V25, V21, V27, V40, V19, V16(X)
+V24 → V25, V21, V27, V40
+V25 → V36[V25.POP], V21, V27, V40
+V26 → V21, V22, V27(REC), V27(ENV), V40
+V27(REC) → V21, V22, V27(ENV), V28, V34(REC)
+V27(ENV) → V21, V22, V27(REC), V28, V34(ENV)
+V28 → V21, V22, V27, [QR Scanner]
+V34 → V27/V35/V21
+V35(CUP) → V36(PUN), V27(REC), V34, V21, V40
+V36 → V35, V25
+V37 → V36, V42, V27, V40
+V40 → V41, V42, V21, V22, V27, V37
+V41 → V21, V22, V27(REC)
+
+================================================================================
+15. NOTAS ESPECIALES
+================================================================================
+
+- La IA Gemini se integra en V22 (Búsqueda) y se menciona en V21
+- Los códigos QR (VIQR) se generan al usar cupones en V25
+- Hay soporte para escaneo/lectura de códigos QR en V28
+- Sistema de puntos y recompensas completo en V35/V36
+- Privacidad integrada en V40(PRIV)
+- Seguridad integrada en V41(SEG), V17
+- Sistema de gamificación en V46
+- Múltiples contextos para la misma pantalla (Ej: V40(ACT), V40(MEN), V40(VAL))
+- Pestañas dinámicas en varias vistas (V21, V23, V25, V27)
+- Modales/Popups para acciones no destructivas (V36)
+
+================================================================================

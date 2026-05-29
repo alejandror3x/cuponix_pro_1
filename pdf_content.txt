@@ -1,0 +1,2592 @@
+
+
+================================================================================
+PDF: Cuponix Planos finales def25 p2.pdf
+================================================================================
+
+
+--- Página 1 ---
+Para ti Siguiendo
+BUSCAR
+BUSCARSalud Tecnología MaquillajeArte Deporte Ropa Restaurante
+Pizza Sushi Artesania BaresGym Vegetariano MascotasMúsica Coctel Hamburguesa CineVentana Recomendaciones; 
+grande(330x330px, R3),
+ peq(165x165px, R3)
+Ventana respuesta de IA
+dimensiones: 
+660 x 480 px[VIR]
+Cuentas CuponesENVIAR
+@EjemploTexto3EjemploTexto3Foto Per/f_il 
+pequeño
+120x120
+@EjemploTexto3EjemploTexto3Foto Per/f_il 
+pequeño
+120x120V21V22V23(CUE)
+1280 px720 px
+4
+87
+9
+10
+1112
+1365 4
+611 12
+7
+985 4 6
+7 8
+9
+10
+11 125
+1 2 1 2 3 1 2 3 3
+V21.BBI=
+V21.BCI=
+V21.BPI=
+V21.BMsI=
+V21.BOI=
+V21.VIR#1=
+V21.VIR#2=
+V21.VIR#3=
+V21.PES2=
+V21.VIP1#1=
+V21.BS3#1=
+V21.BS2#1=
+V21.BS3#2=V22
+V27
+V40(ACT)
+V19(MSJ)
+PESTAÑA V40
+SCROLL IZQ:ZOOM VIR IZQ
+SCROLL DER:ZOOM VIR DER
+V16(X)
+V21(SIG)
+V16(X)
+AGREGAR A V40(ACT)
+AGREGAR A V35(CUP)
+V24V21
+V27
+V40
+V19(MSJ)
+PESTAÑA V40
+ESCRIBIR 14O CARACTÉRES
+V23
+SELECCIONAR 1 O +
+V23V21
+V27
+V40
+V22
+V19(MSJ)
+PESTAÑA V40
+ESCRBIR
+V23(CUE)[ACTUALIZAR BUSQUEDA)]
+V23(CUP)
+V16(X)
+AÑADIR A V40(SIG)
+OCULTAR1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13V24.BHI=
+V24.BCA=
+V24.BPI=
+V24.BMsI=
+V24.BOI=
+V24.CT2=
+V24.BS1=
+V24.E=
+V24.BS1=V25.BHI=
+V25.BCI=
+V25.BPI=
+V25.BR=
+V25.BMsI=
+V25.BOI=
+V25.CT1=
+V25.BS2#1=
+V25.PES2=
+V25.VIP1=
+V25.BS2#2=
+V25.BS1#1=1
+2
+3
+4
+5
+6
+7
+8
+91
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+Permitir Ahora noCuponix desea acceder a
+tu ubicaciónMedidas
+Función/Ubicación
+Nombre/Características
+Resultado
+Diseño
+60px
+105px
+120px30px
+22,5px
+22,5px
+22,5px
+22,5px
+22,5px
+22,5px22,5px
+30px
+30px
+30px
+30px30px
+10Ventana de menú principal.
+De arriba a abajo, la primera sección ofrece los negocios 
+ó cuentas destacadas recomendadas por el Cuponix.
+En segunda instancia, ofrece cupones de cuentas que
+han sido recomendados para ti según tus gustos y cuentas 
+que ya sigues, y una pestaña donde ver los cupones creados
+y compartidos por cuentas que tu ya sigues. Ventana Buscador general.
+El buscador cuenta con IA (Gemini),
+También se puede buscar etiqueta/as.Ventana Resultado de Búsqueda. 
+Es el resultado en cuentas y cupónes de la 
+búsqueda que has accionado.
+¿Qué estás buscando?
+Busca por categoríasEjemploTexto3: 42 pt
+200 caractéres
+[CT2]Cuponix. Planos generales 2026. Propiedad intelectual de Alexis Ivan Salgado Duran.
+@EjemploTexto3EjemploTexto3Expira: x/x/x
+Usar Guardarxx%
+Descuento Compra mínima$xx,xx xx
+Recompenza
+@EjemploTexto3EjemploTexto3Expira: x/x/x
+Usar Guardarxx
+Recompenza140 caractéresLa IA te recomendará los mejores resultados
+--- Página 2 ---
+Cuentas CuponesENVIAR
+xUsar Cupón
+¡Podrás canjear estos puntos por
+más productos de este negocio!
+¿Deseas añadir un código al cupón?EjemploTexto3
+@EjemploTexto3
+Recompenza:
+USARxx%
+Descuento
+Compra mínima$xx,xx
+EN OTRO MOMENTOMuestra este código en:
+EjemploTexto3
+@EjemploTexto3
+xx%
+Compra mínima Descuento$xx,xx x
+Recompenza
+Expira: xx/xx/xxV23(CUP) V24 V25V22
+V27
+V40(ACT)
+V19(MSJ)
+PESTAÑA V40
+SCROLL IZQ:ZOOM VIR IZQ
+SCROLL DER:ZOOM VIR DER
+V16(X)
+V21(SIG)
+V16(X)
+AGREGAR A V40(ACT)
+AGREGAR A V35(CUP)
+V24
+2 1 3 2 1 345 6
+4
+6 4
+5
+67
+8
+9
+10 11 125
+V21
+V27
+V40(ACT)
+V19(MSJ)
+PESTAÑA V40
+ESCRBIR
+V23(CUP)[SEGUN 6.V23.(CT1)]
+V23(CUE)
+V16(X)
+AÑADIR A V40(ACT)
+AÑADIR A V36
+V24V21
+V27
+V40(ACT)
+V(X)
+ESCRIBIR
+V25V23(CUP).BHI=
+V23(CUP).BCI=
+V23(CUP.BPI=
+V23(CUP.BMsI=
+V23(CUP.BOI=
+V23(CUP.CT1=
+V23(CUP.BS2#1=
+V23(CUP.PES2=
+V23(CUP.VIP1=
+V23(CUP.BS3#1=
+V23(CUP.BS2#2
+V23(CUP.BS3#2=V24.BHI=
+V24.BCI=
+V24.BPI=
+V24.BR=
+V24.CT1=
+V24.BS1=1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+121
+2
+3
+4
+5
+6V21
+V27
+V40(ACT)
+V36[V25.POP] 
+AÑADIR A V36
+V36V25.BHI=
+V25.BCI=
+V25.BPI=
+V25.BS1=
+V25.POP.1=
+V25.POP.2=1
+2
+3
+4
+5
+6
+Guardar Ahora noDeseas Guardar este
+Cupón para otro momento?Medidas
+Función/Ubicación
+Nombre/Características
+Resultado
+Diseño
+22,5px
+22,5px
+120px
+22,5px22,5px30px 30px 30px 660px
+22,5px
+22,5px60px 60px
+130px
+30px
+30px
+30px30px30px30px 30px
+60px
+30px
+30px
+30px
+30px
+30px155px30px
+30px
+30px80px
+65px195px 195px
+360px
+105px30px
+30px
+1 2 3 11115 px30 px
+60 px
+11Otra pestaña de la V23.
+Muestra el resultado en cupónes de la busqueda realizadaVentana Usar Cupón.
+Detalla el cupón que solicitas usar, puedes incluír 
+un código especial, al usar se generará un código
+QR que será almacenado en V28(ENV)Ventana de código QR de transacción.
+Almacenado en V28(ENV). se debe mostrar al 
+propietario de la cuenta a la que se desea usar el cupón.
+@EjemploTexto3EjemploTexto3Expira: x/x/x
+Usar Guardarxx%
+Descuento Compra mínima$xx,xx xx
+Recompenza
+@EjemploTexto3EjemploTexto3Expira: x/x/x
+Usar Guardarxx
+Recompenza140 caractéresCódigoQR:
+(360x369px, R3)
+[VIQR]Cuponix. Planos generales 2026. Propiedad intelectual de Alexis Ivan Salgado Duran.Cuponix. Planos generales 2026. Propiedad intelectual de Alexis Ivan Salgado Duran.
+--- Página 3 ---
+ENTENDIDO¡Gracias por visitar!
+Resumen:
+Disfruta canjeando tus puntos
+por más productos o servicios
+en este mismo negocio.
+¡Esperamos que vuelvas pronto!EjemploTexto3
+@EjemploTexto3
+xx%
+Compra mínima Descuento$xx,xx
+RecompenzaxRecibidas EnviadasSolicitudes
+@EjemploTexto3EjemploTexto3 Solicitó Usar Puntos
+VER
+VER@EjemploTexto3EjemploTexto3 Solicitó Usar Cupón
+HISTORIALV26 V27(REC) V27(ENV)V21
+V27
+V40(ACT)
+V19(MSJ)
+PESTAÑA V40
+ESCRBIR
+V23(CUP)[SEGUN 6.V23.(CT1)]
+V23(CUE)
+V16(X)
+AÑADIR A V40(ACT)
+AÑADIR A V36
+V24
+V21
+V27
+V40(ACT)
+V27V26.BHI=
+V26.BCA=
+V26.BPI=
+V26.BS1=1
+2
+3
+4V21
+V22
+V40(ACT)
+V19(MSJ)
+PESTAÑA V42
+V37
+V36
+V27 (ENV)
+V16(X)
+V28
+ELIMINAR
+V34(REC)V27(REC).BHI=
+V27(REC).BCI=
+V27(REC).BPI=
+V27(REC).BMsI=
+V27(REC).BOI=
+V27(REC).BCrI=
+V27(REC).BGI=
+V27(REC).PES.2=
+V27(REC).VIP1=
+V27(REC).BS2=
+V27(REC).BS3=
+V27(REC).BS1=1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+124
+1 212
+93 1 2 34
+6 7 6 7
+8
+9
+10 115 4 5
+V21
+V22
+V40(ACT)
+V19(MSJ)
+PESTAÑA V42
+V37
+V36
+V27(REC)
+V16(X)
+V28
+ELIMINAR
+V34(ENV)V28(ENV).BHI=
+V28(ENV).BBI=
+V28(ENV).BPI=
+V28(ENV).BMsI=
+V28(ENV).BOI=
+V28(ENV).BCrI=
+V28(ENV).BGI=
+V28(ENV).PES.1=
+V28(ENV).VIP1=
+V28(ENV).BS2=
+V28(ENV).BS3=
+V28(ENV).BS1=1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+1230px
+60px
+30px
+30px30px 30px
+30px115px
+30px30px 30px 90px
+195px
+80px
+90px
+305px
+2 1 322,5px
+22,5px
+30px30px
+105px
+22,5px
+22,5px60px 60pxMedidas
+Función/Ubicación
+Nombre/Características
+Resultado
+Diseño
+12Ventana Gracias por visitar.
+Contiene resumen de transacción de cupón realizada. Ventada de solicitudes recibidas.
+se mostrarán todas las solicitudes que te hayan enviadoVentana de solicitudes enviadas.
+Se mostrarán las solicitudes de cupón que has
+enviado.Cuponix. Planos generales 2026. Propiedad intelectual de Alexis Ivan Salgado Duran.
+HISTORIALRecibidas EnviadasSolicitudes
+@EjemploTexto3EjemploTexto3 Solicitud de Puntos
+VER
+VER@EjemploTexto3EjemploTexto3 Solicitud de Cupón8
+9
+10
+12 HISTORIAL
+--- Página 4 ---
+V Alguien te envio una solicitud
+de canje de puntos
+Solicitud de Cupón
+¡Desea Usar tu Cupón!
+CONFIRMAREjemploTexto3
+@EjemploTexto3
+xx
+Recompenza:xx%
+Descuento
+Compra mínima$xx,xx
+Para confirmar, se abrirá tu lector 
+de QR para el código del solicitante.Para confirmar, se abrirá tu lector 
+de QR para el código del solicitante.Solicitud de Canje
+¡Desea Canjear sus puntos en tu producto!
+CONFIRMAREjemploTexto3
+@EjemploTexto3
+EjemploTexto4
+Ver
+Expira: xx/xx/xxV28 V29 V30
+6 7
+2 3 14 47 8
+5
+6 5
+V21
+V22
+V41
+V27(REC)
+ABRIR LECTOR QR/ POP V28
+ACCEDER A CÁMARA
+DENEGAR ACCESO A CÁMARAV29.BHI=
+V29.BBI=
+V29.BPI=
+V29.BR=
+V29.BS1=
+V29.POP1.1=
+V29.POP1.2=1
+2
+3
+4
+5
+6
+7V21
+V22
+V41(ACT)
+V27(REC)
+V16(MEN)(PRO)(X)
+ABRIR LECTOR QR/ POP V28
+ACCEDER A CÁMARA
+DENEGAR ACCESO A CÁMARAV33.BHI=
+V33.BBI=
+V33.BPI=
+V33.BR=
+V33.BS2=
+V33.BS1=
+V29.POP1.1=
+V29.POP1.2=1
+2
+3
+4
+5
+6
+7
+8Medidas
+Función/Ubicación
+Nombre/Características
+Resultado
+Diseño
+30px 30px
+30px
+30px30px
+60px
+30px
+30px
+30px
+30px
+30px
+30px105px65px195px30px
+60px
+30px
+30px
+30px
+30px
+30px
+30px
+30px
+30px195px
+80px 80px50px
+1 2 3290px
+1 2 31115 px
+13Ventana de solicitud de cupón.
+Se muestra un resúmen del cupon que has creado
+y solicitan usar y la cuenta que lo solicita, al confirmar
+se abre tu lector de código QR
+Aceptar Ahora no¿Autorizas a Cuponix a 
+acceder a tu cámara?
+Aceptar Ahora no¿Autorizas a Cuponix a 
+acceder a tu cámara?Cuponix. Planos generales 2026. Propiedad intelectual de Alexis Ivan Salgado Duran.
+Canjear Puntos
+¿Deseas añadir un código tu transacción?EjemploTexto3
+@EjemploTexto3
+CANJEARx
+EjemploTexto44
+5
+630px
+30px
+30px
+30px
+290px60px60px
+195px30px 30px
+30px30px
+V21
+V22
+V41(ACT)
+V16(MEN)(PRO)(X)
+ESCRIBIR
+V32V31.BHI=
+V31.BBI=
+V31.BPI=
+V31.BR=
+V31.CT1=
+V31.BS1=1
+2
+3
+4
+5
+6Ventana canjear puntos.
+Resumen de la transacción que vas a reaizar,
+se puede añadir un código. Al “CANJEAR”
+se abrirá un código QR que deberás mostrar
+al dueño de la cuenta a la que deseas hacer el canje.
+--- Página 5 ---
+V31 V32 V33
+2 3 1
+V21
+V22
+V41(ACT)
+V16(MEN)(PRO)(X)V32.BHI=
+V32.BBI=
+V32.BPI=
+V32.BS1=1
+2
+3
+4V21
+V22
+V41
+V27(ENV)V33.BHI=
+V33.BCI=
+V33.BPI=
+V33.BS1=1
+2
+3
+4V21
+V22
+V41(ACT
+V36(PUN)V34.BHI=
+V34.BBI=
+V34.BPI=
+V34.BS1=1
+2
+3
+430px
+30px385px
+30px
+30px30px
+30px
+30px
+30px
+30px60px
+195px
+ENTENDIDO¡Lo Sentimos!
+Parece que no tienes Puntos suficientes.
+Usa ó Comparte Cupónes para obtener
+más Puntos.
+460 pxMedidas
+Función/Ubicación
+Nombre/Características
+Resultado
+Diseño
+1 2 3360px1115 px660px30 px
+1 2 3
+14Ventana puntos insuficientes.
+Ventana código QR canjear puntos.
+Mostrar este código al usuario dueño de la cuenta
+a la que deseas canjear tus puntos por alguno
+de sus productos o servicios. Ventana gracias por canjear.
+Contiene resumen de transacción.
+Aparece despés de haber sido escaneado 
+el código QR.Cuponix. Planos generales 2026. Propiedad intelectual de Alexis Ivan Salgado Duran.
+EN OTRO MOMENTOMuestra este código en:
+EjemploTexto3
+@EjemploTexto3
+Para canjear tus Puntos por
+el Producto Selecionado.
+4CódigoQR:
+(360x369px, R3)
+[VIQR]30px
+30px
+30px
+30px
+30px
+30px
+30px60px
+60px60px
+195px30px 30px
+30px30px
+ENTENDIDO¡Gracias por visitar!
+Resumen:
+¡Esperamos que hayas disfritado!EjemploTexto3
+@EjemploTexto3
+EjemploTexto4
+4x
+--- Página 6 ---
+V34(REC) V34(ENV) V35(CUP)
+V21
+V22
+V41(ACT)
+V19(MSJ)
+PESTAÑA V41
+V36
+V27(REC)
+V34(ENV)
+V35(REC).POP1
+BORRAR HISTORIAL
+DESCARTAR POP1
+DESCARTAR REGISTRO V34(REC).BHI=
+V34(REC).BBI=
+V34(REC).BPI=
+V34(REC).BMsI=
+V34(REC).BOI=
+V34(REC).BCrI=
+V34(REC).BGI=
+V34(REC).PES.2=
+V34(REC).BS1=
+V34(REC).POP.1
+V34(REC).POP.2=
+V34(REC).BS3=1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12V21
+V22
+V41(ACT)
+V19(MSJ)
+PESTAÑA V40
+V36
+V27(REC)
+V34(REC)
+V34(ENV).POP1
+BORRAR HISTORIAL
+DESCARTAR POP1
+DESCARTAR REGISTROV34(REC).BHI=
+V34(REC).BBI=
+V34(REC).BPI=
+V34(REC).BMsI=
+V34(REC).BOI=
+V34(REC).BCrI=
+V34(REC).BGI=
+V34(REC).PES.2=
+V34(REC).BS1=
+V34(REC).POP.1
+V34(REC).POP.2=
+V34(REC).BS1.2=1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+Aceptar Ahora no¿Estás seguro de querer
+borrar tu Historial?
+Aceptar Ahora no¿Estás seguro de querer
+borrar tu Historial?
+10 11
+12 1210 11
+5Medidas
+Función/Ubicación
+Nombre/Características
+Resultado
+Diseño
+2 3 122,5px
+22,5px
+22,5px
+22,5px
+22,5px
+22,5px 22,5px105px
+105px
+90px22,5px 22,5px 22,5px 22,5px
+1 2 3 1 2 3
+15Ventana historial recibidos. Resumen de transacciones recibidas Ventana historial enviados. Resumen de cupónes
+y puntos usados. opción a borrar.
+Ventana de cupónes guardados.
+Se mostrarán los cupónes a los que les hayas 
+dado tap en “GUARDAR”Cuponix. Planos generales 2026. Propiedad intelectual de Alexis Ivan Salgado Duran.
+Historial
+Recibidos Enviados
+BORRAR TODO 94
+86 7
+@xxxCanje de Puntos xx/xx/xx
+xx:xxX
+xx/xx/xx
+@xUso de Cupón
+xx:xxxx%
+Compra mínima Descuento$xx,xx xx
+RecompenzaXHistorial
+Recibidos Enviados
+BORRAR TODO 986 74 5
+@xx
+x Canje de Puntos xx/xx/xx xx:xxX
+@xx
+xx Canjeó PuntosEn: x
+xx/xx/xx xx:xx
+@xx
+Uso de Cupónxx/xx/xx xx:xx
+xx%
+Compra mínima Descuento$xx,xx xx
+RecompenzaX
+xx/xx/xx@xx
+Usó un Cupón xx:xxxx%
+Compra mínima Descuento$xx,xx xx
+Recompenza
+V21
+V22
+V41(ACT)
+V19(MSJ)
+PESTAÑA V41
+V36v
+V27(REC)
+V16(X)
+AÑADIR A V41(ACT)
+V24
+ELIMINARV36.BHI=
+V36.BBI=
+V36.BPI=
+V36.BMsI=
+V36.BOI=
+V36.BCrI=
+V36.BBbI=
+V36.VIP1=
+V36.BS3#1=
+V36.BS3#2=
+V36.BS3#3=1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11105px
+90px
+30px
+30px22,5px
+22,5px30px 30px
+Guardados4
+6
+8
+10 9 11Cupones Puntos
+Usar X@EjemploTexto3EjemploTexto3Expira: x/x/xxx%
+Descuento Compra mínima$xx,xx xx
+Recompenza
+@EjemploTexto3EjemploTexto3Expira: x/x/xxx
+Recompenza140 caractéres
+Usar X7
+--- Página 7 ---
+Guardados Mis Cupones
+XX/XX/XX XX:XXxx%
+Compra mínima Descuento$xx,xx
+Recompenzax
+Por compartir: +X Expira: xx/xx/xxXV35(PUN) V36 V37(CON)
+V21
+V22
+V41(ACT)
+V19(MSJ)
+PESTAÑA V41
+V36
+V27(REC)
+V35(CUP)V27.BHI=
+V27.BCI=
+V27.BPI=
+V27.BMsI=
+V27.BOI=
+V27.BCrI=
+V27.BGI=
+V27.VIP1=1
+2
+3
+4
+5
+6
+7
+8411 12
+5
+6
+8
+1094 5
+6
+87 7
+V37.BHI=
+V37.BBI=
+V37.BPI=
+V37.BMsI=
+V37.BOI=
+V37.BGI=
+V37.BBbI=
+V37.BS3#1=
+V37.BS3#2=
+V37.BN=
+V37.POP.1=
+V37.POP.2=1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12V21
+V22
+V40 (ACT)
+V36
+V37(PER)
+0-100 IZQ-DER
+0,00-99,00 IZQ-DER
+0-999
+ESCRIBIR FECHA
+ESCRIBIR
+V38V38.BHI=
+V38.BBI=
+V38.BPI=
+V38.BR=
+V38.PES.2=
+V38.BaC=
+V38.BaC=
+V38.BaC=
+V38.CT1#1=
+V38.CT1#2=
+V38.BS1=1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+Aceptar Ahora no¿Estás seguro de querer
+borrar tu Cupón?Medidas
+Función/Ubicación
+Nombre/Características
+Resultado
+Diseño
+2 3 1105px
+22,5px
+22,5px22,5px 22,5px 22,5px 90px
+90px
+1 2 330px
+30px
+30px
+30px
+30px120px
+168px
+168px
+168px
+V21
+V22
+V41(ACT)
+V19(MSJ)
+PESTAÑA V41
+V35(CUP)
+V27(REC)
+COMPARTIR EN OTRA RED
+V36.POP
+V37
+ELIMINAR CUPON
+DESCARTAR POPVentana Billetera.
+En primera instancia, tiene las 3 pestañas principales;
+Crear, cupones guardados, y esta que es la billetera,
+en segundo, tiene el registro de todos los puntos dispnibles y usados
+en cada cuenta que sea el caso. 
+16Cupónes creados por ti. opción a crear más. Ventana crear cupón.
+Opciones de elegir el monto mínimo en dólares
+de consumo para que sea válido el cupón, 
+elegir el porcentaje de descuento 
+que tiene el consumidor en el monto total de su compra,
+cuántos puntos de recompenza tiene el consumidor por
+usar el cupón, y la fecha de expiración. (max 14 días)
+x4
+5
+6
+7
+38
+CREARAñadir código (opcional)Fecha de Expiración:
+9
+10
+11Puntos a ganar
+(opcional)xx%
+Descuento
+$xx,xx
+Consumo
+xConsumo PersonalizadoCrear cupón
+1 2Cuponix. Planos generales 2026. Propiedad intelectual de Alexis Ivan Salgado Duran.
+Cupones Puntos
+@EjemploTexto3EjemploTexto3Foto Per/f_il 
+pequeño
+120x120 Disponiblesx
+Usadasx
+@EjemploTexto3EjemploTexto3Foto Per/f_il 
+pequeño
+120x120 Disponiblesx
+Usadasx
+--- Página 8 ---
+V21
+V22
+V40 (ACT)
+V36
+V37(PER)
+0-100 IZQ-DER
+0,00-99,00 IZQ-DER
+0-999
+ESCRIBIR FECHA
+ESCRIBIR
+V38
+V21
+V22
+V40(ACT)
+V36
+V37(CUP)
+ESCRIBIR 140 CARACTÉRES
+0-999
+ESCRIBIR FECHA
+ESCRIBIR
+V39V38.BHI=
+V38.BBI=
+V38.BPI=
+V38.BR=
+V39.PES.2=
+V38.CT2=
+V38.BaC=
+V38.CT1#1=
+V38.CT1#2=
+V38.BS1=1
+2
+3
+4
+5
+6
+7
+8
+9
+10V21
+V22
+V41(ACT)
+V19(MSJ)
+PESTAÑA V41
+V35(CUP)
+V27(REC)
+COMPARTIR EN OTRA RED
+V36.POP
+V37
+ELIMINAR CUPON
+DESCARTAR POPMedidas
+Función/Ubicación
+Nombre/Características
+Resultado
+Diseño
+¡Cupón Listo!
+Creación: XX:XX   XX/XX/XXEjemploTexto3
+@EjemploTexto3
+Expiración: XX/XX/XX
+ENTENDIDOxx%
+Descuento
+Compra mínima$xx,xxResumen:
+x
+RecompenzaV38
+4
+V21
+V22
+V40(ACT)
+V36V39.BHI=
+V39.BBI=
+V39.BPI=
+V39.BS1=1
+2
+3
+430px
+30px
+30px
+30px
+30px
+30px
+30px
+30px
+30px
+30px
+30px
+30px60px
+195px
+80px
+80px65px
+2 3 130px 30px
+30px30pxVentana cupón listo.
+Resumen del Cupón que creaste y que se 
+mostrará en tus Actividades de perfil
+17200 caractéres
+200 caractéres¡Cupón Listo!
+Creación: XX:XX   XX/XX/XXEjemploTexto3
+@EjemploTexto3
+Expiración: XX/XX/XX
+ENTENDIDOResumen:
+x
+RecompenzaV39
+4
+V21
+V22
+V40(ACT)
+V36V39.BHI=
+V39.BBI=
+V39.BPI=
+V39.BS1=1
+2
+3
+430px
+30px
+30px
+30px
+30px
+30px
+30px
+30px
+30px
+30px
+30px60px
+195px
+80px
+2 3 130px 30px
+30px30pxVentana cupón listo.
+Resumen del Cupón que creaste y que se 
+mostrará en tus Actividades de perfil
+30px
+30px
+30px
+30px
+30px120px
+168px
+CREARAñadir código (opcional)Fecha de Expiración:
+8
+9
+10Puntos a ganar
+(opcional)xConsumo PersonalizadoCrear cupón
+1 2¿De qué se trata tu promoción?V37(PER)
+Ventana crear cupón.
+Opción de escribir de qué se trata la
+promoción que deseas crear, 
+elegir su valor en puntos si lo deseas,
+un código especial
+y la fecha de expiración. (max 14 días)
+34
+5
+6
+7Cuponix. Planos generales 2026. Propiedad intelectual de Alexis Ivan Salgado Duran.
+EntendidoDisfruta de crear cupones
+y puntos ilimitados por
+tres meses!
+Luego suscríbete para
+crear más.
+En V37(CON)/F11 & V37(PER)/F10
+SOLO si no está suscrito. 
+--- Página 9 ---
+V21
+V22
+V40(ACT)
+V36
+V37(CUP)
+ESCRIBIR 140 CARACTÉRES
+0-999
+ESCRIBIR FECHA
+ESCRIBIR
+V39Medidas
+Función/Ubicación
+Nombre/Características
+Resultado
+DiseñoEditar Per/f_il
+Editar Cuenta
+Bloqueos
+Suscripción
+Permisos
+Términos y Condiciones
+Ayuda
+Cerrar SesiónCon/f_iguración
+V21
+V22
+V27(REC)
+V(X)
+PESTAÑA V40
+AMPLIAR FOTO PERFIL
+V41(SEG) 
+V41(SIG)
+V40(MEN) 
+V40(VAL)
+V19(MSJ)V43.BHI=
+V43.BBI=
+V43.BCI=
+V43.BR=
+V43.BCO=
+V43.VIP2=
+V43.T2#1=
+V43.T2#2=
+V43.BMI=
+V43.BVI=
+V43.BMI=1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11x@x
+SeguidoresxSeguidosxFoto Per/f_il 
+grande
+270 x 270 px
+200 caractéres45 11
+6
+7 8
+9 10Intereses:
+X X X X
+1 2 330px 30px 30px
+105px
+105px60 px
+22,5px
+30px
+30px
+30px
+30px
+30px
+30px30pxV40
+Ventana Perfil propio.
+Contiene funciones
+básicas de perfil, junto
+con las 3 pestañas generales
+de perfil, “ACTIVIDAD”,”MENÚ”,
+“VALORACIONES” Se mostrará
+los cupónes que hatas creado.V41(SIG)
+1 2 36Seguidos Seguidores@x 4
+@EjemploTexto3EjemploTexto3Foto Per/f_il 
+pequeño
+120x120
+Repetición Scroll Abajo
+Si NoDeseas eliminar 
+este Seguidor?
+V41.(SIG).BHI=
+V41.(SIG).BBI=
+V41.(SIG).BCI=
+V41.(SIG).BR=
+V41.(SIG).PES1.2=
+V41.(SIG).VIP2(X)=
+V41.(SIG).BS3#1=V21
+V22
+V27(REC)
+V40ACT)
+V41 (SEG)
+V16(ACT)(X)
+ELIMINARVentana Seguidos.
+Contiene cuentas que hemos dado tap en “SEGUIR”V41(SEG)
+30px
+30px
+30px
+30px
+30px
+30px
+30px
+30px
+30px
+30px
+30px
+30px60px
+195px
+80px
+80px65px30px 30px
+30px30px
+5
+674
+Seguidos Seguidores@x
+@EjemploTexto3EjemploTexto3Foto Per/f_il 
+pequeño
+120x120
+Repetición Scroll Abajo
+(AÑADIR)(V17)
+1 2 3
+V41.(SEG).BHI=
+V41.(SEG).BBI=
+V41.(SEG).BCI=
+V41.(SEG).BR=
+V41.(SEG).PES1.2=
+V41.(SEG).VIP2(X)=
+V41.(SEG).BS2(X)=V21
+V22
+V27(REC)
+V40(ACT)
+V41(SIG)
+V16(X)
+ELIMINAR1
+2
+3
+4
+5
+6
+7Ventana de seguidores.
+muestra las cuentas que han dado tap en “SEGUIR”
+en tu cuenta. opción a eliminar.
+185
+7Cuponix. Planos generales 2026. Propiedad intelectual de Alexis Ivan Salgado Duran.
+1
+2
+3
+4
+5
+6
+7
+
+================================================================================
+PDF: Cuponix planos finales def26 p1.pdf
+================================================================================
+
+
+--- Página 1 ---
+Permitir Ahora noCuponix desea acceder
+a tu ubicación
+Permitir Ahora noCuponix desea enviarte
+notificaciones.
+1280 px720 px
+An 200
+x Al 200 px
+centrado
+¿Deseas saber cómo funciona?
+TOURComienza a disfrutar
+de grandes ofertas cerca tuyo
+¡Totalmente Gratis! ¿Aún no tienes una cuenta?
+REGISTRATE
+INICIOREGISTRATEVentana “Pop Up” centrada #1
+Ventana “Pop Up” centrada #2(Animación de 9 segundos
+informativa y explicativa
+respecto al funcionamiento
+de esta App.)
+60px60px
+120px
+120px60px
+INICIAR SESIÓN
+¿Necesitas ayuda?30px
+30px
+30px
+30px
+60px30px30px
+30pxV1 V2 V3
+11
+22
+33
+44
+5
+6
+V1.POP#1.1=
+V1.POP#1.2=
+V1.POP#2.1=
+V1.POP#2.2=ACTIVAR NOTIFICACIONES
+NO ACTIVAR NOTIFICACIONES
+PERMITIR UBICACION
+NO PERMITIR UBICACION1
+2
+3
+4V3.BS1#1=
+V3.BS3#1=V8
+V21
+2V2.CT1#1=
+V2.CT1#2=
+V2.BS1#1=
+V2.T2#1=
+V2.BS1#2=
+V2.BS3#1=ESCRIBIR
+ESCRIBIR
+V21
+V4
+V8
+V31
+2
+3
+4
+5
+61
+2Medidas
+Función/Ubicación
+Nombre/Características
+Resultado
+Diseño
+Ventana de Iniciación/arranque. 
+Abre automáticamente 2 POP Ventana de Inicio.
+Se puede iniciar sesión. crear una cuenta,
+ó recuperar datos olvidados. Ventana Explicativa.
+Cómo funciona esta app. 
+1Cuponix. Planos generales 2026. Propiedad intelectual de Alexis Ivan Salgado Duran.
+--- Página 2 ---
+ENVIAR
+PROBAR OTRA FORMA INICIOENVIAR VOLVER A ENVIAREscribe tu correo, enviaremos
+un enlace de recuperación.
+¿No recuerdas tu correo?¿Olvidaste tus datos?
+¡No hay problema!¡Casi listo!
+Por favor ingresa a tu correo,
+hemos enviado un enlace de
+recuperación. 
+¿No has recibido el correo?720 px
+1280 px
+60px60px
+60px
+60px
+60px
+60px
+135px30px30px
+30pxIngresa tu número de 
+teléfono, enviaremos
+un SMS con un código 
+de recuperación. Por favor, ingresa tu 
+nombre de Usuario.60pxV4 V5 V6
+V4.BR=
+V4.CT1#1=
+V4.BS3#1=
+V4.BS1#1=V2
+ESCRIBIR
+V5
+V61
+2
+3
+4V5.BS1=
+V5.BS2=V4
+V21
+2V6.BR=
+V6.CT1#1=
+V6.CT1#2=
+V6.BS3#1=V4
+ESCRIBIR
+ESCRIBIR
+V71
+2
+3
+41 1
+2
+12
+3
+43
+2 4Medidas
+Función/Ubicación
+Nombre/Características
+Resultado
+Diseño
+2Ventana de recuperación de cuenta.
+recupera vía enlace en Mail.Eviado los datos, se envía un Mail
+con un enlace de verificación de
+propiedad.En caso de no tener acceso a Mail,
+la alternativa es número de teléfono
+registrado previamente.Cuponix. Planos generales 2026. Propiedad intelectual de Alexis Ivan Salgado Duran.
+--- Página 3 ---
+60px
+INGRESAR
+INICIOPor favor ingresa a tu buzón de,
+SMS, hemos enviado un código
+de recuperación. ¡Casi listo!720 px
+1280 pxRegistrar Cuenta Editar Perfil
+Nombre
+Usuario
+Correo Electrónico
+Contraseña
+Repetir Contraseña
+Número Telefónico150px 150px
+Terminos y Condiciones.
+AceptarCuenta Privada
+SIGUIENTE SIGUIENTEBiografía (Opcional)
+(Opcional)Intereses (Opcional)
+Elige intereses que te identifiquen:30px30px
+30px
+30px
+60px200 caractéres
+Salud Tecnología MaquillajeArte Deporte Ropa Restaurante
+Pizza Sushi Artesania BaresGym Vegetariano Mascotas
+Bicicleta Dulces InternacionalMúsica Coctel Hamburguesa CineMostrar intereses 
+en perfil.V7 V8V9
+V7.BR=
+V7.CT1#1=
+V7.BS1#1=
+V7.BS3#1=V6
+ESCRIBIR
+V21
+V21
+2
+3
+41
+2
+3
+4
+V8.BR=
+V8.CA#1=
+V8.CT1#1=
+V8.CT1#2=
+V8.CT1#3=
+V8.CT1#4=
+V8.CT1#5=
+V8.CT1#6=
+V8.T3#1=
+V8.CA#2=
+V8.BS1#1=V2 / V3
+[V40(PRIV)]
+ESCRIBIR
+ESCRIBIR
+ESCRIBIR
+ESCRIBIR
+ESCRIBIR
+ESCRIBIR
+V.TERMINOS
+CONFIRMAR 9.
+V9(SOLO SI F10 ES V)1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+111
+2 3
+4
+5
+6
+7
+8
+9
+10
+11
+V9.BR=
+V9.ViP1=
+V9.POP#1.1=
+V9.POP#1.2=
+V9.CT2#1=
+V9.CT1#1=
+V9.CA#1=
+V9.E(X)=
+V9.BS1#1=V8
+[V9.POP#1]/SUBIR MULTIMEDIA
+PERMITIR MULTIMEDIA
+NO PERMITIR MULTIMEDIA
+ESCRIBIR
+ESCRIBIR
+[V40.(ACT)](MOSTRAR)
+SELECCIONAR 1 O MAS
+V101
+2
+3
+4
+5
+6
+7
+8
+91
+23 4
+5
+6 7
+8
+9
+Permitir Ahora noCuponix desea acceder a tu
+Galería MultimediaMedidas
+Función/Ubicación
+Nombre/Características
+Resultado
+Diseño
+330px90pxVentana de recuperación de cuenta
+vía SMS enviado por Cuponix con código.Ventana de Registro de Cuenta.
+Se ingresan datos personales básicos
+y se acepta términos y condiciones.
+Excepto F2, cada campo ES OBLIGATORIO.  Ventana de editar perfil. 
+Se personaliza con foto, descripción y gustos.
+Cada campo NO ES OBLIGATORIO.Cuponix. Planos generales 2026. Propiedad intelectual de Alexis Ivan Salgado Duran.
+--- Página 4 ---
+Nombre de Producto /ServicioProducto /Servicio
+Descripción
+GUARDARPrecio Precio en Puntos (Opcional)[Ventana buscados de Google
+para ubicar un punto en 
+el mapa]60px 60px
+30px 30px 30px 30px
+60px30px30px30px30px
+60px60px
+90px
+30px
+30px
+30px
+60px90px
+90px30px
+30px
+30pxV10 V11 V12
+30px
+200 caractéresPermitir Calificaciones  
+y comentarios.Omite este paso si deseas usar
+Cuponix como cliente y no como negocio.Perfil de Negocio
+UBICAR EN MAPATipo de Negocio (Opcional)
+Dirección (Opcionall)
+Aceptas pagos en:
+Efectivo Tarjeta Transferencia2
+4
+5 6 7
+8
+9
+1011
+3112
+Productos /Servicios
+V10.BR=
+V10.CT1#1=
+V10.CT1#2=
+V10.BS1#1=
+V10.CA#1=
+V10.CA#2=
+V10.CA#3=
+V10.CA#4=
+V10.ViPr1=
+V10.BS1#3=
+V10.POP1.1=
+V10.POP1.2=V9
+ESCRIBIR
+ESCRIBIR
+V11 (SI V1.POP.1.1, SINO V10 POP1)
+[V40(ACT)] MOSTRAR
+[V40(ACT)] MOSTRAR
+[V40(ACT)] MOSTRAR
+[V40(VAL), V40.(MEN)] PERMITIR
+V12
+V14 CON DATOS GUARDADOS
+PERMITIR UBICACIÓN
+NO PERMITIR UBICACIÓN1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12GUARDAR
+V11.BR=
+V11.BS1#1=V10
+V10 [GEOLOCALIZACION]1
+21 2
+V12.BR=
+V12.CT3#1=
+V12.ViPr2#1=
+V12.POP#1=
+V12.POP#2=
+V12.CT3#1=
+V12.CT3#2=
+V12.T4=
+V12.CT2#1=
+V12.BS1#1=V10
+ESCRIBIR
+[V12.POP#1] SUBIR ARCHIVO
+PERMITIR MULTIMEDIA
+NO PERMITIR MULTIMEDIA
+ESCRIBIR NUMÉRICO
+ESCRIBIR NUMÉRICO
+V13
+ESCRIBIR
+V141
+2
+3
+4
+5
+6
+7
+8
+9
+101
+2
+34
+65
+7
+8
+9
+10
+Permitir Ahora noCuponix desea acceder a tu
+Galería Multimedia
+1280 px720 pxMedidas
+Función/Ubicación
+Nombre/Características
+Resultado
+Diseño
+4
+Permitir Ahora noCuponix desea acceder a tu
+ubicación al usar la AppVentana Perfil de Negocio. Permite cargar información relevante,
+destacanto la pestaña para cargar productosVentana con Buscador de Mapa,
+donde mediante un Pin podrás ubicar tu cuenta.Ventana de descripción de producto o servicio
+que deseas comercializar. Se esxplican los puntos
+¿Qué es esto?Cuponix. Planos generales 2026. Propiedad intelectual de Alexis Ivan Salgado Duran.
+(Opcionall)
+(Opcionall)
+REGISTRAR
+--- Página 5 ---
+V13 V14 V15
+Puntos canjeables
+ENTENDIDO(Animación de 9 segundos
+informativa y explicativa
+respecto al funcionamiento
+de los puntos, su uso y
+beneficios.Por favor ingresa a tu buzón de,
+correo electrónico, hemos
+enviado un enlace de 
+verificación. ¡Casi listo!Cuentas Sugeridas
+SIGUIENTE30px
+60px60px
+60px
+V13.BS1#1= V12 1 V5.BS3#1= V2 1 V15.BS2=
+V15.BS3=
+V15.BS1#1=AÑADIR A V40(SIG)
+OCULTAR
+V211
+2
+34 3 21 2
+INICIO@EjemploTexto3EjemploTexto3Foto Per/f_il 
+pequeño
+120x120
+@EjemploTexto3EjemploTexto3Foto Per/f_il 
+pequeño
+120x120
+Repetición Scroll Abajo
+(Sugerencias de algoritmo
+basado en ¨Preferencias¨
+en V9)1280 px720 pxMedidas
+Función/Ubicación
+Nombre/Características
+Resultado
+Diseño
+5150pxVentana explicativa de Puntos canjeables.
+contiene un vide que se autoreproduce y se repite en loop.Ventana de solicitud de confirmación
+de cuenta en Mail.Ventana de sugerencia de Cuentas,
+basado en “PREFERENCIAS” en V9.8
+Esta ventana es la que te lleva el enlace
+de confirmación de la cuenta, enviado al
+mail. V10/F10.Cuponix. Planos generales 2026. Propiedad intelectual de Alexis Ivan Salgado Duran.
+--- Página 6 ---
+V16 (ACT)
+V17 (SIG) V17 (SEG)
+x@x
+SeguidoresxSeguidosx
+Mensaje Seguir MapaFoto Per/f_il 
+grande
+270 x 270 px
+105px105px22,5px22,5px
+22,5px
+22,5px
+22,5px
+22,5px
+22,5px22,5px
+22,5px
+30px
+30px
+30px
+30px
+30px30px30px
+30px
+30px200 caractéres
+V16.(ACT).BHI=
+V16.(ACT).BBI=
+V16.(ACT).BCI=
+V16.(ACT).BPI=
+V16.(ACT).BR=
+V16.(ACT).BCo=
+V16.(ACT).VIP1=
+V16.(ACT).T2#1=
+V16.(ACT).T2#2=
+V16.(ACT).BS2#1=
+V16.(ACT).BS2#2=
+V16.(ACT).BS2#3=
+V16.(ACT).BAA=
+V16.(ACT).BMI=
+V16.(ACT).BVI=V21
+V22
+V27
+V40(ACT)
+REGRESAR (LOCACION ¨X¨)
+ABRIR PESTAÑA V16
+AMPLIAR FOTO PERFIL
+V17 (SIG)
+V17 (SEG)
+AÑADIR A V41(SIG)
+V18
+V20(X)
+¨SCROLL ABAJO¨
+V16. (MEN)
+V16. (VAL)1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15V17.(SIG).BHI=
+V17.(SIG).BBI=
+V17.(SIG).BCI=
+V17.(SIG).BPI=
+V17.(SIG).BR=
+V17.(SIG).PES1.2=
+V17.(SIG).VIP2(X)=
+V17.(SIG).BS2(X)=V21
+V22
+V27
+V40ACT)
+V16 (ACT)
+V17 (SEG)
+V16(ACT)(X)
+AÑADIR A V40(SIG)1
+2
+3
+4
+5
+6
+7
+8V17.(SEG).BHI=
+V17.(SEG).BBI=
+V17.(SEG).BCI=
+V17.(SEG).BPI=
+V17.(SEG).BR=
+V17.(SEG).PES1.2=
+V17.(SEG).VIP2(X)=
+V17.(SEG).BS2(X)=V21
+V22
+V27
+V40ACT)
+V16 (ACT)
+V17 (SIG)
+V16(ACT)(X)
+AÑADIR A V40(SIG)1
+2
+3
+4
+5
+6
+7
+85
+76
+78
+8 9
+12 10
+11
+13
+1 2 3 4 1 2 3 414 156
+Seguidos Seguidores@x 5
+6
+785
+1 2 3 4Seguidos Seguidores@x
+Intereses:
+X X X X
+Acepta Pagos en:
+Efectivo Tarjetas Transferencia@EjemploTexto3EjemploTexto3Foto Per/f_il 
+pequeño
+120x120 @EjemploTexto3EjemploTexto3Foto Per/f_il 
+pequeño
+120x120
+Repetición Scroll Abajo Repetición Scroll AbajoReportar
+Bloquear
+CompartirOpciones
+30px 30px 30px 30pxMedidas
+Función/Ubicación
+Nombre/Características
+Resultado
+Diseño
+6Ventana de Perfil de Cuenta No Propia.Se muestran opciones generales de Redes,
+Intereses, Pagos, y las 3 pestañas básicas; actividad, Menú y Valoraciones.
+Ventana de Cuentas que Sigue 
+una cuenta no propia. Scroll abajo para másVentana de Cuentas que Siguen a 
+una cuenta no propia. Scroll abajo para másCuponix. Planos generales 2026. Propiedad intelectual de Alexis Ivan Salgado Duran.
+--- Página 7 ---
+V18 V19(MSJ) V19(NOT)
+@EjemploTexto3EjemploTexto3
+ENVIARMensajes Notificaciones
+V18.BR=
+V18.CT1=
+V18.BS2=(X)
+ESCRIBIR(ABIR TECLADO)
+AÑADIR [CT2(x)] A V18(x)
+ 1
+2
+35 6
+1
+3 2200 caractéresXX/XX/XX
+Enviado
+200 caractéresRecibido@EjemploTexto3EjemploTexto3VERFoto Per/f_il 
+pequeño
+120x1207
+8 9 10Mensajes Notificaciones58
+11
+128
+6
+7
+8
+9 10
+V19(MSJ).BHI=
+V19(MSJ).BBI=
+V19(MSJ).BCI=
+V19(MSJ).BPI=
+V19(MSJ).BR=
+V19(MSJ).BOI=
+V19(MSJ).VPES2=
+V19(MSJ).VIP2(X)=
+V19(MSJ).BS2#1=
+V19(MSJ).BS3#1=1
+2
+3
+4
+5
+6
+7
+8
+9
+10V21
+V22
+V27
+V40(ACT)
+X
+PESTAÑA V40
+V19(NOT)
+V16(X)
+V18(X)
+[ELIMINAR MSJ]V19(NOT).BHI=
+V19(NOT).BBA=
+V19(NOT).BCI=
+V19(NOT).BPI=
+V19(NOT).BR=
+V19(NOT).BOI=
+V19(NOT).BPES1=
+V19(NOT).VIP2(X)=
+V19(NOT).BS2#1=
+V19(NOT).BS1#1=
+V19(NOT).BS2#2=
+V19(NOT).BS2#3=V21
+V22
+V27
+V40(ACT)
+X
+PESTAÑA V40
+V19(MSJ)
+V16 (X)
+AÑADIR A V41(SEG)
+ELIMINAR SOLICITUD
+V40(VAL)(X)
+V40(MEN)(PRO)(X)1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12@EjemploTexto3EjemploTexto3 Solicitó Seguirte
+ACEPTAR X
+@EjemploTexto3EjemploTexto3 Cali/f_icó tu Per/f_il
+X
+@EjemploTexto3EjemploTexto3 Cali/f_icó tu Producto
+X
+@EjemploTexto3EjemploTexto3 Compartió tu Cupón
+X
+@EjemploTexto3EjemploTexto3 Comenzó a Seguirte@EjemploTexto3EjemploTexto3 Comentó tu Per/f_il
+VER
+@EjemploTexto3EjemploTexto3 Comentó tu Producto
+VERMedidas
+Función/Ubicación
+Nombre/Características
+Resultado
+Diseño
+30px 30px 30px 30px
+30px
+30px
+30px
+30px
+30px
+30px
+30px
+30px22,5px
+22,5px
+22,5px
+1 2 3 4 1 2 3 4
+7Ventana Escribir un Mensaje.
+Esta ventana es de cuenta propia, al igual que 
+el resto de mensajes y notificacionesVentana de Buzón de Mesanjes.
+Scroll para abajo para ver más.Ventana de Notificaciones. Scroll abajo para ver más.Cuponix. Planos generales 2026. Propiedad intelectual de Alexis Ivan Salgado Duran.
+--- Página 8 ---
+V20 V16 (ACT) V16 (MEN)
+@EjemploTexto3EjemploTexto3
+[Ventana buscados de Google
+para ubicar un punto en 
+el mapa]IR A GOOGLE MAPS
+Actividad
+V22.BR=
+V22.BS3#1=
+TOUCHX
+ABRIR GOOGLE MAPS 
+DESPLAZAMIENTO1
+2
+31 2
+3
+V16(ACT).BHI=
+V16(ACT).BBA=
+V16(ACT).BCI=
+V16(ACT).BPI=
+V16(ACT).BMsI=
+V16(ACT).BOI=
+V16(ACT).BMI=
+V16(ACT).BVI=
+V16(ACT).VIP1(X)=
+V16(ACT).BS3#3=
+V16(ACT).BS2#2=
+V16(ACT).BS3#3=V16(MEN).BHI=
+V16(MEN).BBI=
+V16(MEN).BCI=
+V16(MEN).BPI=
+V16(MEN).BMsI=
+V16(MEN).BOI=
+V16(MEN).BAI=
+V16(MEN).BVI=
+V16(MEN).VIP1(X)=V21
+V22
+V27
+V42(ACT)
+V19(MSJ)
+PESTAÑA V40
+V16 (MEN)
+V16 (VAL)
+V16(X)
+COMPARTIR EN V40(ACT)(PROP)
+AGREGAR EN V35
+V24(X)1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+125
+9
+10 11 127 86
+V21
+V22
+V27
+V42(ACT)
+V19(MSJ)
+PESTAÑA V40
+V16 (ACT)
+V16(VAL)(X)
+V16(MEN)(PRO)1
+2
+3
+4
+5
+6
+7
+8
+9EjemploTexto4
+VerEjemploTexto4
+VerEjemploTexto4
+Ver
+EjemploTexto4
+VerEjemploTexto4
+VerEjemploTexto4
+VerMenú7
+985 6
+1 2 3 4 1 2 3 430px
+22,5px
+22,5px
+240 px22,5px
+105 px
+ 90 px
+30px
+30px30px 30px 30px
+30px
+30pxMedidas
+Función/Ubicación
+Nombre/Características
+Resultado
+Diseño
+Ventana con buscador de Mapa para ubicar un 
+punto, y abrir el buscador de Google Maps oficial
+para indicaciones.Ventana Actividad de cuenta no propia.
+se muestra los cupones creados y compartidos. Ventana Menú de cuenta no propia. 
+se muestran los diferentes productos / servicios
+que ofrece la cuenta, se puede ver más información.
+8@EjemploTexto3EjemploTexto3Expira: x/x/x
+Usar Guardarxx%
+Descuento Compra mínima$xx,xx xx
+RecompenzaCuponix. Planos generales 2026. Propiedad intelectual de Alexis Ivan Salgado Duran.
+@EjemploTexto3EjemploTexto3Expira: x/x/x
+Usar Guardarxx
+Recompenza140 caractéres
+--- Página 9 ---
+V16 (MEN)(PRO) V16 (MEN)(PRO) V16 (VAL)
+NombreDeProducto
+Comentarios
+FotoDeProducto
+(660x460px, R3)
+$xx.xx
+Precio Normalxx
+Precio Puntos(X) de X Calificaciones
+CALIFICAR
+CANJEARENVIAR
+200 caractéresX@X
+200 caractéresX@X
+200 caractéres200 caractéres
+Comentarios(X) de X Calificaciones
+CALIFICAR
+ENVIAR
+200 caractéresX@X200 caractéres
+CalificacionesCalificaciones5
+7
+8
+96
+V16(MEN)(PRO).BHI=
+V16(MEN)(PRO).BBI=
+V16(MEN)(PRO).BCI=
+V16(MEN)(PRO).BPI=
+V16(MEN)(PRO).BMsI=
+V16(MEN)(PRO).BOI=
+V16(MEN)(PRO).BR=
+V16(MEN)(PRO).VIPR2=
+V16(MEN)(PRO).BS3#1=V16(MEN)(PRO).PG=
+V16(MEN)(PRO).BS3#2=
+V16(MEN)(PRO).CT2=
+V16(MEN)(PRO).BS2#1=V21
+V22
+V27
+V40
+V19(MSJ)
+PESTAÑA V40
+V16(MEN)(X)
+“ZOOM”
+¨V30TOQUE: EN BLANCO Y SE LLENA
+AGREGAR A V16(VAL)
+“ËSCRIBIR”
+“AGREGAR A V16(VAL)”1
+2
+3
+4
+5
+6
+7
+8
+910
+11
+12
+1310
+11
+12
+13
+1 2 3 45 6
+7 8
+10
+11
+129
+V16(VAL).BHI=
+V16(VAL).BBI=
+V16(VAL).BCI=
+V16(VAL).BPI=
+V16(VAL).BMsI=
+V16(VAL).BOI=
+V16(VAL).BAI=
+V16(VAL).BMI=
+V16(VAL).PG=
+V16(VAL).BS3#1=
+V16(VAL).CT2=
+V16(VAL).BS2#1=V21
+V21
+V27
+V40(ACT)
+V19(MSJ)
+PESTAÑA V40
+V16 (ACT)
+V16 (MEN)
+TOQUE:EN BLANCO Y SE LLENA
+AGREGAR A V16(VAL)
+“ESCRIBIR”
+“AGREGAR A V16(VAL)”1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12Medidas
+Función/Ubicación
+Nombre/Características
+Resultado
+Diseño
+22,5px
+22,5px
+30px30px
+30px
+30px
+30px
+30px
+30px
+30px30px
+30px
+30px
+160px160px
+160px 90 px
+ 90 px 90 px 90 px
+ 90 px
+1 2 3 4105 px105 px
+30px
+30px
+30px
+30px
+30px
+30pxVentana de descripción del producto.
+Tiene la opción de canjear por puntosContinuación de la ventana a la izq al hacer Scroll abajo.
+Se pueden agregar valoraciones nuevas y comentarios.Ventana Valoraciones no propias.
+sirve para valorar al negocio en general.
+se puede agregar valoraciones y comentarios.
+9Cuponix. Planos generales 2026. Propiedad intelectual de Alexis Ivan Salgado Duran.
+
+================================================================================
+PDF: Cuponix planos finales def26 p3.pdf
+================================================================================
+
+
+--- Página 1 ---
+Medidas
+Función/Ubicación
+Nombre/Características
+Resultado
+Diseño V43
+Ventana Editar perfil.
+Se accede desde pestaña “Configuración” en V40.
+Se puede editar datos escritos en V9 y V10.
+19Continuación de V43.V42
+Ventana Editar Cuenta.
+Sirve para editar información que se dió
+en V8 (Registrar cuenta).
+opción a eliminar cuenta.Cuponix. Planos generales 2026. Propiedad intelectual de Alexis Ivan Salgado Duran.
+2
+960pxNombre
+Usuario
+Correo Electrónico
+Número Telefónico150px
+Cuenta Privada
+GUARDAR30px
+V8.BR=
+V8.CA#1=
+V8.CT1#1=
+V8.CT1#2=
+V8.CT1#3=
+V8.CT1#4=
+V8.CT1#5=
+V8.CT1#6=
+V8.T3#1=
+V8.CA#2=
+V8.BS1#1=V2 / V3
+[V40(PRIV)]
+ESCRIBIR
+ESCRIBIR
+ESCRIBIR
+ESCRIBIR
+ESCRIBIR
+ESCRIBIR
+V.TERMINOS
+CONFIRMAR 9.
+V9(SOLO SI F10 ES V)1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+111
+3
+4
+5
+6
+7
+8
+10Editar Cuenta Editar Perfil
+Nueva Contraseña
+Repetir Nueva Contraseña
+ELIMINAR CUENTA
+Aceptar Ahora noAl aceptar se eliminarán
+todos tus datos. Continuar?
+150px
+Biografía 
+Agregar Interés:Tus intereses:30px
+30px
+30px
+60px
+60px200 caractéres
+Arte Deporte Ropa Restaurante
+Música Coctel Hamburguesa Cine
+Mostrar intereses 
+en perfil.
+V9.BR=
+V9.ViP1=
+V9.POP#1.1=
+V9.POP#1.2=
+V9.CT2#1=
+V9.CT1#1=
+V9.CA#1=
+V9.E(X)=
+V9.BS1#1=V8
+[V9.POP#1]/SUBIR MULTIMEDIA
+PERMITIR MULTIMEDIA
+NO PERMITIR MULTIMEDIA
+ESCRIBIR
+ESCRIBIR
+[V40.(ACT)](MOSTRAR)
+SELECCIONAR 1 O MAS
+V101
+2
+3
+4
+5
+6
+7
+8
+91
+2
+5
+630px 30px 30px 30px
+60px30px
+30px60px90px
+90px30px
+30pxPermitir Calificaciones  
+y comentarios.
+UBICAR EN MAPATipo de Negocio
+DirecciónAceptas pagos en:
+Efectivo Tarjeta Transferencia
+7
+8 94310 11 12
+13
+14
+15Productos /Servicios
+V10.BR=
+V10.CT1#1=
+V10.CT1#2=
+V10.BS1#1=
+V10.CA#1=
+V10.CA#2=
+V10.CA#3=
+V10.CA#4=
+V10.ViPr1=
+V10.BS1#3=
+V10.POP1.1=
+V10.POP1.2=V9
+ESCRIBIR
+ESCRIBIR
+V11 (SI V1.POP.1.1, SINO V10 POP1)
+[V40(ACT)] MOSTRAR
+[V40(ACT)] MOSTRAR
+[V40(ACT)] MOSTRAR
+[V40(VAL), V40.(MEN)] PERMITIR
+V12
+V14 CON DATOS GUARDADOS
+PERMITIR UBICACIÓN
+NO PERMITIR UBICACIÓN1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12GUARDAR
+60px30px
+--- Página 2 ---
+Medidas
+Función/Ubicación
+Nombre/Características
+Resultado
+Diseño V45
+1
+2Ventana Bloqueados
+Se viene desde pestaña “Configuración” en V40.
+Se muestran tods las cuentas a las que se le dió
+“Bloquear” en V16(ACT)F6, la pestaña “Opciones
+para cuenta no propia” presente en todos los 
+perfiles de cuentas no propia. 
+20V46(GRA)
+21Ventana Suscripción (GRATIS).
+Sólo si aún no tiene cupones o esta en sus 3 meses
+de prueba.
+Se viene desde pestaña “Configuración” en barra
+principal. contiene la fecha de expiración de los 3
+meses de prueba, que inician luedo de creado el 
+primer cupón. Tiene un botón “Suscribirme” que
+enlaza a la web. Igual con otro llamado “anular
+suscripción”. El registro de pagos es en la web.V44
+Ventana Editar producto.
+Se Viene desde V43, se editan datos que 
+se dieron en V12 Cuponix. Planos generales 2026. Propiedad intelectual de Alexis Ivan Salgado Duran.
+V16(MEN)(PRO).BHI=
+V16(MEN)(PRO).BBI=
+V16(MEN)(PRO).BCI=
+V16(MEN)(PRO).BPI=
+V16(MEN)(PRO).BMsI=
+V16(MEN)(PRO).BOI=
+V16(MEN)(PRO).BR=
+V16(MEN)(PRO).VIPR2=
+V16(MEN)(PRO).BS3#1=V21
+V22
+V27
+V40
+V19(MSJ)
+PESTAÑA V40
+V16(MEN)(X)
+“ZOOM”
+¨V301
+2
+3
+4
+5
+6
+7
+8
+922,5px
+22,5px
+30px
+30px
+30px
+30px
+160px 90 px
+ 90 px
+GUARDARBloqueados
+Nuevo Nombre de Producto /ServicioProducto /Servicio
+DescripciónPrecio Precio en Puntos (Opcional)
+200 caractéres1
+2
+3
+4 5
+6
+7
+8¿Qué es esto?Suscribirme
+Días restantes:xx
+Pruébalo Gratis
+por 3 meses,
+sin suscripción!$5.99 al mespor solo@EjemploTexto3EjemploTexto3Foto Per/f_il 
+pequeño
+120x120DESBLOQUEAR
+@EjemploTexto3EjemploTexto3Foto Per/f_il 
+pequeño
+120x120DESBLOQUEARCon CUPONIX dale a tus clientes
+más razones para volver!
+Activa cupones ilimitados
+y recompensas con
+puntos desde una
+sola plataforma  
+SUSCRIBIRME
+60px150px
+30px150px
+30px
+60px60px
+90px
+90px
+--- Página 3 ---
+V21
+V22
+V40(ACT)
+V36
+V37(CUP)
+ESCRIBIR 140 CARACTÉRES
+0-999
+ESCRIBIR FECHA
+ESCRIBIR
+V39V38.BHI=
+V38.BBI=
+V38.BPI=
+V38.BR=
+V39.PES.2=
+V38.CT2=
+V38.BaC=
+V38.CT1#1=
+V38.CT1#2=
+V38.BS1=1
+2
+3
+4
+5
+6
+7
+8
+9
+10Medidas
+Función/Ubicación
+Nombre/Características
+Resultado
+Diseño V47
+V21
+V22
+V40(ACT)
+V36V39.BHI=
+V39.BBI=
+V39.BPI=
+V39.BS1=1
+2
+3
+41
+2
+3
+4
+5
+6
+7Ventana “Permisos”
+Se accede sde la pestaña “Configuración” en la barra 
+principal. tiene un botón de “guardar” y otro de “Regresar”.
+Tiene una lista de preguntas de permisos, a las que se
+acepta o niega con una casilla de “Check”:
+Valoraciones, Reseñas, Mensajes, Notificaciones.
+21V48
+V21
+V22
+V40(ACT)
+V36V39.BHI=
+V39.BBI=
+V39.BPI=
+V39.BS1=1
+2
+3
+41
+2
+3
+4
+5
+6
+7
+8Ventana Reportar.
+Se accede desde la pestaña “mas ajustes” desde
+perfil no propio. Hay preguntas que se acepta o 
+niega con una casilla de “Check”.V46(SUS)
+Ventana Suscripción (SUSCRITO).
+Sólo si ya está suscrito.
+Se viene desde pestaña “Configuración” en barra
+principal. contiene la fecha de inicio de suscripción.
+a nombre de quién.vTiene un botón “anular suscripción” que
+enlaza a la web. El registro de pagos es en la web.
+1
+2Cuponix. Planos generales 2026. Propiedad intelectual de Alexis Ivan Salgado Duran.
+Mi Suscripción
+EntendidoGracias por informarnos,
+Revisaremos en breve.
+Permisos Reportar
+Tu suscripción está activa.
+Disfruta cupones ilimitados y
+puntos canjeables para convertir
+clientes en compradores
+frecuentes. 
+Puedes anular tu suscripción
+en cualquier momento. 
+ANULARMe resulta falsa.
+Sube contenido inapropiado.
+Me está acosando.
+Se hace pasar por otra cuenta.
+No cumple con sus promociones.
+No sigue activo.Permitir Valoraciones
+Permitir Reseñas
+Permitir Notificaciones
+Permitir Seguidores
+Permitir Compartir Actividad
+GUARDARCada reporte ayuda a proteger
+la confianza y seguridad de la
+comunidad. 
+Trabajemos para que CUPONIX
+sea un espacio seguro para todos.  
+Esta cuenta...
+ENVIAR150px
+30px
+60px 90 px150px
+30px150px
+30px
+60px60px60px
+60px
+60px
+60px60px60px
+60px
+60px
+60px
+60px90px

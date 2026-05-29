@@ -1,0 +1,262 @@
+╔════════════════════════════════════════════════════════════════════════════════════╗
+║                    CUPONIX - MATRIZ DE PANTALLAS Y FLUJOS                         ║
+║                         RESUMEN EJECUTIVO PARA FLUTTER                            ║
+╚════════════════════════════════════════════════════════════════════════════════════╝
+
+┌─ PARTE 1: ONBOARDING Y AUTENTICACIÓN (V1-V20)
+├─ V1-V20: Pantallas de login, registro, bienvenida
+├─ Incluyen: Verificación de seguridad (V17), Botones de cerrar (V18, V20)
+└─ Flujo: V1 → V2 → ... → V20 → V21 (Home)
+
+┌─ PARTE 2: HOME Y EXPLORACIÓN (V21-V23)
+├─ V21: Home/Para Ti - Panel principal con recomendaciones e IA
+├─ V22: Búsqueda con IA Gemini - Búsqueda por categoría
+├─ V23(CUE): Resultados de búsqueda - Lista de cupones a explorar
+└─ V23(CUP): Mis cupones - Cupones guardados del usuario
+
+┌─ PARTE 3: DETALLES Y ACCIONES DE CUPONES (V24-V36)
+├─ V24: Carrito/Editor - Personalizar cupón antes de usar
+├─ V25: QR Display - Mostrar código QR tras usar cupón
+├─ V36[V25.POP]: Modal guardar - Popup "¿Guardar para después?"
+├─ V36(PUN): Puntos - Detalle de puntos acumulados
+└─ Flujo: V23 → V24 → V25 → [V36 Modal]
+
+┌─ PARTE 4: HISTORIAL Y TRANSACCIONES (V26-V34)
+├─ V26: Historial general - Vista general de transacciones
+├─ V27(REC): Cupones recibidos - Historial de entrada
+├─ V27(ENV): Cupones enviados - Historial de salida
+├─ V28(ENV): QR Scanner - Escáner de código QR
+├─ V34(REC): Detalle recibido - Detalles de cupón recibido
+├─ V34(ENV): Detalle enviado - Detalles de cupón enviado
+├─ V35(CUP): Puntos y rewards - Panel de puntos totales
+└─ Flujo: V26 → V27(REC/ENV) → V34 / V35
+
+┌─ PARTE 5: NAVEGACIÓN Y MENÚ (V16, V19, V37, V40-V42)
+├─ V16(X): Cerrar/Retorno - Botón universal de cierre
+├─ V16(ACT): Acciones - Botón para actividades
+├─ V16(MEN)/(PRO): Menú y Perfil - Navegación principal
+├─ V19(MSJ): Mensajes - Centro de mensajes y notificaciones
+├─ V37: Perfil - Información personal y configuración
+├─ V40(ACT): Panel actividades - Centro de acciones
+├─ V41: Subactividades - Detalles de seguridad, siguiendo
+├─ V42: Config actividades - Qué mostrar/notificar
+└─ Accesible desde casi todas las pantallas
+
+┌─ PARTE 6: GAMIFICACIÓN (V46)
+├─ V46(GRA): Gamificación - Sistema de logros y desafíos
+├─ V46(SUS): Suscripción - Información de membresía
+└─ Funcionalidad complementaria
+
+┌─ PARTE 7: PANTALLAS RESERVADAS (V61, V71, V101, V141, V211, V301)
+├─ Numeración especial para futuras extensiones
+├─ Probables: Integraciones, marketplace, reports, admin
+└─ A definir en próximas versiones
+
+╔════════════════════════════════════════════════════════════════════════════════════╗
+║                           MAPEO DE RUTAS PARA FLUTTER                             ║
+╚════════════════════════════════════════════════════════════════════════════════════╝
+
+RUTAS PRINCIPALES:
+─────────────────
+/home                       → V21 (HomeScreen)
+/search                     → V22 (SearchScreen)
+/search-results/:query      → V23(CUE) (SearchResultsScreen)
+/cupones                    → V23(CUP) (MyCuponesScreen)
+/cupone/:id/edit            → V24 (CuponeEditorScreen)
+/cupone/:id/confirm         → V25 (QRConfirmScreen)
+/cupone/:id/save-modal      → V36 (SaveModalScreen) [Dialog]
+/cupone/:id/points          → V36(PUN) (PointsDetailScreen)
+/historial                  → V26 (HistorialScreen)
+/historial/recibidos        → V27(REC) (RecibidosScreen)
+/historial/enviados         → V27(ENV) (EnviadosScreen)
+/qr-scanner                 → V28(ENV) (QRScannerScreen)
+/cupone/recibido/:id        → V34(REC) (CuponeRecibidoDetailScreen)
+/cupone/enviado/:id         → V34(ENV) (CuponeEnviadoDetailScreen)
+/puntos                     → V35(CUP) (PointsOverviewScreen)
+/mensajes                   → V19(MSJ) (MessagesScreen)
+/actividades                → V40(ACT) (ActivitiesScreen)
+/perfil                     → V37 (ProfileScreen)
+/configuracion              → V37 (ConfigScreen) [Part of V37]
+/gamificacion               → V46 (GamificationScreen)
+
+COMPONENTES GLOBALES:
+──────────────────────
+- BottomNavBar: V16(MEN), V40(ACT), V37(PRO)
+- AppBar: Botones V16(X), V16(ACT), V19(MSJ)
+- NavigationDrawer: Acceso rápido a principales
+- Dialogs/Modals: V36[V25.POP], otros popups
+- FloatingActionButton: Posible en V35, V40
+
+╔════════════════════════════════════════════════════════════════════════════════════╗
+║                         ELEMENTOS UI REUTILIZABLES                                ║
+╚════════════════════════════════════════════════════════════════════════════════════╝
+
+TARJETAS CUPÓN:
+───────────────
+- Tamaño: 330x330px (grande) / 165x165px (pequeña)
+- BorderRadius: R3
+- Información: Nombre cuenta, descuento, compra mínima, recompensa, expiración
+- Acciones: Usar, Guardar
+- Componentes: Foto perfil (120x120px), texto de cuenta
+
+CÓDIGO QR:
+──────────
+- Tamaño: 360x369px
+- Tipo: VIQR (ventana QR)
+- Uso: Transacciones entre usuarios
+- Ubicación: V25, V28
+
+PESTAÑAS (Tabs):
+────────────────
+- PES2: 2 pestañas (común)
+  - V21: "Para Ti" / "Siguiendo"
+  - V23: "Cupones" / "Cuentas"
+  - V25: Pestañas en detalle
+- PES.1, PES.2: Variable según contexto
+
+BOTONES:
+────────
+- BBI: Top button (historial/info)
+- BCI: Center button (principal action)
+- BPI: Bottom button (secondary action)
+- BMsI: Messages button (siempre visible)
+- BOI: Options button (menu)
+- BS1/2/3: Secondary buttons (variaciones)
+- BR: Back button (regresar)
+
+CAMPOS ENTRADA:
+───────────────
+- E: Input field
+- Máximo 14 caracteres (código cupón)
+- Máximo 200 caracteres (búsqueda)
+- Búsqueda: Soporta etiquetas con IA
+
+VENTANAS ESPECIALES:
+────────────────────
+- VIR: Ventana Respuesta IA (660x480px) [En V21: 3 instancias]
+- VIP: Ventana Info Popup (4 instancias típicamente)
+- CT1/CT2: Contenedores scrolleables
+
+╔════════════════════════════════════════════════════════════════════════════════════╗
+║                          INTEGRACIONES IMPORTANTES                                ║
+╚════════════════════════════════════════════════════════════════════════════════════╝
+
+GEMINI AI:
+──────────
+- Integrado en V22 (Búsqueda)
+- Búsqueda por IA en V21
+- Recomendaciones inteligentes
+
+QR SYSTEM:
+──────────
+- Generación de QR en V25 tras usar cupón
+- Escaneo en V28
+- Almacenamiento en V28(ENV)
+
+PUNTOS/REWARDS:
+───────────────
+- Acumulación en V35(CUP)
+- Detalle en V36(PUN)
+- Canje de puntos en transacciones
+
+GAMIFICACIÓN:
+──────────────
+- Sistema de logros (V46)
+- Badges y desafíos
+- Integración de suscripciones
+
+╔════════════════════════════════════════════════════════════════════════════════════╗
+║                        MATRIZ DE TRANSICIONES RÁPIDA                              ║
+╚════════════════════════════════════════════════════════════════════════════════════╝
+
+V21 (Home) 
+  ↓
+  ├→ V22 (Buscar)
+  ├→ V23(CUE) (Explorar)
+  ├→ V23(CUP) (Mis Cupones)
+  ├→ V26 (Historial)
+  ├→ V27(REC/ENV) (Transacciones)
+  ├→ V40(ACT) (Actividades)
+  ├→ V37 (Perfil)
+  ├→ V19(MSJ) (Mensajes)
+  └→ V16(X) (Cerrar)
+
+V23(CUE) (Explorar)
+  ↓
+  ├→ V24 (Editar)
+  ├→ V25 (QR)
+  └→ V36 (Guardar?)
+
+V24 (Editar)
+  ↓
+  └→ V25 (QR)
+
+V25 (QR)
+  ↓
+  ├→ V36[V25.POP] (Modal Guardar)
+  └→ V35/V36(PUN) (Puntos)
+
+V27(REC/ENV) (Historial)
+  ↓
+  ├→ V34 (Detalle)
+  ├→ V28 (QR Scanner)
+  └→ V35(CUP) (Puntos)
+
+V35(CUP) (Puntos)
+  ↓
+  └→ V36(PUN) (Detalle)
+
+V40(ACT) (Actividades)
+  ↓
+  ├→ V41 (Sub-actividades)
+  ├→ V42 (Config)
+  └→ V37 (Perfil)
+
+╔════════════════════════════════════════════════════════════════════════════════════╗
+║                            RECOMENDACIONES FLUTTER                                ║
+╚════════════════════════════════════════════════════════════════════════════════════╝
+
+ARQUITECTURA:
+─────────────
+✓ Usar Navigator 2.0 o go_router para manejo de rutas complejas
+✓ Provider/Riverpod para state management
+✓ Separar pantallas en widgets reutilizables
+
+WIDGETS RECOMENDADOS:
+─────────────────────
+✓ CustomScrollView con SliverAppBar para V21, V23
+✓ TabBar para pestañas (PES2)
+✓ QrImageView para display QR (qr_flutter package)
+✓ QrScanner para V28 (qr_scanner package)
+✓ BottomNavigationBar o NavigationRail
+✓ Material Dialog para modals
+✓ GridView para tarjetas de cupones
+
+PACKAGES SUGERIDOS:
+───────────────────
+- go_router: Navegación avanzada
+- provider/riverpod: State management
+- http/dio: API calls
+- sqflite: Local persistence
+- qr_flutter: QR generation
+- qr_scanner: QR reading
+- firebase: Auth, messaging, notifications
+- flutter_gemini: Integración con Gemini API
+- cached_network_image: Optimizar imágenes
+- shimmer: Loading effects
+
+PERSISTENCIA:
+──────────────
+- SharedPreferences: Preferencias de usuario
+- Sqflite: Historial local
+- Hive: Cache de cupones
+- Firebase: Datos en cloud
+
+OPTIMIZACIONES:
+────────────────
+- Lazy loading en listas (V21, V23, V27, V35)
+- Caching de búsquedas (V22)
+- Preload de imágenes de cupones
+- Paginación en historial
+
+═════════════════════════════════════════════════════════════════════════════════════════

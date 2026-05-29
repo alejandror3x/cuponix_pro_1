@@ -1,0 +1,189 @@
+====================================================================================================
+ANÁLISIS COMPLETO DE PLANOS - CUPONIX
+====================================================================================================
+
+TOTAL DE PANTALLAS ÚNICAS: 55
+
+PANTALLAS IDENTIFICADAS:
+--------------------------------------------------
+  1. V1
+  2. V2
+  3. V3
+  4. V4
+  5. V5
+  6. V6
+  7. V7
+  8. V8
+  9. V9.8
+ 10. V9
+ 11. V10
+ 12. V11
+ 13. V12
+ 14. V13
+ 15. V14
+ 16. V15
+ 17. V16
+ 18. V17
+ 19. V18
+ 20. V19
+ 21. V20
+ 22. V21
+ 23. V22
+ 24. V23
+ 25. V24
+ 26. V25
+ 27. V26
+ 28. V27
+ 29. V28
+ 30. V29
+ 31. V30
+ 32. V31
+ 33. V32
+ 34. V33
+ 35. V34
+ 36. V35
+ 37. V36
+ 38. V37
+ 39. V38
+ 40. V39
+ 41. V40
+ 42. V41
+ 43. V42
+ 44. V43
+ 45. V44
+ 46. V45
+ 47. V46
+ 48. V47
+ 49. V48
+ 50. V61
+ 51. V71
+ 52. V101
+ 53. V141
+ 54. V211
+ 55. V301
+
+====================================================================================================
+CATEGORÍAS/CONTEXTOS IDENTIFICADOS:
+--------------------------------------------------
+
+ACT: Actividades/Acciones
+  Pantallas: V16, V40, V41, V42
+
+CON: Configuración
+  Pantallas: V37
+
+CUE: Cupones - Explorar
+  Pantallas: V23
+
+CUP: Mis Cupones
+  Pantallas: V23, V35, V37
+
+ENV: Enviados
+  Pantallas: V27, V28, V34
+
+GRA: Gamificación
+  Pantallas: V46
+
+MEN: Menú
+  Pantallas: V16, V40
+
+MSJ: Mensajes
+  Pantallas: V19
+
+NOT: Notificaciones
+  Pantallas: V19
+
+PER: Perfil Personal
+  Pantallas: V37
+
+PRIV: Privacidad
+  Pantallas: V40
+
+PUN: Puntos/Rewards
+  Pantallas: V35, V36
+
+REC: Recibidos
+  Pantallas: V27, V34, V35
+
+SEG: Seguridad
+  Pantallas: V41
+
+SIG: Siguiente/Navegación
+  Pantallas: V21, V40, V41
+
+SUS: Suscripción
+  Pantallas: V46
+
+VAL: Validación
+  Pantallas: V16, V40
+
+X: Cerrar/Botón de retorno
+  Pantallas: V16, V18, V20, V24
+
+====================================================================================================
+COMPONENTES Y ELEMENTOS UI DETECTADOS:
+--------------------------------------------------
+
+BBI: Botón de Inicio/Arriba
+  Instancias encontradas: 1
+
+BCI: Botón de Centro
+  Instancias encontradas: 1
+
+BCrI: Botón Crear
+  Instancias encontradas: 1
+
+BGI: Botón General
+  Instancias encontradas: 1
+
+BHI: Botón de Historia
+  Instancias encontradas: 1
+
+BMsI: Botón Mensajes
+  Instancias encontradas: 1
+
+BOI: Botón Opciones
+  Instancias encontradas: 1
+
+BPI: Botón de Pie/Abajo
+  Instancias encontradas: 1
+
+BR: Botón Regresar
+  Instancias encontradas: 1
+
+BS: Botones Secundarios
+  Instancias encontradas: 12
+
+CT: Contenedor/Container
+  Instancias encontradas: 12
+
+E: Entrada/Input
+  Instancias encontradas: 2
+
+PES: Pestañas/Tabs
+  Instancias encontradas: 3
+
+POP: Popup/Modal
+  Instancias encontradas: 4
+
+VIP: Ventana de Información Popul
+  Instancias encontradas: 4
+
+VIR: Ventana de Respuesta IA
+  Instancias encontradas: 4
+
+====================================================================================================
+FLUJOS PRINCIPALES DETECTADOS:
+--------------------------------------------------
+  120x120V21V22V23(CUE)
+  V21.BS3#2=V22
+  V24.BS1=V25.BHI=
+  Expira: xx/xx/xxV23(CUP) V24 V25V22
+  V23(CUP)[SEGUN 6.V23.(CT1)]
+  V25V23(CUP).BHI=
+  V23(CUP.BS3#2=V24.BHI=
+  V36[V25.POP]
+  V36V25.BHI=
+  HISTORIALV26 V27(REC) V27(ENV)V21
+  V23(CUP)[SEGUN 6.V23.(CT1)]
+  V27V26.BHI=
